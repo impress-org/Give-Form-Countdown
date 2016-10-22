@@ -30,9 +30,9 @@ function give_ldd_is_form_has_limited_duration( $form_id ) {
  */
 function give_is_limit_donation_time_achieved( $form_id ) {
 	$is_time_achieved = false;
-
+	
 	if ( give_ldd_is_form_has_limited_duration( $form_id ) ) {
-		$is_time_achieved = ( current_time( 'timestamp', 1 ) < give_ldd_get_form_close_date( $form_id ) ? true : false );
+		$is_time_achieved = ( give_ldd_get_form_close_date( $form_id ) < current_time( 'timestamp', 1 ) ? true : false );
 	}
 
 	return $is_time_achieved;
