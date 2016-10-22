@@ -65,8 +65,13 @@ function give_ldd_get_form_close_date( $form_id, $date_format = '' ) {
 				break;
 			}
 
-			// Timestamp.
-			$limit_timestamp = strtotime( "+ $limit_in_day days", current_time( 'timestamp', 1 ) );
+			// Local timestamp.
+			$limit_timestamp = strtotime( "+ $limit_in_day days", current_time( 'timestamp' ) );
+
+			$formatted_date = date( 'Y-m-d 00:00:00', $limit_timestamp );
+
+			//GMT timestamp.
+			$limit_timestamp = get_gmt_from_date( $formatted_date, 'U' );
 			break;
 
 		case 'end_on_day_and_time':
@@ -78,8 +83,10 @@ function give_ldd_get_form_close_date( $form_id, $date_format = '' ) {
 				break;
 			}
 
-			// Timestamp.
-			$limit_timestamp = get_gmt_from_date( $limit_in_date . ' ' . give_ldd_get_time_list()[ $limit_in_time ], 'U' );
+			$formatted_date = date( 'Y-m-d H:i:s', strtotime( $limit_in_date . ' ' . give_ldd_get_time_list()[ $limit_in_time ] ) );
+
+			// GMT timestamp.
+			$limit_timestamp = get_gmt_from_date( $formatted_date, 'U' );
 			break;
 	}
 
