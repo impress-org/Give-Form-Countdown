@@ -28,7 +28,7 @@ function give_ldd_closed_form_message( $message, $form_id ) {
 		give_is_limit_donation_time_achieved( $form_id )
 		&& ( $form->get_goal() > $form->get_earnings() )
 	) {
-		$message = get_post_meta( $form_id, 'limit-donation-message', true );
+		$message = give_ldd_get_message( $form_id );
 	}
 
 	return $message;
