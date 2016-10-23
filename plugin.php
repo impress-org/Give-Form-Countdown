@@ -5,7 +5,7 @@
  * Plugin URI:
  * Description: The most robust, flexible, and intuitive way to accept donations on WordPress.
  * Author: Ravinder Kumar
- * Author URI: https://ravinder.me.com
+ * Author URI: https://ravinder.me
  * Version: 1.0
  * Text Domain: give-limit-donation-duration
  * Domain Path: /languages
