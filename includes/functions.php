@@ -105,30 +105,30 @@ function give_ldd_get_form_close_date( $form_id, $date_format = '' ) {
  */
 function give_ldd_get_time_list() {
 	$times = array(
-		'0100' => __( '1:00 AM', 'give' ),
-		'0200' => __( '2:00 AM', 'give' ),
-		'0300' => __( '3:00 AM', 'give' ),
-		'0400' => __( '4:00 AM', 'give' ),
-		'0500' => __( '5:00 AM', 'give' ),
-		'0600' => __( '6:00 AM', 'give' ),
-		'0700' => __( '7:00 AM', 'give' ),
-		'0800' => __( '8:00 AM', 'give' ),
-		'0900' => __( '9:00 AM', 'give' ),
-		'1000' => __( '10:00 AM', 'give' ),
-		'1100' => __( '11:00 AM', 'give' ),
-		'1200' => __( '12:00 AM', 'give' ),
-		'1300' => __( '1:00 PM', 'give' ),
-		'1400' => __( '2:00 PM', 'give' ),
-		'1500' => __( '3:00 PM', 'give' ),
-		'1600' => __( '4:00 PM', 'give' ),
-		'1700' => __( '5:00 PM', 'give' ),
-		'1800' => __( '6:00 PM', 'give' ),
-		'1900' => __( '7:00 PM', 'give' ),
-		'2000' => __( '8:00 PM', 'give' ),
-		'2100' => __( '9:00 PM', 'give' ),
-		'2200' => __( '10:00 PM', 'give' ),
-		'2300' => __( '11:00 PM', 'give' ),
-		'2400' => __( '12:00 PM', 'give' ),
+		'0100' => __( '1:00 AM', 'give-limit-donation-duration' ),
+		'0200' => __( '2:00 AM', 'give-limit-donation-duration' ),
+		'0300' => __( '3:00 AM', 'give-limit-donation-duration' ),
+		'0400' => __( '4:00 AM', 'give-limit-donation-duration' ),
+		'0500' => __( '5:00 AM', 'give-limit-donation-duration' ),
+		'0600' => __( '6:00 AM', 'give-limit-donation-duration' ),
+		'0700' => __( '7:00 AM', 'give-limit-donation-duration' ),
+		'0800' => __( '8:00 AM', 'give-limit-donation-duration' ),
+		'0900' => __( '9:00 AM', 'give-limit-donation-duration' ),
+		'1000' => __( '10:00 AM', 'give-limit-donation-duration' ),
+		'1100' => __( '11:00 AM', 'give-limit-donation-duration' ),
+		'1200' => __( '12:00 AM', 'give-limit-donation-duration' ),
+		'1300' => __( '1:00 PM', 'give-limit-donation-duration' ),
+		'1400' => __( '2:00 PM', 'give-limit-donation-duration' ),
+		'1500' => __( '3:00 PM', 'give-limit-donation-duration' ),
+		'1600' => __( '4:00 PM', 'give-limit-donation-duration' ),
+		'1700' => __( '5:00 PM', 'give-limit-donation-duration' ),
+		'1800' => __( '6:00 PM', 'give-limit-donation-duration' ),
+		'1900' => __( '7:00 PM', 'give-limit-donation-duration' ),
+		'2000' => __( '8:00 PM', 'give-limit-donation-duration' ),
+		'2100' => __( '9:00 PM', 'give-limit-donation-duration' ),
+		'2200' => __( '10:00 PM', 'give-limit-donation-duration' ),
+		'2300' => __( '11:00 PM', 'give-limit-donation-duration' ),
+		'2400' => __( '12:00 PM', 'give-limit-donation-duration' ),
 	);
 
 	// Format time  with wp time format setting.
@@ -153,5 +153,5 @@ function give_ldd_get_time_list() {
 function give_ldd_get_message( $form_id ) {
 	$message = get_post_meta( $form_id, 'limit-donation-message', true );
 
-	return ( $message ? $message : __( 'Thank you to all our donors, we have met our fundraising goal.', 'give' ) );
+	return ( $message ? $message : __( 'Thank you to all our donors, we have met our fundraising goal.', 'give-limit-donation-duration' ) );
 }
