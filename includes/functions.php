@@ -139,3 +139,19 @@ function give_ldd_get_time_list() {
 
 	return $times;
 }
+
+
+/**
+ * Get form message when time achieved.
+ *
+ * @since 1.0
+ *
+ * @param $form_id
+ *
+ * @return mixed|string|void
+ */
+function give_ldd_get_message( $form_id ) {
+	$message = get_post_meta( $form_id, 'limit-donation-message', true );
+
+	return ( $message ? $message : __( 'Thank you to all our donors, we have met our fundraising goal.', 'give' ) );
+}
