@@ -90,6 +90,9 @@ class Give_Limit_Donation_Duration_Metabox_Settings {
 
 		// Enqueue scripts.
 		add_filter( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ), 999 );
+
+		// Validate setting.
+		add_action( 'give_post_process_give_forms_meta', array( $this, 'validate_settings' ) );
 	}
 
 
@@ -198,6 +201,21 @@ class Give_Limit_Donation_Duration_Metabox_Settings {
 
 		wp_enqueue_script( 'jquery-ui-datepicker' );
 		wp_enqueue_script( 'limit-donation-admin-script', LIMIT_DONATION_PLUGIN_URL . 'assets/js/admin-script.js' );
+	}
+
+
+	/**
+	 * Validate setting.
+	 *
+	 * @since  1.0
+	 * @access public
+	 *
+	 * @param $form_id
+	 */
+	public function validate_settings( $form_id ) {
+		if( ! give_ldd_get_form_close_date( $form_id ) ){
+			update_post_meta( $form_id, 'limit-donation-close-from', 'disabled' );
+		}
 	}
 }
 
