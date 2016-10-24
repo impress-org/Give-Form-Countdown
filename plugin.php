@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: Give - Limit Donation Duration
+ * Plugin Name: Give Limit Donation Duration
  * Plugin URI:
  * Description: The most robust, flexible, and intuitive way to accept donations on WordPress.
  * Author: Ravinder Kumar
