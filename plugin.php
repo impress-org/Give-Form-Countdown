@@ -114,8 +114,19 @@ final class Give_Donation_Duration {
 	}
 }
 
+/**
+ * Initiate plugin.
+ * @since 1.0
+ */
+function give_ldd_initiate() {
+	if ( ! class_exists( 'Give' ) ) {
+		return;
+	}
 
-// Initiate plugin.
-Give_Donation_Duration::get_instance()
-                      ->set_constants()
-                      ->load_files();
+	// Initiate plugin.
+	Give_Donation_Duration::get_instance()
+	                      ->set_constants()
+	                      ->load_files();
+}
+
+add_action( 'plugins_loaded', 'give_ldd_initiate' );
