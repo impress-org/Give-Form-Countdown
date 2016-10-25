@@ -8,3 +8,5 @@
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
 This plugin is addon of Give plugin which allows you to raise donation in specific time interval.
+
+![Give Donation Duration](/assets/gif/version_1_0.gif)
