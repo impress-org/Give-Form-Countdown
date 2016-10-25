@@ -200,7 +200,7 @@ class Give_Donation_Duration_Metabox_Settings {
 		}
 
 		wp_enqueue_script( 'jquery-ui-datepicker' );
-		wp_enqueue_script( 'limit-donation-admin-script', LIMIT_DONATION_PLUGIN_URL . 'assets/js/admin-script.js' );
+		wp_enqueue_script( 'limit-donation-admin-script', DONATION_DURATION_PLUGIN_URL . 'assets/js/admin-script.js' );
 	}
 
 

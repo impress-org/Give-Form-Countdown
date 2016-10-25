@@ -88,7 +88,7 @@ final class Give_Donation_Duration {
 	 */
 	public function set_constants() {
 		// Global Params.
-		define( 'LIMIT_DONATION_PLUGIN_URL', plugins_url( '/', __FILE__ ) );
+		define( 'DONATION_DURATION_PLUGIN_URL', plugins_url( '/', __FILE__ ) );
 
 		return self::$instance;
 	}
