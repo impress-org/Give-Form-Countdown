@@ -1,18 +1,18 @@
 <?php
 
 /**
- * Class Give_Limit_Donation_Duration_Metabox_Settings
+ * Class Give_Donation_Duration_Metabox_Settings
  *
  * @since 1.0
  */
-class Give_Limit_Donation_Duration_Metabox_Settings {
+class Give_Donation_Duration_Metabox_Settings {
 
 	/**
 	 * Instance.
 	 *
 	 * @since  1.0
 	 * @access static
-	 * @var Give_Limit_Donation_Duration_Metabox_Settings
+	 * @var Give_Donation_Duration_Metabox_Settings
 	 */
 	private static $instance;
 
@@ -41,7 +41,7 @@ class Give_Limit_Donation_Duration_Metabox_Settings {
 	 *
 	 * @since  1.0
 	 * @access private
-	 * Give_Limit_Donation_Duration_Metabox_Settings constructor.
+	 * Give_Donation_Duration_Metabox_Settings constructor.
 	 */
 	private function __construct() {
 	}
@@ -52,7 +52,7 @@ class Give_Limit_Donation_Duration_Metabox_Settings {
 	 *
 	 * @since  1.0
 	 * @access public
-	 * @return Give_Limit_Donation_Duration_Metabox_Settings
+	 * @return Give_Donation_Duration_Metabox_Settings
 	 */
 	public static function get_instance() {
 		if ( null === static::$instance ) {
@@ -68,18 +68,18 @@ class Give_Limit_Donation_Duration_Metabox_Settings {
 	 *
 	 * @since  1.0
 	 * @access public
-	 * @return Give_Limit_Donation_Duration_Metabox_Settings
+	 * @return Give_Donation_Duration_Metabox_Settings
 	 */
 	public function setup_params() {
-		$this->id    = 'give-limit-donation-duration';
-		$this->label = __( 'Donation Duration', 'give-limit-donation-duration' );
+		$this->id    = 'give-donation-duration';
+		$this->label = __( 'Donation Duration', 'give-donation-duration' );
 
 		return static::get_instance();
 
 	}
 
 	/**
-	 * Give_Limit_Donation_Duration_Metabox_Settings constructor.
+	 * Give_Donation_Duration_Metabox_Settings constructor.
 	 *
 	 * @since  1.0
 	 * @access public
@@ -116,32 +116,32 @@ class Give_Limit_Donation_Duration_Metabox_Settings {
 				// Close Form.
 				array(
 					'id'          => 'limit-donation-close-from',
-					'name'        => __( 'Close Form', 'give-limit-donation-duration' ),
+					'name'        => __( 'Close Form', 'give-donation-duration' ),
 					'type'        => 'radio_inline',
 					'default'     => 'disabled',
 					'options'     => array(
-						'enabled'  => __( 'Enabled', 'give-limit-donation-duration' ),
-						'disabled' => __( 'Disabled', 'give-limit-donation-duration' ),
+						'enabled'  => __( 'Enabled', 'give-donation-duration' ),
+						'disabled' => __( 'Disabled', 'give-donation-duration' ),
 					),
-					'description' => __( 'Would you like to close the donation forms and stop accepting donations once time limit met?', 'give-limit-donation-duration' ),
+					'description' => __( 'Would you like to close the donation forms and stop accepting donations once time limit met?', 'give-donation-duration' ),
 				),
 
 				// Donation duration type.
 				array(
 					'id'      => 'limit-donation-by',
-					'name'    => __( 'Donation limit', 'give-limit-donation-duration' ),
+					'name'    => __( 'Donation limit', 'give-donation-duration' ),
 					'type'    => 'radio_inline',
 					'default' => 'number_of_days',
 					'options' => array(
-						'number_of_days'      => __( 'Number of days', 'give-limit-donation-duration' ),
-						'end_on_day_and_time' => __( 'End on day & time', 'give-limit-donation-duration' ),
+						'number_of_days'      => __( 'Number of days', 'give-donation-duration' ),
+						'end_on_day_and_time' => __( 'End on day & time', 'give-donation-duration' ),
 					),
 				),
 
 				// Days.
 				array(
 					'id'      => 'limit-donation-in-number-of-days',
-					'name'    => __( 'Days', 'give-limit-donation-duration' ),
+					'name'    => __( 'Days', 'give-donation-duration' ),
 					'type'    => 'text-small',
 					'default' => '30',
 				),
@@ -149,14 +149,14 @@ class Give_Limit_Donation_Duration_Metabox_Settings {
 				// Date
 				array(
 					'id'   => 'limit-donation-on-date',
-					'name' => __( 'Date', 'give-limit-donation-duration' ),
+					'name' => __( 'Date', 'give-donation-duration' ),
 					'type' => 'text-medium',
 				),
 
 				// Time
 				array(
 					'id'      => 'limit-donation-on-time',
-					'name'    => __( 'Time', 'give-limit-donation-duration' ),
+					'name'    => __( 'Time', 'give-donation-duration' ),
 					'type'    => 'select',
 					'options' => give_ldd_get_time_list(),
 				),
@@ -164,10 +164,10 @@ class Give_Limit_Donation_Duration_Metabox_Settings {
 				// Duration achieved message.
 				array(
 					'id'         => 'limit-donation-message',
-					'name'       => __( 'Duration achieved message', 'give-limit-donation-duration' ),
+					'name'       => __( 'Duration achieved message', 'give-donation-duration' ),
 					'type'       => 'textarea',
 					'attributes' => array(
-						'placeholder' => __( 'Thank you to all our donors, we have met our fundraising goal.', 'give-limit-donation-duration' ),
+						'placeholder' => __( 'Thank you to all our donors, we have met our fundraising goal.', 'give-donation-duration' ),
 					),
 				),
 			),
@@ -221,4 +221,4 @@ class Give_Limit_Donation_Duration_Metabox_Settings {
 
 
 // initialize.
-Give_Limit_Donation_Duration_Metabox_Settings::get_instance()->setup_params()->setup_hooks();
+Give_Donation_Duration_Metabox_Settings::get_instance()->setup_params()->setup_hooks();
