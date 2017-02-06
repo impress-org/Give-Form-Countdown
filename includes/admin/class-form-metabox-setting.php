@@ -109,71 +109,73 @@ class Give_Donation_Duration_Metabox_Settings {
 	public function setup_setting( $settings ) {
 
 		// Setup settings.
-		$settings[ $this->id ] = array(
-			'id'     => $this->id,
-			'title'  => $this->label,
-			'fields' => array(
-				// Close Form.
-				array(
-					'id'          => 'limit-donation-close-from',
-					'name'        => __( 'Close Form', 'give-donation-duration' ),
-					'type'        => 'radio_inline',
-					'default'     => 'disabled',
-					'options'     => array(
-						'enabled'  => __( 'Enabled', 'give-donation-duration' ),
-						'disabled' => __( 'Disabled', 'give-donation-duration' ),
+		$new_settings = array(
+			$this->id => array(
+				'id'     => $this->id,
+				'title'  => $this->label,
+				'fields' => array(
+					// Close Form.
+					array(
+						'id'          => 'limit-donation-close-from',
+						'name'        => __( 'Close Form', 'give-donation-duration' ),
+						'type'        => 'radio_inline',
+						'default'     => 'disabled',
+						'options'     => array(
+							'enabled'  => __( 'Enabled', 'give-donation-duration' ),
+							'disabled' => __( 'Disabled', 'give-donation-duration' ),
+						),
+						'description' => __( 'Would you like to close the donation forms and stop accepting donations once time limit met?', 'give-donation-duration' ),
 					),
-					'description' => __( 'Would you like to close the donation forms and stop accepting donations once time limit met?', 'give-donation-duration' ),
-				),
 
-				// Donation duration type.
-				array(
-					'id'      => 'limit-donation-by',
-					'name'    => __( 'Donation limit', 'give-donation-duration' ),
-					'type'    => 'radio_inline',
-					'default' => 'number_of_days',
-					'options' => array(
-						'number_of_days'      => __( 'Number of days', 'give-donation-duration' ),
-						'end_on_day_and_time' => __( 'End on day & time', 'give-donation-duration' ),
+					// Donation duration type.
+					array(
+						'id'      => 'limit-donation-by',
+						'name'    => __( 'Donation limit', 'give-donation-duration' ),
+						'type'    => 'radio_inline',
+						'default' => 'number_of_days',
+						'options' => array(
+							'number_of_days'      => __( 'Number of days', 'give-donation-duration' ),
+							'end_on_day_and_time' => __( 'End on day & time', 'give-donation-duration' ),
+						),
+					),
+
+					// Days.
+					array(
+						'id'      => 'limit-donation-in-number-of-days',
+						'name'    => __( 'Days', 'give-donation-duration' ),
+						'type'    => 'text-small',
+						'default' => '30',
+					),
+
+					// Date
+					array(
+						'id'   => 'limit-donation-on-date',
+						'name' => __( 'Date', 'give-donation-duration' ),
+						'type' => 'text-medium',
+					),
+
+					// Time
+					array(
+						'id'      => 'limit-donation-on-time',
+						'name'    => __( 'Time', 'give-donation-duration' ),
+						'type'    => 'select',
+						'options' => give_ldd_get_time_list(),
+					),
+
+					// Duration achieved message.
+					array(
+						'id'         => 'limit-donation-message',
+						'name'       => __( 'Duration achieved message', 'give-donation-duration' ),
+						'type'       => 'textarea',
+						'attributes' => array(
+							'placeholder' => __( 'Thank you to all our donors, we have met our fundraising goal.', 'give-donation-duration' ),
+						),
 					),
 				),
-
-				// Days.
-				array(
-					'id'      => 'limit-donation-in-number-of-days',
-					'name'    => __( 'Days', 'give-donation-duration' ),
-					'type'    => 'text-small',
-					'default' => '30',
-				),
-
-				// Date
-				array(
-					'id'   => 'limit-donation-on-date',
-					'name' => __( 'Date', 'give-donation-duration' ),
-					'type' => 'text-medium',
-				),
-
-				// Time
-				array(
-					'id'      => 'limit-donation-on-time',
-					'name'    => __( 'Time', 'give-donation-duration' ),
-					'type'    => 'select',
-					'options' => give_ldd_get_time_list(),
-				),
-
-				// Duration achieved message.
-				array(
-					'id'         => 'limit-donation-message',
-					'name'       => __( 'Duration achieved message', 'give-donation-duration' ),
-					'type'       => 'textarea',
-					'attributes' => array(
-						'placeholder' => __( 'Thank you to all our donors, we have met our fundraising goal.', 'give-donation-duration' ),
-					),
-				),
-			),
+			)
 		);
 
-		return $settings;
+		return array_merge( $settings, $new_settings );
 	}
 
 
