@@ -148,7 +148,7 @@ function give_ldd_get_time_list() {
  *
  * @param $form_id
  *
- * @return mixed|string|void
+ * @return string
  */
 function give_ldd_get_message( $form_id ) {
 	$message = get_post_meta( $form_id, 'limit-donation-message', true );
