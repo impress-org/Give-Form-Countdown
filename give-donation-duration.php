@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Give Donation Duration
+ * Plugin Name: Give - Donation Duration
  * Plugin URI: https://github.com/WordImpress/Give-Donation-Duration
  * Description: Accept donations which limited by duration with Give.
  * Author: WordImpress
