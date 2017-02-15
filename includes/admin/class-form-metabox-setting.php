@@ -116,7 +116,7 @@ class Give_Donation_Duration_Metabox_Settings {
 				'fields' => array(
 					// Close Form.
 					array(
-						'id'          => 'limit-donation-close-from',
+						'id'          => 'donation-duration-close-from',
 						'name'        => __( 'Close Form', 'give-donation-duration' ),
 						'type'        => 'radio_inline',
 						'default'     => 'disabled',
@@ -129,7 +129,7 @@ class Give_Donation_Duration_Metabox_Settings {
 
 					// Donation duration type.
 					array(
-						'id'      => 'limit-donation-by',
+						'id'      => 'donation-duration-by',
 						'name'    => __( 'Donation limit', 'give-donation-duration' ),
 						'type'    => 'radio_inline',
 						'default' => 'number_of_days',
@@ -141,7 +141,7 @@ class Give_Donation_Duration_Metabox_Settings {
 
 					// Days.
 					array(
-						'id'      => 'limit-donation-in-number-of-days',
+						'id'      => 'donation-duration-in-number-of-days',
 						'name'    => __( 'Days', 'give-donation-duration' ),
 						'type'    => 'text-small',
 						'default' => '30',
@@ -149,22 +149,22 @@ class Give_Donation_Duration_Metabox_Settings {
 
 					// Date
 					array(
-						'id'   => 'limit-donation-on-date',
+						'id'   => 'donation-duration-on-date',
 						'name' => __( 'Date', 'give-donation-duration' ),
 						'type' => 'text-medium',
 					),
 
 					// Time
 					array(
-						'id'      => 'limit-donation-on-time',
+						'id'      => 'donation-duration-on-time',
 						'name'    => __( 'Time', 'give-donation-duration' ),
 						'type'    => 'select',
-						'options' => give_ldd_get_time_list(),
+						'options' => gdd_get_time_list(),
 					),
 
 					// Duration achieved message.
 					array(
-						'id'         => 'limit-donation-message',
+						'id'         => 'donation-duration-message',
 						'name'       => __( 'Duration achieved message', 'give-donation-duration' ),
 						'type'       => 'textarea',
 						'attributes' => array(
@@ -202,7 +202,7 @@ class Give_Donation_Duration_Metabox_Settings {
 		}
 
 		wp_enqueue_script( 'jquery-ui-datepicker' );
-		wp_enqueue_script( 'limit-donation-admin-script', DONATION_DURATION_PLUGIN_URL . 'assets/js/admin-script.js' );
+		wp_enqueue_script( 'donation-duration-admin-script', GDD_PLUGIN_URL . 'assets/js/admin-script.js' );
 	}
 
 
@@ -215,8 +215,8 @@ class Give_Donation_Duration_Metabox_Settings {
 	 * @param $form_id
 	 */
 	public function validate_settings( $form_id ) {
-		if( ! give_ldd_get_form_close_date( $form_id ) ){
-			update_post_meta( $form_id, 'limit-donation-close-from', 'disabled' );
+		if( ! gdd_get_form_close_date( $form_id ) ){
+			update_post_meta( $form_id, 'donation-duration-close-from', 'disabled' );
 		}
 	}
 }
