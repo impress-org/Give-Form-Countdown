@@ -62,7 +62,7 @@ function gdd_activation_banner() {
 			'file'              => __FILE__,
 			'name'              => esc_html__( 'Give Donation Duration', 'give-donation-duration' ),
 			'version'           => GDD_PLUGIN_VERSION,
-			'settings_url'      => '',
+			//'settings_url'      => '',
 			'documentation_url' => 'https://github.com/WordImpress/Give-Donation-Duration/',
 			'support_url'       => 'https://github.com/WordImpress/Give-Donation-Duration/issues',
 			'testing'           => false //Never leave true.
