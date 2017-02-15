@@ -10,7 +10,7 @@ function gdd_is_form_has_limited_duration( $form_id ) {
 	$has_limited_duration = false;
 
 	if (
-		give_is_setting_enabled( get_post_meta( $form_id, 'donation-duration-close-from', true ) )
+		give_is_setting_enabled( get_post_meta( $form_id, 'donation-duration-close-form', true ) )
 		&& gdd_get_form_close_date( $form_id )
 	) {
 		$has_limited_duration = true;

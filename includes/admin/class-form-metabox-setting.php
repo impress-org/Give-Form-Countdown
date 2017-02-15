@@ -116,7 +116,7 @@ class Give_Donation_Duration_Metabox_Settings {
 				'fields' => array(
 					// Close Form.
 					array(
-						'id'          => 'donation-duration-close-from',
+						'id'          => 'donation-duration-close-form',
 						'name'        => __( 'Close Form', 'give-donation-duration' ),
 						'type'        => 'radio_inline',
 						'default'     => 'disabled',
@@ -216,7 +216,7 @@ class Give_Donation_Duration_Metabox_Settings {
 	 */
 	public function validate_settings( $form_id ) {
 		if( ! gdd_get_form_close_date( $form_id ) ){
-			update_post_meta( $form_id, 'donation-duration-close-from', 'disabled' );
+			update_post_meta( $form_id, 'donation-duration-close-form', 'disabled' );
 		}
 	}
 }
