@@ -78,13 +78,13 @@ final class Give_Donation_Duration {
 	 */
 	public function load_files() {
 		// Bootstrap.
-		require_once dirname( __FILE__ ) . '/includes/admin/class-form-metabox-setting.php';
+		require_once GDD_PLUGIN_DIR. 'includes/admin/class-form-metabox-setting.php';
 
 		// Load helper functions.
-		require_once dirname( __FILE__ ) . '/includes/functions.php';
+		require_once GDD_PLUGIN_DIR. 'includes/functions.php';
 
 		// Load filters.
-		require_once dirname( __FILE__ ) . '/includes/filters.php';
+		require_once GDD_PLUGIN_DIR. 'includes/filters.php';
 
 		return self::$instance;
 	}
@@ -99,7 +99,7 @@ function gdd_initiate() {
 	Give_Donation_Duration::get_instance()->set_constants();
 
 	// Process plugin activation conditions.
-	require_once GDD_PLUGIN_DIR . '/includes/admin/plugin-activation.php';
+	require_once GDD_PLUGIN_DIR . 'includes/admin/plugin-activation.php';
 
 	if ( ! class_exists( 'Give' ) ) {
 		return;
