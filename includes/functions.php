@@ -164,7 +164,9 @@ function gdd_get_message( $form_id ) {
 	 * @param string $message
 	 * @param int    $form_id
 	 */
-	$message = apply_filters( 'give_donation_duration_message', give_output_error( $message, false, 'success' ), $message, $form_id );
+	//$message = apply_filters( 'give_donation_duration_message', give_output_error( $message, false, 'success' ), $message, $form_id );
+
+    $message = apply_filters( 'give_donation_duration_message', wpautop($message) );
 
 	return $message;
 }

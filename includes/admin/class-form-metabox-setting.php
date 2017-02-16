@@ -170,7 +170,7 @@ class Give_Donation_Duration_Metabox_Settings {
 					array(
 						'id'         => 'donation-duration-message',
 						'name'       => __( 'Duration ended message', 'give-donation-duration' ),
-						'type'       => 'textarea',
+						'type'       => 'wysiwyg',
 						'attributes' => array(
 							'placeholder' => __( 'Thank you to all our donors, we have met our fundraising goal.', 'give-donation-duration' ),
 						),
