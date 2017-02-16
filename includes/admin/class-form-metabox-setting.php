@@ -117,34 +117,36 @@ class Give_Donation_Duration_Metabox_Settings {
 					// Close Form.
 					array(
 						'id'          => 'donation-duration-close-form',
-						'name'        => __( 'Close Form', 'give-donation-duration' ),
+						'name'        => __( 'Enable Duration', 'give-donation-duration' ),
 						'type'        => 'radio_inline',
 						'default'     => 'disabled',
 						'options'     => array(
 							'enabled'  => __( 'Enabled', 'give-donation-duration' ),
 							'disabled' => __( 'Disabled', 'give-donation-duration' ),
 						),
-						'description' => __( 'Would you like to close the donation forms and stop accepting donations once time limit met?', 'give-donation-duration' ),
+						'description' => __( 'Enable this to set a time when the form will close automatically and a custom message will appear.', 'give-donation-duration' ),
 					),
 
 					// Donation duration type.
 					array(
 						'id'      => 'donation-duration-by',
-						'name'    => __( 'Donation limit', 'give-donation-duration' ),
+						'name'    => __( 'Duration Timeframe', 'give-donation-duration' ),
 						'type'    => 'radio_inline',
 						'default' => 'number_of_days',
 						'options' => array(
 							'number_of_days'      => __( 'Number of days', 'give-donation-duration' ),
-							'end_on_day_and_time' => __( 'End on day & time', 'give-donation-duration' ),
+							'end_on_day_and_time' => __( 'Specific day & time', 'give-donation-duration' ),
 						),
+                        'description' => __( 'Set when the form should close automatically.', 'give-donation-duration' ),
 					),
 
 					// Days.
 					array(
 						'id'      => 'donation-duration-in-number-of-days',
-						'name'    => __( 'Days', 'give-donation-duration' ),
+						'name'    => __( 'Number of Days', 'give-donation-duration' ),
 						'type'    => 'text-small',
 						'default' => '30',
+                        'description' => __( 'The number of days from the date of publication that the duration should last.', 'give-donation-duration' ),
 					),
 
 					// Date
@@ -152,6 +154,7 @@ class Give_Donation_Duration_Metabox_Settings {
 						'id'   => 'donation-duration-on-date',
 						'name' => __( 'Date', 'give-donation-duration' ),
 						'type' => 'text-medium',
+                        'description' => __( 'The date for which you want the duration to end.', 'give-donation-duration' ),
 					),
 
 					// Time
@@ -160,16 +163,18 @@ class Give_Donation_Duration_Metabox_Settings {
 						'name'    => __( 'Time', 'give-donation-duration' ),
 						'type'    => 'select',
 						'options' => gdd_get_time_list(),
+                        'description' => __( 'The time of day you want the duration to end on your designated day.', 'give-donation-duration' ),
 					),
 
 					// Duration achieved message.
 					array(
 						'id'         => 'donation-duration-message',
-						'name'       => __( 'Duration achieved message', 'give-donation-duration' ),
+						'name'       => __( 'Duration ended message', 'give-donation-duration' ),
 						'type'       => 'textarea',
 						'attributes' => array(
 							'placeholder' => __( 'Thank you to all our donors, we have met our fundraising goal.', 'give-donation-duration' ),
 						),
+                        'description' => __( 'This is the content that will appear in your form when the duration has ended.', 'give-donation-duration' ),
 					),
 				),
 			)
