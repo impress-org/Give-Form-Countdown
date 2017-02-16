@@ -28,7 +28,7 @@ All of the Donation Duration settings are per form, so you will not find anythin
 
 There you'll see our tabbed "Donation Form Options" interface. At the bottom is a new tab called "Donation Duration". There you'll have the following options:
 
-* **Set Duration** -- Enable or Disable your Duration features. All other fields will appear when you select "Enable".
+* **Enable Duration** -- Enable or Disable your Duration features. All other fields will appear when you select "Enable".
 * **Donation Deadline** -- Set the Duration to end at a set number of days after the form is published, or at a specific day and time.
 * **Date** -- If you selected "Day & Time" above, you'll see this option. This is a datepicker to allow you to choose any date in the future.
 * **Time** -- If you selected "Day & Time" above, you'll see this option. Choose what time of day the form should close from a dropdown list.
