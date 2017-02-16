@@ -76,6 +76,10 @@ They work great together. If you've chosen a Goal for your form and NOT chosen t
 
 If you choose to close the form when your Goal is reached, you can choose either to show a simple message in your "Donation Goal" settings, or opt to show the "Duration achieved message" instead.
 
+= How can I test the completion message? =
+
+The easiest way is to manually change the date of your duration to be in the past. The datepicker won't let you choose a date in the past, but you can manually change it in the text field after the datepicker populates it.
+
 = Where can I submit Support Questions? =
 
 If you have purchased any of our Premium Add-ons, we can provide with your [Priority Support here](https://givewp.com/support).
