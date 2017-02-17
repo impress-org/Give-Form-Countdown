@@ -90,6 +90,7 @@ class Give_Donation_Duration_Metabox_Settings {
 
 		// Enqueue scripts.
 		add_filter( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ), 999 );
+		add_filter( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend_scripts' ), 999 );
 
 		// Validate setting.
 		add_action( 'give_post_process_give_forms_meta', array( $this, 'validate_settings' ) );
@@ -267,7 +268,7 @@ class Give_Donation_Duration_Metabox_Settings {
 
 
 	/**
-	 * Load scripts.
+	 * Load admin scripts.
 	 *
 	 * @since  1.0
 	 * @access public
@@ -288,7 +289,8 @@ class Give_Donation_Duration_Metabox_Settings {
 		}
 
 		wp_enqueue_script( 'jquery-ui-datepicker' );
-		wp_enqueue_script( 'donation-duration-admin-script', GDD_PLUGIN_URL . 'assets/js/admin/admin-script.js' );
+		wp_register_script( 'donation-duration-jquery-countdown', GDD_PLUGIN_URL . 'assets/js/plugin/jquery.countdown.js', array('jquery'), GDD_PLUGIN_VERSION );
+		wp_enqueue_script( 'donation-duration-admin-script', GDD_PLUGIN_URL . 'assets/js/admin/admin-script.js', array( 'jquery'), GDD_PLUGIN_VERSION );
 
 		$gdc_vars = array(
 			'duration_ended_message' => array(
@@ -297,6 +299,18 @@ class Give_Donation_Duration_Metabox_Settings {
 		);
 
 		wp_localize_script( 'donation-duration-admin-script', 'gdc_vars', $gdc_vars );
+	}
+
+	/**
+	 * Load scripts.
+	 *
+	 * @since  1.0
+	 * @access public
+	 *
+	 * @param string $hook
+	 */
+	function enqueue_frontend_scripts( $hook ) {
+		wp_register_script( 'donation-duration-jquery-countdown', GDD_PLUGIN_URL . 'assets/js/plugin/jquery.countdown.js', array('jquery'), GDD_PLUGIN_VERSION );
 	}
 
 
