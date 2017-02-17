@@ -111,9 +111,10 @@ class Give_Donation_Duration_Metabox_Settings {
 		// Setup settings.
 		$new_settings = array(
 			$this->id => array(
-				'id'     => $this->id,
-				'title'  => $this->label,
-				'fields' => array(
+				'id'        => $this->id,
+				'title'     => $this->label,
+				'icon-html' => '<span class="dashicons dashicons-clock" style="font-size: 15px;text-align: left;line-height: 20px"></span>',
+				'fields'    => array(
 					// Close Form.
 					array(
 						'id'          => 'donation-duration-close-form',
