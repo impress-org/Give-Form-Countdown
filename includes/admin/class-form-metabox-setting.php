@@ -181,7 +181,7 @@ class Give_Donation_Duration_Metabox_Settings {
 						'description' => __( 'This is the content that will appear in your form when the duration has ended.', 'give-donation-duration' ),
 					),
 
-					// Duration achieved message.
+					// Duration achieved message position.
 					array(
 						'id'          => 'donation-duration-message-achieved-position',
 						'name'        => __( 'Duration achieved message position', 'give-donation-duration' ),
@@ -193,6 +193,19 @@ class Give_Donation_Duration_Metabox_Settings {
 							'below_form' => 'Keep the form open and show this message below the form'
 						),
 						'description' => __( 'Choose position where you want to show donation achieved message.', 'give-donation-duration' ),
+					),
+
+					// Countdown clock.
+					array(
+						'id'          => 'donation-duration-countdown-clock',
+						'name'        => __( 'Countdown Clock', 'give-donation-duration' ),
+						'type'        => 'radio_inline',
+						'default'     => 'disabled',
+						'options'     => array(
+							'enabled'  => __( 'Enabled', 'give-donation-duration' ),
+							'disabled' => __( 'Disabled', 'give-donation-duration' ),
+						),
+						'description' => __( 'Enable setting if you want to show countdown clock on frontend.', 'give-donation-duration' ),
 					),
 				),
 			),
