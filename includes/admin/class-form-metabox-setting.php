@@ -275,7 +275,7 @@ class Give_Donation_Duration_Metabox_Settings {
 		}
 
 		wp_enqueue_script( 'jquery-ui-datepicker' );
-		wp_enqueue_script( 'donation-duration-admin-script', GDD_PLUGIN_URL . 'assets/js/admin-script.js' );
+		wp_enqueue_script( 'donation-duration-admin-script', GDD_PLUGIN_URL . 'assets/js/admin/admin-script.js' );
 
 		$gdc_vars = array(
 			'duration_ended_message' => array(
