@@ -93,6 +93,9 @@ class Give_Donation_Duration_Metabox_Settings {
 
 		// Validate setting.
 		add_action( 'give_post_process_give_forms_meta', array( $this, 'validate_settings' ) );
+
+		// Add setting to goal section.
+		add_filter( 'give_donation_goal_options', array( $this, 'add_goal_section_settings' ), 999999 );
 	}
 
 
@@ -184,6 +187,57 @@ class Give_Donation_Duration_Metabox_Settings {
 		return array_merge( $settings, $new_settings );
 	}
 
+	/**
+	 * Add settings to goal setting section.
+	 *
+	 * @since  1.0
+	 * @access public
+	 *
+	 * @param array $settings
+	 *
+	 * @return array
+	 */
+	public function add_goal_section_settings( $settings ) {
+		if( ! empty( $settings['fields'] ) ) {
+			$goal_achieved_message_setting_index = null;
+			foreach ( $settings['fields'] as $index => $field ) {
+				if( ! isset( $field['id'] ) ) {
+					continue;
+				}
+
+				if( '_give_form_goal_achieved_message' === $field['id'] ) {
+					$goal_achieved_message_setting_index = $index;
+				}
+			}
+
+			if( ! is_null( $goal_achieved_message_setting_index ) ) {
+				$gdc_setting = array(
+					array(
+						'id'          => 'donation-duration-use-end-message',
+						'name'        => __( 'Use Donation End Message', 'give-donation-duration' ),
+						'type'        => 'radio_inline',
+						'default'     => 'disabled',
+						'options'     => array(
+							'enabled'      => __( 'Enabled', 'give-donation-duration' ),
+							'disabled' => __( 'Disabled', 'give-donation-duration' ),
+						),
+						'description' => __( 'When goal is achieved, do you want to close the form and show the Donation Duration message', 'give-donation-duration' ),
+					)
+				);
+
+				$settings['fields'] = array_merge(
+					array_slice( $settings['fields'], 0, $goal_achieved_message_setting_index ),
+					$gdc_setting,
+					array_slice( $settings['fields'], $goal_achieved_message_setting_index )
+				);
+
+				$settings['fields'] = array_values( $settings['fields'] );
+			}
+		}
+
+		return $settings;
+	}
+
 
 	/**
 	 * Load scripts.
@@ -208,6 +262,14 @@ class Give_Donation_Duration_Metabox_Settings {
 
 		wp_enqueue_script( 'jquery-ui-datepicker' );
 		wp_enqueue_script( 'donation-duration-admin-script', GDD_PLUGIN_URL . 'assets/js/admin-script.js' );
+
+		$gdc_vars = array(
+			'duration_ended_message' => array(
+				'warning' => __( 'You are currently using \' Donation Goal\' message when form closes. Change that to set your custom message here.', 'give-donation-duration' )
+			)
+		);
+
+		wp_localize_script( 'donation-duration-admin-script', 'gdc_vars', $gdc_vars );
 	}
 
 
