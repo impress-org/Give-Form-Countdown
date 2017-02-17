@@ -78,13 +78,13 @@ final class Give_Donation_Duration {
 	 */
 	public function load_files() {
 		// Bootstrap.
-		require_once GDD_PLUGIN_DIR. 'includes/admin/class-form-metabox-setting.php';
+		require_once GDD_PLUGIN_DIR . 'includes/admin/class-form-metabox-setting.php';
 
 		// Load helper functions.
-		require_once GDD_PLUGIN_DIR. 'includes/functions.php';
+		require_once GDD_PLUGIN_DIR . 'includes/functions.php';
 
 		// Load filters.
-		require_once GDD_PLUGIN_DIR. 'includes/filters.php';
+		require_once GDD_PLUGIN_DIR . 'includes/filters.php';
 
 		return self::$instance;
 	}
@@ -92,6 +92,7 @@ final class Give_Donation_Duration {
 
 /**
  * Initiate plugin.
+ *
  * @since 1.0
  */
 function gdd_initiate() {

@@ -30,7 +30,7 @@ function gdd_is_form_has_limited_duration( $form_id ) {
  */
 function give_is_limit_donation_time_achieved( $form_id ) {
 	$is_time_achieved = false;
-	
+
 	if ( gdd_is_form_has_limited_duration( $form_id ) ) {
 		$is_time_achieved = ( gdd_get_form_close_date( $form_id ) < current_time( 'timestamp', 1 ) ? true : false );
 	}
@@ -56,7 +56,6 @@ function gdd_get_form_close_date( $form_id, $date_format = '' ) {
 	// Get donation time limit type.
 	$limit_donation_by = get_post_meta( $form_id, 'donation-duration-by', true );
 
-
 	switch ( $limit_donation_by ) {
 		case 'number_of_days':
 			$limit_in_day = absint( get_post_meta( $form_id, 'donation-duration-in-number-of-days', true ) );
@@ -70,7 +69,7 @@ function gdd_get_form_close_date( $form_id, $date_format = '' ) {
 
 			$formatted_date = date( 'Y-m-d 00:00:00', $limit_timestamp );
 
-			//GMT timestamp.
+			// GMT timestamp.
 			$limit_timestamp = get_gmt_from_date( $formatted_date, 'U' );
 			break;
 
@@ -155,7 +154,6 @@ function gdd_get_message( $form_id ) {
 	$message = get_post_meta( $form_id, 'donation-duration-message', true );
 	$message = $message ? $message : __( 'Thank you to all our donors, we have met our fundraising goal.', 'give-donation-duration' );
 
-
 	/**
 	 * Filter the donation duration message.
 	 *
@@ -164,9 +162,8 @@ function gdd_get_message( $form_id ) {
 	 * @param string $message
 	 * @param int    $form_id
 	 */
-	//$message = apply_filters( 'give_donation_duration_message', give_output_error( $message, false, 'success' ), $message, $form_id );
-
-    $message = apply_filters( 'give_donation_duration_message', wpautop($message) );
+	// $message = apply_filters( 'give_donation_duration_message', give_output_error( $message, false, 'success' ), $message, $form_id );
+	$message = apply_filters( 'give_donation_duration_message', wpautop( $message ) );
 
 	return $message;
 }

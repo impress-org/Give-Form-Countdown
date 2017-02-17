@@ -130,55 +130,55 @@ class Give_Donation_Duration_Metabox_Settings {
 
 					// Donation duration type.
 					array(
-						'id'      => 'donation-duration-by',
-						'name'    => __( 'Duration Timeframe', 'give-donation-duration' ),
-						'type'    => 'radio_inline',
-						'default' => 'number_of_days',
-						'options' => array(
+						'id'          => 'donation-duration-by',
+						'name'        => __( 'Duration Timeframe', 'give-donation-duration' ),
+						'type'        => 'radio_inline',
+						'default'     => 'number_of_days',
+						'options'     => array(
 							'number_of_days'      => __( 'Number of days', 'give-donation-duration' ),
 							'end_on_day_and_time' => __( 'Specific day & time', 'give-donation-duration' ),
 						),
-                        'description' => __( 'Set when the form should close automatically.', 'give-donation-duration' ),
+						'description' => __( 'Set when the form should close automatically.', 'give-donation-duration' ),
 					),
 
 					// Days.
 					array(
-						'id'      => 'donation-duration-in-number-of-days',
-						'name'    => __( 'Number of Days', 'give-donation-duration' ),
-						'type'    => 'text-small',
-						'default' => '30',
-                        'description' => __( 'The number of days from the date of publication that the duration should last.', 'give-donation-duration' ),
+						'id'          => 'donation-duration-in-number-of-days',
+						'name'        => __( 'Number of Days', 'give-donation-duration' ),
+						'type'        => 'text-small',
+						'default'     => '30',
+						'description' => __( 'The number of days from the date of publication that the duration should last.', 'give-donation-duration' ),
 					),
 
 					// Date
 					array(
-						'id'   => 'donation-duration-on-date',
-						'name' => __( 'Date', 'give-donation-duration' ),
-						'type' => 'text-medium',
-                        'description' => __( 'The date for which you want the duration to end.', 'give-donation-duration' ),
+						'id'          => 'donation-duration-on-date',
+						'name'        => __( 'Date', 'give-donation-duration' ),
+						'type'        => 'text-medium',
+						'description' => __( 'The date for which you want the duration to end.', 'give-donation-duration' ),
 					),
 
 					// Time
 					array(
-						'id'      => 'donation-duration-on-time',
-						'name'    => __( 'Time', 'give-donation-duration' ),
-						'type'    => 'select',
-						'options' => gdd_get_time_list(),
-                        'description' => __( 'The time of day you want the duration to end on your designated day.', 'give-donation-duration' ),
+						'id'          => 'donation-duration-on-time',
+						'name'        => __( 'Time', 'give-donation-duration' ),
+						'type'        => 'select',
+						'options'     => gdd_get_time_list(),
+						'description' => __( 'The time of day you want the duration to end on your designated day.', 'give-donation-duration' ),
 					),
 
 					// Duration achieved message.
 					array(
-						'id'         => 'donation-duration-message',
-						'name'       => __( 'Duration ended message', 'give-donation-duration' ),
-						'type'       => 'wysiwyg',
-						'attributes' => array(
+						'id'          => 'donation-duration-message',
+						'name'        => __( 'Duration ended message', 'give-donation-duration' ),
+						'type'        => 'wysiwyg',
+						'attributes'  => array(
 							'placeholder' => __( 'Thank you to all our donors, we have met our fundraising goal.', 'give-donation-duration' ),
 						),
-                        'description' => __( 'This is the content that will appear in your form when the duration has ended.', 'give-donation-duration' ),
+						'description' => __( 'This is the content that will appear in your form when the duration has ended.', 'give-donation-duration' ),
 					),
 				),
-			)
+			),
 		);
 
 		return array_merge( $settings, $new_settings );
@@ -201,7 +201,6 @@ class Give_Donation_Duration_Metabox_Settings {
 
 		global $post;
 
-
 		// Bailout.
 		if ( 'give_forms' !== $post->post_type ) {
 			return;
@@ -221,7 +220,7 @@ class Give_Donation_Duration_Metabox_Settings {
 	 * @param $form_id
 	 */
 	public function validate_settings( $form_id ) {
-		if( ! gdd_get_form_close_date( $form_id ) ){
+		if ( ! gdd_get_form_close_date( $form_id ) ) {
 			update_post_meta( $form_id, 'donation-duration-close-form', 'disabled' );
 		}
 	}
