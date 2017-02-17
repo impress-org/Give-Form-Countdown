@@ -180,6 +180,20 @@ class Give_Donation_Duration_Metabox_Settings {
 						),
 						'description' => __( 'This is the content that will appear in your form when the duration has ended.', 'give-donation-duration' ),
 					),
+
+					// Duration achieved message.
+					array(
+						'id'          => 'donation-duration-message-achieved-position',
+						'name'        => __( 'Duration achieved message position', 'give-donation-duration' ),
+						'type'        => 'radio',
+						'default' => 'close_form',
+						'options' => array(
+							'close_form' => 'Close the form and replace its content',
+							'above_form' => 'Keep the form open and show this message above the form',
+							'below_form' => 'Keep the form open and show this message below the form'
+						),
+						'description' => __( 'Choose position where you want to show donation achieved message.', 'give-donation-duration' ),
+					),
 				),
 			),
 		);

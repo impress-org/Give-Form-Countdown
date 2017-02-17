@@ -11,7 +11,8 @@ jQuery(document).ready(function ($) {
 		$donation_duration_msg                  = $('.donation-duration-message_field '),
 		$donation_duration_message_wraning_wrap = $('.give-notice-warning', $donation_duration_msg),
 		$donation_duration_message_wysiwyg      = $('#wp-donation-duration-message-wrap'),
-		$goal_edit_msg_link                     = '';
+		$goal_edit_msg_link                     = '',
+		$duration_achieved_msg_postion = $('.donation-duration-message-achieved-position_field');
 
 	// Add warning.
 	if (!$donation_duration_message_wraning_wrap.length) {
@@ -38,6 +39,7 @@ jQuery(document).ready(function ($) {
 		if ('enabled' === field_value) {
 			$('.donation-duration-by_field').show();
 			$donation_duration_msg.show();
+			$duration_achieved_msg_postion.show();
 
 			if ('number_of_days' === donation_limit_radio_value) {
 
@@ -56,6 +58,7 @@ jQuery(document).ready(function ($) {
 			$('.donation-duration-on-date_field').hide();
 			$('.donation-duration-on-time_field').hide();
 			$('.donation-duration-message_field').hide();
+			$duration_achieved_msg_postion.hide();
 		}
 	}).change();
 
