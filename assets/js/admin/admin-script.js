@@ -12,7 +12,8 @@ jQuery(document).ready(function ($) {
 		$donation_duration_message_wraning_wrap = $('.give-notice-warning', $donation_duration_msg),
 		$donation_duration_message_wysiwyg      = $('#wp-donation-duration-message-wrap'),
 		$goal_edit_msg_link                     = '',
-		$duration_achieved_msg_postion = $('.donation-duration-message-achieved-position_field');
+		$duration_achieved_msg_position          = $('.donation-duration-message-achieved-position_field'),
+		$countdown_clock                        = $('.donation-duration-countdown-clock_field');
 
 	// Add warning.
 	if (!$donation_duration_message_wraning_wrap.length) {
@@ -39,7 +40,8 @@ jQuery(document).ready(function ($) {
 		if ('enabled' === field_value) {
 			$('.donation-duration-by_field').show();
 			$donation_duration_msg.show();
-			$duration_achieved_msg_postion.show();
+			$duration_achieved_msg_position.show();
+			$countdown_clock.show();
 
 			if ('number_of_days' === donation_limit_radio_value) {
 
@@ -58,7 +60,8 @@ jQuery(document).ready(function ($) {
 			$('.donation-duration-on-date_field').hide();
 			$('.donation-duration-on-time_field').hide();
 			$('.donation-duration-message_field').hide();
-			$duration_achieved_msg_postion.hide();
+			$duration_achieved_msg_position.hide();
+			$countdown_clock.hide();
 		}
 	}).change();
 
@@ -92,8 +95,8 @@ jQuery(document).ready(function ($) {
 	 * Use donation end message.
 	 */
 	$donation_goal.on('change', function () {
-		var selected_value   = $('input[type="radio"]:checked', $(this)).val(),
-			close_form_value = $('input[type="radio"]:checked', $close_form_donation_achieved).val(),
+		var selected_value             = $('input[type="radio"]:checked', $(this)).val(),
+			close_form_value           = $('input[type="radio"]:checked', $close_form_donation_achieved).val(),
 			donation_end_message_value = $('input[type="radio"]:checked', $donation_end_message).val();
 
 		if ('enabled' === selected_value && 'enabled' === close_form_value && 'disabled' === donation_end_message_value) {
@@ -108,9 +111,9 @@ jQuery(document).ready(function ($) {
 	$close_form_donation_achieved.on('change', function () {
 		var selected_value      = $('input[type="radio"]:checked', $(this)).val(),
 			donation_goal_value = $('input[type="radio"]:checked', $(this)).val(),
-			goal_value = $('input[type="radio"]:checked', $donation_goal ).val();
+			goal_value          = $('input[type="radio"]:checked', $donation_goal).val();
 
-		if ('enabled' === selected_value && 'enabled' === donation_goal_value && 'enabled' === goal_value ) {
+		if ('enabled' === selected_value && 'enabled' === donation_goal_value && 'enabled' === goal_value) {
 			$donation_end_message.show();
 		} else {
 			$donation_end_message.hide();
@@ -122,7 +125,7 @@ jQuery(document).ready(function ($) {
 	$donation_end_message.on('change', function () {
 		var selected_value   = $('input[type="radio"]:checked', $(this)).val(),
 			close_form_value = $('input[type="radio"]:checked', $close_form_donation_achieved).val(),
-			goal_value = $('input[type="radio"]:checked', $donation_goal ).val();
+			goal_value       = $('input[type="radio"]:checked', $donation_goal).val();
 
 		if ('disabled' === selected_value && 'enabled' === close_form_value && 'enabled' === goal_value) {
 			$goal_achieved_msg.show();
@@ -145,7 +148,7 @@ jQuery(document).ready(function ($) {
 		e.preventDefault();
 
 		$('a[href="#donation_goal_options"]').trigger('click');
-		$('html, body').animate({scrollTop:$goal_achieved_msg.position().top}, 'slow');
+		$('html, body').animate({scrollTop: $goal_achieved_msg.position().top}, 'slow');
 		return false;
 	});
 });
