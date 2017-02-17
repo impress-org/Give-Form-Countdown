@@ -86,6 +86,9 @@ final class Give_Donation_Duration {
 		// Load filters.
 		require_once GDD_PLUGIN_DIR . 'includes/filters.php';
 
+		// Load actions.
+		require_once GDD_PLUGIN_DIR . 'includes/actions.php';
+
 		return self::$instance;
 	}
 }

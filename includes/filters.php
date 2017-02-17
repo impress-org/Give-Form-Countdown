@@ -11,7 +11,7 @@
  */
 function gdd_form_close( $is_closed, $form_id ) {
 	// Check if time achieved or not.
-	if ( give_is_limit_donation_time_achieved( $form_id ) ) {
+	if ( give_is_limit_donation_time_achieved( $form_id )  && 'close_form' === get_post_meta( $form_id, 'donation-duration-message-achieved-position', true ) ) {
 		return true;
 	}
 
