@@ -107,9 +107,10 @@ jQuery(document).ready(function ($) {
 
 	$close_form_donation_achieved.on('change', function () {
 		var selected_value      = $('input[type="radio"]:checked', $(this)).val(),
-			donation_goal_value = $('input[type="radio"]:checked', $(this)).val();
+			donation_goal_value = $('input[type="radio"]:checked', $(this)).val(),
+			goal_value = $('input[type="radio"]:checked', $donation_goal ).val();
 
-		if ('enabled' === selected_value && 'enabled' === donation_goal_value) {
+		if ('enabled' === selected_value && 'enabled' === donation_goal_value && 'enabled' === goal_value ) {
 			$donation_end_message.show();
 		} else {
 			$donation_end_message.hide();
