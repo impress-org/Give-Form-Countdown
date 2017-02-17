@@ -310,7 +310,9 @@ class Give_Donation_Duration_Metabox_Settings {
 	 * @param string $hook
 	 */
 	function enqueue_frontend_scripts( $hook ) {
-		wp_register_script( 'donation-duration-jquery-countdown', GDD_PLUGIN_URL . 'assets/js/plugin/jquery.countdown.js', array( 'jquery' ), GDD_PLUGIN_VERSION );
+		wp_register_script( 'donation-duration-jquery-countdown-script', GDD_PLUGIN_URL . 'assets/js/plugin/jquery.countdown.js', array( 'jquery' ), GDD_PLUGIN_VERSION );
+		wp_register_script( 'donation-duration-underscore-script', GDD_PLUGIN_URL . 'assets/js/plugin/underscore-min.js', array( 'jquery' ), GDD_PLUGIN_VERSION );
+		wp_register_style( 'donation-duration-jquery-countdown-layout-1-style', GDD_PLUGIN_URL . 'assets/css/plugin/jquery.countdown-layout-1.css', array(), GDD_PLUGIN_VERSION );
 	}
 
 
