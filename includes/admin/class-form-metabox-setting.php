@@ -187,11 +187,11 @@ class Give_Donation_Duration_Metabox_Settings {
 						'id'          => 'donation-duration-message-achieved-position',
 						'name'        => __( 'Duration achieved message position', 'give-donation-duration' ),
 						'type'        => 'radio',
-						'default' => 'close_form',
-						'options' => array(
-							'close_form' => 'Close the form and replace its content',
-							'above_form' => 'Keep the form open and show this message above the form',
-							'below_form' => 'Keep the form open and show this message below the form'
+						'default'     => 'close_form',
+						'options'     => array(
+							'close_form' => __( 'Close the form and replace its content', 'give-donation-duration' ),
+							'above_form' => __( 'Keep the form open and show this message above the form', 'give-donation-duration' ),
+							'below_form' => __( 'Keep the form open and show this message below the form', 'give-donation-duration' ),
 						),
 						'description' => __( 'Choose position where you want to show donation achieved message.', 'give-donation-duration' ),
 					),
@@ -226,19 +226,19 @@ class Give_Donation_Duration_Metabox_Settings {
 	 * @return array
 	 */
 	public function add_goal_section_settings( $settings ) {
-		if( ! empty( $settings['fields'] ) ) {
+		if ( ! empty( $settings['fields'] ) ) {
 			$goal_achieved_message_setting_index = null;
 			foreach ( $settings['fields'] as $index => $field ) {
-				if( ! isset( $field['id'] ) ) {
+				if ( ! isset( $field['id'] ) ) {
 					continue;
 				}
 
-				if( '_give_form_goal_achieved_message' === $field['id'] ) {
+				if ( '_give_form_goal_achieved_message' === $field['id'] ) {
 					$goal_achieved_message_setting_index = $index;
 				}
 			}
 
-			if( ! is_null( $goal_achieved_message_setting_index ) ) {
+			if ( ! is_null( $goal_achieved_message_setting_index ) ) {
 				$gdc_setting = array(
 					array(
 						'id'          => 'donation-duration-use-end-message',
@@ -246,11 +246,11 @@ class Give_Donation_Duration_Metabox_Settings {
 						'type'        => 'radio_inline',
 						'default'     => 'disabled',
 						'options'     => array(
-							'enabled'      => __( 'Enabled', 'give-donation-duration' ),
+							'enabled'  => __( 'Enabled', 'give-donation-duration' ),
 							'disabled' => __( 'Disabled', 'give-donation-duration' ),
 						),
 						'description' => __( 'When goal is achieved, do you want to close the form and show the Donation Duration message', 'give-donation-duration' ),
-					)
+					),
 				);
 
 				$settings['fields'] = array_merge(
@@ -289,13 +289,13 @@ class Give_Donation_Duration_Metabox_Settings {
 		}
 
 		wp_enqueue_script( 'jquery-ui-datepicker' );
-		wp_register_script( 'donation-duration-jquery-countdown', GDD_PLUGIN_URL . 'assets/js/plugin/jquery.countdown.js', array('jquery'), GDD_PLUGIN_VERSION );
-		wp_enqueue_script( 'donation-duration-admin-script', GDD_PLUGIN_URL . 'assets/js/admin/admin-script.js', array( 'jquery'), GDD_PLUGIN_VERSION );
+		wp_register_script( 'donation-duration-jquery-countdown', GDD_PLUGIN_URL . 'assets/js/plugin/jquery.countdown.js', array( 'jquery' ), GDD_PLUGIN_VERSION );
+		wp_enqueue_script( 'donation-duration-admin-script', GDD_PLUGIN_URL . 'assets/js/admin/admin-script.js', array( 'jquery' ), GDD_PLUGIN_VERSION );
 
 		$gdc_vars = array(
 			'duration_ended_message' => array(
-				'warning' => __( 'You are currently using \' Donation Goal\' message when form closes. Change that to set your custom message here.', 'give-donation-duration' )
-			)
+				'warning' => __( 'You are currently using \' Donation Goal\' message when form closes. Change that to set your custom message here.', 'give-donation-duration' ),
+			),
 		);
 
 		wp_localize_script( 'donation-duration-admin-script', 'gdc_vars', $gdc_vars );
@@ -310,7 +310,7 @@ class Give_Donation_Duration_Metabox_Settings {
 	 * @param string $hook
 	 */
 	function enqueue_frontend_scripts( $hook ) {
-		wp_register_script( 'donation-duration-jquery-countdown', GDD_PLUGIN_URL . 'assets/js/plugin/jquery.countdown.js', array('jquery'), GDD_PLUGIN_VERSION );
+		wp_register_script( 'donation-duration-jquery-countdown', GDD_PLUGIN_URL . 'assets/js/plugin/jquery.countdown.js', array( 'jquery' ), GDD_PLUGIN_VERSION );
 	}
 
 
