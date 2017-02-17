@@ -90,9 +90,10 @@ jQuery(document).ready(function ($) {
 	 */
 	$donation_goal.on('change', function () {
 		var selected_value   = $('input[type="radio"]:checked', $(this)).val(),
-			close_form_value = $('input[type="radio"]:checked', $close_form_donation_achieved).val();
+			close_form_value = $('input[type="radio"]:checked', $close_form_donation_achieved).val(),
+			donation_end_message_value = $('input[type="radio"]:checked', $donation_end_message).val();
 
-		if ('enabled' === selected_value && 'enabled' === close_form_value) {
+		if ('enabled' === selected_value && 'enabled' === close_form_value && 'disabled' === donation_end_message_value) {
 			$donation_end_message.show();
 		} else {
 			$donation_end_message.hide();
@@ -116,9 +117,10 @@ jQuery(document).ready(function ($) {
 
 	$donation_end_message.on('change', function () {
 		var selected_value   = $('input[type="radio"]:checked', $(this)).val(),
-			close_form_value = $('input[type="radio"]:checked', $close_form_donation_achieved).val();
+			close_form_value = $('input[type="radio"]:checked', $close_form_donation_achieved).val(),
+			goal_value = $('input[type="radio"]:checked', $donation_goal ).val();
 
-		if ('disabled' === selected_value && 'enabled' === close_form_value) {
+		if ('disabled' === selected_value && 'enabled' === close_form_value && 'enabled' === goal_value) {
 			$goal_achieved_msg.show();
 			$donation_duration_message_wysiwyg.hide();
 			$donation_duration_message_wysiwyg.next().hide();
