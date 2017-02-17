@@ -32,13 +32,12 @@ add_filter( 'give_is_close_donation_form', 'gdd_form_close', 10, 2 );
  * @return string
  */
 function gdd_closed_form_message( $message, $form_id ) {
-	$form = new Give_Donate_Form( $form_id );
+	$is_goal = give_is_setting_enabled( get_post_meta( $form_id, '_give_goal_option', true ) );
+	$is_close_form = give_is_setting_enabled( get_post_meta( $form_id, '_give_close_form_when_goal_achieved', true ) );
+	$is_use_donation_duration_end_message = give_is_setting_enabled( get_post_meta( $form_id, 'donation-duration-use-end-message', true ) );
 
 	// If form is for limited duration and goal is not achieved then show limit duration message.
-	if (
-		give_is_limit_donation_time_achieved( $form_id )
-		&& ( $form->get_goal() >= $form->get_earnings() )
-	) {
+	if ( give_is_limit_donation_time_achieved( $form_id ) || ( $is_use_donation_duration_end_message && $is_goal && $is_close_form ) ){
 		$message = gdd_get_message( $form_id );
 	}
 
