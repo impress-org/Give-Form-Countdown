@@ -7,12 +7,43 @@
  * @todo  : Add months time constraint.
  */
 
+
+/**
+ * Filter the option time constraints per form
+ *
+ * @since 1.0
+ */
+$gfc_default_time_constraints = apply_filters(
+	"gfc_{$form_id}_countdown_clock_1_time_constraints",
+	array(
+		__( 'weeks', 'give-form-countdown' ),
+		__( 'days', 'give-form-countdown' ),
+	)
+);
+
+/**
+ * Filter the time constraints for all form.
+ *
+ * @since 1.0
+ */
+$gfc_default_time_constraints = apply_filters(
+	"gfc_countdown_clock_1_time_constraints",
+	$gfc_default_time_constraints,
+	$form_id
+);
+
 // Time constraints supported weeks (optional), days (optional), hours, minutes, seconds.
 $gfc_time_constraints = array_filter(
 	array_merge(
-		apply_filters( "gfc_{$form_id}_countdown_clock_1_time_constraints", array( __( 'weeks', 'give-form-countdown' ), __( 'days', 'give-form-countdown' ) ) ),
-		array( __( 'hours', 'give-form-countdown' ), __( 'minutes', 'give-form-countdown' ), __( 'seconds', 'give-form-countdown' ) )
+		$gfc_default_time_constraints,
+		array(
+			__( 'hours', 'give-form-countdown' ),
+			__( 'minutes', 'give-form-countdown' ),
+			__( 'seconds', 'give-form-countdown' ),
+		)
 	),
+
+	// Remove empty time constraints.
 	function ( $time_constraint ) {
 		return ! empty( $time_constraint );
 	}
@@ -86,10 +117,10 @@ $default_date = implode( ':', $default_date );
 			// Set hours.
 			if (-1 === labels.indexOf('days') && -1 === labels.indexOf('weeks') && -1 === labels.indexOf('months')) {
 				format = '%I:' + format;
-			} else if ( ( -1 !== labels.indexOf('weeks') || -1 !== labels.indexOf('months') ) && -1 === labels.indexOf('days') ) {
+			} else if (( -1 !== labels.indexOf('weeks') || -1 !== labels.indexOf('months') ) && -1 === labels.indexOf('days')) {
 				var hours = event.offset.days * 24 + event.offset.hours;
-				hours = ( 10 > hours ? '0' + hours.toString() : hours.toString() );
-				format = hours + ':' + format;
+				hours     = ( 10 > hours ? '0' + hours.toString() : hours.toString() );
+				format    = hours + ':' + format;
 			} else {
 				format = '%H:' + format;
 			}

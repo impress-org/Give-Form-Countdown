@@ -64,12 +64,35 @@ function gfc_add_pre_form_countdown_clock( $form_id ){
 		return false;
 	}
 
-	$countdown_clock = 'template/countdown_clock_1.php';
+	/**
+	 * Filter the countdown clock template per form.
+	 *
+	 * @since 1.0
+	 */
+	$countdown_clock = apply_filters( "gfc_{$form_id}_countdown_clock_template", GFC_PLUGIN_DIR. 'template/countdown_clock_1.php', $form_id );
 
-	wp_enqueue_script( 'form-countdown-jquery-countdown-script' );
-	wp_enqueue_script( 'form-countdown-underscore-script' );
-	wp_enqueue_style( 'form-countdown-jquery-countdown-layout-1-style' );
 
-	include GFC_PLUGIN_DIR . "{$countdown_clock}";
+	/**
+	 * Filter the countdown clock template for all form.
+	 *
+	 * @since 1.0
+	 */
+	$countdown_clock = apply_filters( "gfc_countdown_clock_template", $countdown_clock, $form_id );
+
+
+	if( 'countdown_clock_1.php' === wp_basename( $countdown_clock ) ) {
+		wp_enqueue_script( 'form-countdown-jquery-countdown-script' );
+		wp_enqueue_script( 'form-countdown-underscore-script' );
+		wp_enqueue_style( 'form-countdown-jquery-countdown-layout-1-style' );
+
+		include $countdown_clock;
+	}
+
+	/**
+	 *  Fire the action to renderr countdown clock.
+	 *
+	 * @since 1.0
+	 */
+	do_action( 'gdf_render_countdown_clock', $countdown_clock, $form_id );
 }
 add_action( 'give_pre_form_output', 'gfc_add_pre_form_countdown_clock' );
