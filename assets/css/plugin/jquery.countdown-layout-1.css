@@ -1,12 +1,12 @@
-.gdd-clock-wrap {
+.gfc-clock-wrap {
 	margin: 0 auto;
 	width: 355px;
 	padding-bottom: 24px;
 }
-.gdd-clock-wrap .countdown-container {
+.gfc-clock-wrap .countdown-container {
 	height: 130px;
 }
-.gdd-clock-wrap .time {
+.gfc-clock-wrap .time {
 	border-radius: 5px;
 	box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
 	display: inline-block;
@@ -39,7 +39,7 @@
 	-o-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
-.gdd-clock-wrap .count {
+.gfc-clock-wrap .count {
 	background: #202020;
 	color: #f8f8f8;
 	display: block;
@@ -65,7 +65,7 @@
 	-o-transform-style: flat;
 	transform-style: flat;
 }
-.gdd-clock-wrap .count.top {
+.gfc-clock-wrap .count.top {
 	border-top: 1px solid rgba(255,255,255,0.2);
 	border-bottom: 1px solid rgba(255,255,255,0.1);
 	border-radius: 5px 5px 0 0;
@@ -77,7 +77,7 @@
 	-o-transform-origin: 50% 100%;
 	transform-origin: 50% 100%;
 }
-.gdd-clock-wrap .count.bottom {
+.gfc-clock-wrap .count.bottom {
 	background-image: linear-gradient(rgba(255,255,255,0.1), transparent);
 	background-image: -webkit-linear-gradient(rgba(255,255,255,0.1), transparent);
 	background-image: -moz-linear-gradient(rgba(255,255,255,0.1), transparent);
@@ -96,9 +96,9 @@
 	-o-transform-origin: 50% 0;
 	transform-origin: 50% 0;
 }
-.gdd-clock-wrap .count.next {
+.gfc-clock-wrap .count.next {
 }
-.gdd-clock-wrap .label {
+.gfc-clock-wrap .label {
 	font-size: normal;
 	margin-top: 5px;
 	display: block;
@@ -107,7 +107,7 @@
 	width: 100%;
 }
 /* Animation start */
-.gdd-clock-wrap .count.curr.top {
+.gfc-clock-wrap .count.curr.top {
 	-webkit-transform: rotateX(0deg);
 	-moz-transform: rotateX(0deg);
 	-ms-transform: rotateX(0deg);
@@ -115,7 +115,7 @@
 	transform: rotateX(0deg);
 	z-index: 3;
 }
-.gdd-clock-wrap .count.next.bottom {
+.gfc-clock-wrap .count.next.bottom {
 	-webkit-transform: rotateX(90deg);
 	-moz-transform: rotateX(90deg);
 	-ms-transform: rotateX(90deg);
@@ -124,7 +124,7 @@
 	z-index: 2;
 }
 /* Animation end */
-.gdd-clock-wrap .flip .count.curr.top {
+.gfc-clock-wrap .flip .count.curr.top {
 	-webkit-transition: all 250ms ease-in-out;
 	-moz-transition: all 250ms ease-in-out;
 	-ms-transition: all 250ms ease-in-out;
@@ -137,7 +137,7 @@
 	-o-transform: rotateX(-90deg);
 	transform: rotateX(-90deg);
 }
-.gdd-clock-wrap .flip .count.next.bottom {
+.gfc-clock-wrap .flip .count.next.bottom {
 	-webkit-transition: all 250ms ease-in-out 250ms;
 	-moz-transition: all 250ms ease-in-out 250ms;
 	-ms-transition: all 250ms ease-in-out 250ms;
@@ -150,22 +150,26 @@
 	-o-transform: rotateX(0deg);
 	transform: rotateX(0deg);
 }
+
+.gfc-clock-wrap .gfc-time-length-3{
+	width:80px;
+}
 @media screen and (max-width: 48em) {
-	.gdd-clock-wrap {
+	.gfc-clock-wrap {
 		width: 100%;
 	}
-	.gdd-clock-wrap .countdown-container {
+	.gfc-clock-wrap .countdown-container {
 		height: 100px;
 	}
-	.gdd-clock-wrap .time {
+	.gfc-clock-wrap .time {
 		height: 70px;
 		width: 48px;
 	}
-	.gdd-clock-wrap .count {
+	.gfc-clock-wrap .count {
 		font-size: 1.5em;
 		line-height: 70px;
 	}
-	.gdd-clock-wrap .label {
+	.gfc-clock-wrap .label {
 		font-size: 0.8em;
 		top: 72px;
 	}
