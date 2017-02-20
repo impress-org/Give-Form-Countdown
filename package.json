@@ -1,5 +1,5 @@
 {
-  "name": "give-donation-duration",
+  "name": "give-form-countdown",
   "private": true,
   "devDependencies": {
     "gulp": "^3.9.1",

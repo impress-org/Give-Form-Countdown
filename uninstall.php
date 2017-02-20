@@ -1,6 +1,6 @@
 <?php
 /**
- * Uninstall Give Donation Duration
+ * Uninstall Give Form Countdown
  *
  * @package     Give
  * @subpackage  Uninstall
@@ -28,11 +28,11 @@ $wpdb->query(
 			OR meta_key='%s'
 			OR meta_key='%s'
 			",
-		'donation-duration-close-form',
-		'donation-duration-by',
-		'donation-duration-in-number-of-days',
-		'donation-duration-on-date',
-		'donation-duration-on-time',
-		'donation-duration-message'
+		'form-countdown-close-form',
+		'form-countdown-by',
+		'form-countdown-in-number-of-days',
+		'form-countdown-on-date',
+		'form-countdown-on-time',
+		'form-countdown-message'
 	)
 );

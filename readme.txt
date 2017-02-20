@@ -1,6 +1,6 @@
-=== Give Donation Duration ===
+=== Give Form Countdown ===
 Contributors: givewp, wordimpress, ravinderk, dlocc, webdevmattcrom
-Donate link: https://github.com/WordImpress/Give-Donation-Duration
+Donate link: https://github.com/WordImpress/Give-Form-Countdown
 Tags: givewp, donation, donations, time limit, end campaign, duration achieved, close form, donation limit
 Requires at least: 4.3
 Tested up to: 4.7.2
@@ -12,7 +12,7 @@ A Give Add-on which allows you to set a number of days or a specific date and ti
 
 == Description ==
 
-Donation Duration is a [Give](https://givewp.com) Add-on allows you to set a number of days or a specific date and time for which your donation form will end and display a custom message.
+Form Countdown is a [Give](https://givewp.com) Add-on allows you to set a number of days or a specific date and time for which your donation form will end and display a custom message.
 
 Limiting your donation campaigns to a certain time-frame is useful for communicating a sense of urgency. When your donors know that their window to donate is limited to a certain timeframe, they are less likely to postpone giving to a later time.
 
@@ -24,9 +24,9 @@ Limiting your donation campaigns to a certain time-frame is useful for communica
 
 **BASIC USAGE**
 
-All of the Donation Duration settings are per form, so you will not find anything in "Donations > Settings". Instead, go to "Donations > All Forms" and click on your form.
+All of the Form Countdown settings are per form, so you will not find anything in "Donations > Settings". Instead, go to "Donations > All Forms" and click on your form.
 
-There you'll see our tabbed "Donation Form Options" interface. At the bottom is a new tab called "Donation Duration". There you'll have the following options:
+There you'll see our tabbed "Donation Form Options" interface. At the bottom is a new tab called "Form Countdown". There you'll have the following options:
 
 * **Enable Duration** -- Enable or Disable your Duration features. All other fields will appear when you select "Enable".
 * **Donation Deadline** -- Set the Duration to end at a set number of days after the form is published, or at a specific day and time.
@@ -37,7 +37,7 @@ There you'll see our tabbed "Donation Form Options" interface. At the bottom is 
 **ABOUT GIVE**
 > [Give](https://givewp.com) is the most robust WordPress plugin available for accepting online donations. Give provides you with powerful features helping you raise more funds for your cause from one, effective, platform.
 > 
-> If you are enjoying Give Donation Duration please consider giving us your feedback and rating.
+> If you are enjoying Give Form Countdown please consider giving us your feedback and rating.
 
 == Installation ==
 
@@ -49,11 +49,11 @@ There you'll see our tabbed "Donation Form Options" interface. At the bottom is 
 
 = Automatic installation =
 
-**NOTE:** Before installing Give Donation Duration, you must have the free [Give Donation plugin](https://wordpress.org/plugins/give/) installed and activated on your website.
+**NOTE:** Before installing Give Form Countdown, you must have the free [Give Donation plugin](https://wordpress.org/plugins/give/) installed and activated on your website.
 
-Automatic installation is the easiest option as WordPress handles the file transfers itself and you don't need to leave your web browser. To install Give Donation Duration, login to your WordPress dashboard, navigate to the Plugins menu and click "Add New".
+Automatic installation is the easiest option as WordPress handles the file transfers itself and you don't need to leave your web browser. To install Give Form Countdown, login to your WordPress dashboard, navigate to the Plugins menu and click "Add New".
 
-In the search field type "Give Donation Duration" and click Search Plugins. Once you have found the plugin you can view details about it such as the the point release, ratings and description. Most importantly of course, you can install it by simply clicking "Install Now".
+In the search field type "Give Form Countdown" and click Search Plugins. Once you have found the plugin you can view details about it such as the the point release, ratings and description. Most importantly of course, you can install it by simply clicking "Install Now".
 
 = Manual installation =
 
@@ -86,14 +86,14 @@ If you have purchased any of our Premium Add-ons, we can provide with your [Prio
 
 If you are a free Give user and have a general question about Give, submit a ticket here.
 
-Otherwise, if your question is specific to Give Donation Duration we're happy to answer your questions [here](https://wordpress.org/support/plugin/give-donation-duration).
+Otherwise, if your question is specific to Give Form Countdown we're happy to answer your questions [here](https://wordpress.org/support/plugin/give-form-countdown).
 
 = I have a feature request, or would like to contribute to this plugin. Where can I do that? =
-Give Donation Duration is hosted publicly on Github. We'd love your feedback and suggestions [there](https://github.com/WordImpress/Give-Donation-Duration/issues).
+Give Form Countdown is hosted publicly on Github. We'd love your feedback and suggestions [there](https://github.com/WordImpress/Give-Form-Countdown/issues).
 
 == Screenshots ==
 
-1. The Donation Duration form edit settings.
+1. The Form Countdown form edit settings.
 2. The countdown clock at the top of the donation form
 3. A custom Duration Achieved message shown replacing your donation form.
 

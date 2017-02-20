@@ -2,18 +2,18 @@ jQuery(document).ready(function ($) {
 	/**
 	 * Selectors.
 	 */
-	var $close_form                             = $('.donation-duration-close-form_field'),
-		$limit_donation_radio                   = $('.donation-duration-by_field :radio'),
+	var $close_form                             = $('.form-countdown-close-form_field'),
+		$limit_donation_radio                   = $('.form-countdown-by_field :radio'),
 		$donation_goal                          = $('._give_goal_option_field'),
-		$donation_end_message                   = $('.donation-duration-use-end-message_field'),
+		$donation_end_message                   = $('.form-countdown-use-end-message_field'),
 		$close_form_donation_achieved           = $('._give_close_form_when_goal_achieved_field'),
 		$goal_achieved_msg                      = $('._give_form_goal_achieved_message_field'),
-		$donation_duration_msg                  = $('.donation-duration-message_field '),
+		$donation_duration_msg                  = $('.form-countdown-message_field '),
 		$donation_duration_message_wraning_wrap = $('.give-notice-warning', $donation_duration_msg),
-		$donation_duration_message_wysiwyg      = $('#wp-donation-duration-message-wrap'),
+		$donation_duration_message_wysiwyg      = $('#wp-form-countdown-message-wrap'),
 		$goal_edit_msg_link                     = '',
-		$duration_achieved_msg_position          = $('.donation-duration-message-achieved-position_field'),
-		$countdown_clock                        = $('.donation-duration-countdown-clock_field');
+		$duration_achieved_msg_position          = $('.form-countdown-message-achieved-position_field'),
+		$countdown_clock                        = $('.form-countdown-countdown-clock_field');
 
 	// Add warning.
 	if (!$donation_duration_message_wraning_wrap.length) {
@@ -26,7 +26,7 @@ jQuery(document).ready(function ($) {
 	/**
 	 * Datepicker field.
 	 */
-	$('#donation-duration-on-date').datepicker({
+	$('#form-countdown-on-date').datepicker({
 		minDate: 1
 	});
 
@@ -35,31 +35,31 @@ jQuery(document).ready(function ($) {
 	 */
 	$close_form.change(function () {
 		var field_value                = $('input[type="radio"]:checked', $(this)).val(),
-			donation_limit_radio_value = $('.donation-duration-by_field :radio:checked').val();
+			donation_limit_radio_value = $('.form-countdown-by_field :radio:checked').val();
 
 		if ('enabled' === field_value) {
-			$('.donation-duration-by_field').show();
+			$('.form-countdown-by_field').show();
 			$donation_duration_msg.show();
 			$duration_achieved_msg_position.show();
 			$countdown_clock.show();
 
 			if ('number_of_days' === donation_limit_radio_value) {
 
-				$('.donation-duration-in-number-of-days_field').show();
-				$('.donation-duration-on-date_field').hide();
-				$('.donation-duration-on-time_field').hide();
+				$('.form-countdown-in-number-of-days_field').show();
+				$('.form-countdown-on-date_field').hide();
+				$('.form-countdown-on-time_field').hide();
 			} else if ('end_on_day_and_time' === donation_limit_radio_value) {
 
-				$('.donation-duration-in-number-of-days_field').hide();
-				$('.donation-duration-on-date_field').show();
-				$('.donation-duration-on-time_field').show();
+				$('.form-countdown-in-number-of-days_field').hide();
+				$('.form-countdown-on-date_field').show();
+				$('.form-countdown-on-time_field').show();
 			}
 		} else {
-			$('.donation-duration-by_field').hide();
-			$('.donation-duration-in-number-of-days_field').hide();
-			$('.donation-duration-on-date_field').hide();
-			$('.donation-duration-on-time_field').hide();
-			$('.donation-duration-message_field').hide();
+			$('.form-countdown-by_field').hide();
+			$('.form-countdown-in-number-of-days_field').hide();
+			$('.form-countdown-on-date_field').hide();
+			$('.form-countdown-on-time_field').hide();
+			$('.form-countdown-message_field').hide();
 			$duration_achieved_msg_position.hide();
 			$countdown_clock.hide();
 		}
@@ -69,25 +69,25 @@ jQuery(document).ready(function ($) {
 	 * Limit donation.
 	 */
 	$limit_donation_radio.change(function () {
-		if ('disabled' === $('.donation-duration-close-form_field :radio:checked').val()) {
+		if ('disabled' === $('.form-countdown-close-form_field :radio:checked').val()) {
 			return false;
 		}
 
-		var field_value = $('.donation-duration-by_field :radio:checked').val();
+		var field_value = $('.form-countdown-by_field :radio:checked').val();
 
 		if ('number_of_days' === field_value) {
 
-			$('.donation-duration-in-number-of-days_field').show();
-			$('.donation-duration-on-date_field').hide();
-			$('.donation-duration-on-time_field').hide();
+			$('.form-countdown-in-number-of-days_field').show();
+			$('.form-countdown-on-date_field').hide();
+			$('.form-countdown-on-time_field').hide();
 		} else if ('end_on_day_and_time' === field_value) {
 
-			$('.donation-duration-in-number-of-days_field').hide();
-			$('.donation-duration-on-date_field').show();
-			$('.donation-duration-on-time_field').show();
+			$('.form-countdown-in-number-of-days_field').hide();
+			$('.form-countdown-on-date_field').show();
+			$('.form-countdown-on-time_field').show();
 		}
 
-		$('.donation-duration-message_field').show();
+		$('.form-countdown-message_field').show();
 
 	}).change();
 

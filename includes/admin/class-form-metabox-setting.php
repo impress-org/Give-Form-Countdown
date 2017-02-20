@@ -1,18 +1,18 @@
 <?php
 
 /**
- * Class Give_Donation_Duration_Metabox_Settings
+ * Class Give_Form_Countdown_Metabox_Settings
  *
  * @since 1.0
  */
-class Give_Donation_Duration_Metabox_Settings {
+class Give_Form_Countdown_Metabox_Settings {
 
 	/**
 	 * Instance.
 	 *
 	 * @since  1.0
 	 * @access static
-	 * @var Give_Donation_Duration_Metabox_Settings
+	 * @var Give_Form_Countdown_Metabox_Settings
 	 */
 	private static $instance;
 
@@ -41,7 +41,7 @@ class Give_Donation_Duration_Metabox_Settings {
 	 *
 	 * @since  1.0
 	 * @access private
-	 * Give_Donation_Duration_Metabox_Settings constructor.
+	 * Give_Form_Countdown_Metabox_Settings constructor.
 	 */
 	private function __construct() {
 	}
@@ -52,7 +52,7 @@ class Give_Donation_Duration_Metabox_Settings {
 	 *
 	 * @since  1.0
 	 * @access public
-	 * @return Give_Donation_Duration_Metabox_Settings
+	 * @return Give_Form_Countdown_Metabox_Settings
 	 */
 	public static function get_instance() {
 		if ( null === static::$instance ) {
@@ -68,18 +68,18 @@ class Give_Donation_Duration_Metabox_Settings {
 	 *
 	 * @since  1.0
 	 * @access public
-	 * @return Give_Donation_Duration_Metabox_Settings
+	 * @return Give_Form_Countdown_Metabox_Settings
 	 */
 	public function setup_params() {
-		$this->id    = 'give-donation-duration';
-		$this->label = __( 'Donation Duration', 'give-donation-duration' );
+		$this->id    = 'give-form-countdown';
+		$this->label = __( 'Form Countdown', 'give-form-countdown' );
 
 		return static::get_instance();
 
 	}
 
 	/**
-	 * Give_Donation_Duration_Metabox_Settings constructor.
+	 * Give_Form_Countdown_Metabox_Settings constructor.
 	 *
 	 * @since  1.0
 	 * @access public
@@ -121,92 +121,92 @@ class Give_Donation_Duration_Metabox_Settings {
 				'fields'    => array(
 					// Close Form.
 					array(
-						'id'          => 'donation-duration-close-form',
-						'name'        => __( 'Enable Duration', 'give-donation-duration' ),
+						'id'          => 'form-countdown-close-form',
+						'name'        => __( 'Enable Duration', 'give-form-countdown' ),
 						'type'        => 'radio_inline',
 						'default'     => 'disabled',
 						'options'     => array(
-							'enabled'  => __( 'Enabled', 'give-donation-duration' ),
-							'disabled' => __( 'Disabled', 'give-donation-duration' ),
+							'enabled'  => __( 'Enabled', 'give-form-countdown' ),
+							'disabled' => __( 'Disabled', 'give-form-countdown' ),
 						),
-						'description' => __( 'Enable this to set a time when the form will close automatically and a custom message will appear.', 'give-donation-duration' ),
+						'description' => __( 'Enable this to set a time when the form will close automatically and a custom message will appear.', 'give-form-countdown' ),
 					),
 
 					// Donation duration type.
 					array(
-						'id'          => 'donation-duration-by',
-						'name'        => __( 'Duration Timeframe', 'give-donation-duration' ),
+						'id'          => 'form-countdown-by',
+						'name'        => __( 'Duration Timeframe', 'give-form-countdown' ),
 						'type'        => 'radio_inline',
 						'default'     => 'number_of_days',
 						'options'     => array(
-							'number_of_days'      => __( 'Number of days', 'give-donation-duration' ),
-							'end_on_day_and_time' => __( 'Specific day & time', 'give-donation-duration' ),
+							'number_of_days'      => __( 'Number of days', 'give-form-countdown' ),
+							'end_on_day_and_time' => __( 'Specific day & time', 'give-form-countdown' ),
 						),
-						'description' => __( 'Set when the form should close automatically.', 'give-donation-duration' ),
+						'description' => __( 'Set when the form should close automatically.', 'give-form-countdown' ),
 					),
 
 					// Days.
 					array(
-						'id'          => 'donation-duration-in-number-of-days',
-						'name'        => __( 'Number of Days', 'give-donation-duration' ),
+						'id'          => 'form-countdown-in-number-of-days',
+						'name'        => __( 'Number of Days', 'give-form-countdown' ),
 						'type'        => 'text-small',
 						'default'     => '30',
-						'description' => __( 'The number of days from the date of publication that the duration should last.', 'give-donation-duration' ),
+						'description' => __( 'The number of days from the date of publication that the duration should last.', 'give-form-countdown' ),
 					),
 
 					// Date
 					array(
-						'id'          => 'donation-duration-on-date',
-						'name'        => __( 'Date', 'give-donation-duration' ),
+						'id'          => 'form-countdown-on-date',
+						'name'        => __( 'Date', 'give-form-countdown' ),
 						'type'        => 'text-medium',
-						'description' => __( 'The date for which you want the duration to end.', 'give-donation-duration' ),
+						'description' => __( 'The date for which you want the duration to end.', 'give-form-countdown' ),
 					),
 
 					// Time
 					array(
-						'id'          => 'donation-duration-on-time',
-						'name'        => __( 'Time', 'give-donation-duration' ),
+						'id'          => 'form-countdown-on-time',
+						'name'        => __( 'Time', 'give-form-countdown' ),
 						'type'        => 'select',
-						'options'     => gdd_get_time_list(),
-						'description' => __( 'The time of day you want the duration to end on your designated day.', 'give-donation-duration' ),
+						'options'     => gfc_get_time_list(),
+						'description' => __( 'The time of day you want the duration to end on your designated day.', 'give-form-countdown' ),
 					),
 
 					// Duration achieved message.
 					array(
-						'id'          => 'donation-duration-message',
-						'name'        => __( 'Duration ended message', 'give-donation-duration' ),
+						'id'          => 'form-countdown-message',
+						'name'        => __( 'Duration ended message', 'give-form-countdown' ),
 						'type'        => 'wysiwyg',
 						'attributes'  => array(
-							'placeholder' => __( 'Thank you to all our donors, we have met our fundraising goal.', 'give-donation-duration' ),
+							'placeholder' => __( 'Thank you to all our donors, we have met our fundraising goal.', 'give-form-countdown' ),
 						),
-						'description' => __( 'This is the content that will appear in your form when the duration has ended.', 'give-donation-duration' ),
+						'description' => __( 'This is the content that will appear in your form when the duration has ended.', 'give-form-countdown' ),
 					),
 
 					// Duration achieved message position.
 					array(
-						'id'          => 'donation-duration-message-achieved-position',
-						'name'        => __( 'Duration achieved message position', 'give-donation-duration' ),
+						'id'          => 'form-countdown-message-achieved-position',
+						'name'        => __( 'Duration achieved message position', 'give-form-countdown' ),
 						'type'        => 'radio',
 						'default'     => 'close_form',
 						'options'     => array(
-							'close_form' => __( 'Close the form and replace its content', 'give-donation-duration' ),
-							'above_form' => __( 'Keep the form open and show this message above the form', 'give-donation-duration' ),
-							'below_form' => __( 'Keep the form open and show this message below the form', 'give-donation-duration' ),
+							'close_form' => __( 'Close the form and replace its content', 'give-form-countdown' ),
+							'above_form' => __( 'Keep the form open and show this message above the form', 'give-form-countdown' ),
+							'below_form' => __( 'Keep the form open and show this message below the form', 'give-form-countdown' ),
 						),
-						'description' => __( 'Choose position where you want to show donation achieved message.', 'give-donation-duration' ),
+						'description' => __( 'Choose position where you want to show donation achieved message.', 'give-form-countdown' ),
 					),
 
 					// Countdown clock.
 					array(
-						'id'          => 'donation-duration-countdown-clock',
-						'name'        => __( 'Countdown Clock', 'give-donation-duration' ),
+						'id'          => 'form-countdown-countdown-clock',
+						'name'        => __( 'Countdown Clock', 'give-form-countdown' ),
 						'type'        => 'radio_inline',
 						'default'     => 'disabled',
 						'options'     => array(
-							'enabled'  => __( 'Enabled', 'give-donation-duration' ),
-							'disabled' => __( 'Disabled', 'give-donation-duration' ),
+							'enabled'  => __( 'Enabled', 'give-form-countdown' ),
+							'disabled' => __( 'Disabled', 'give-form-countdown' ),
 						),
-						'description' => __( 'Enable setting if you want to show countdown clock on frontend.', 'give-donation-duration' ),
+						'description' => __( 'Enable setting if you want to show countdown clock on frontend.', 'give-form-countdown' ),
 					),
 				),
 			),
@@ -241,15 +241,15 @@ class Give_Donation_Duration_Metabox_Settings {
 			if ( ! is_null( $goal_achieved_message_setting_index ) ) {
 				$gdc_setting = array(
 					array(
-						'id'          => 'donation-duration-use-end-message',
-						'name'        => __( 'Use Donation End Message', 'give-donation-duration' ),
+						'id'          => 'form-countdown-use-end-message',
+						'name'        => __( 'Use Donation End Message', 'give-form-countdown' ),
 						'type'        => 'radio_inline',
 						'default'     => 'disabled',
 						'options'     => array(
-							'enabled'  => __( 'Enabled', 'give-donation-duration' ),
-							'disabled' => __( 'Disabled', 'give-donation-duration' ),
+							'enabled'  => __( 'Enabled', 'give-form-countdown' ),
+							'disabled' => __( 'Disabled', 'give-form-countdown' ),
 						),
-						'description' => __( 'When goal is achieved, do you want to close the form and show the Donation Duration message', 'give-donation-duration' ),
+						'description' => __( 'When goal is achieved, do you want to close the form and show the Form Countdown message', 'give-form-countdown' ),
 					),
 				);
 
@@ -289,16 +289,16 @@ class Give_Donation_Duration_Metabox_Settings {
 		}
 
 		wp_enqueue_script( 'jquery-ui-datepicker' );
-		wp_register_script( 'donation-duration-jquery-countdown', GDD_PLUGIN_URL . 'assets/js/plugin/jquery.countdown.js', array( 'jquery' ), GDD_PLUGIN_VERSION );
-		wp_enqueue_script( 'donation-duration-admin-script', GDD_PLUGIN_URL . 'assets/js/admin/admin-script.js', array( 'jquery' ), GDD_PLUGIN_VERSION );
+		wp_register_script( 'form-countdown-jquery-countdown', GFC_PLUGIN_URL . 'assets/js/plugin/jquery.countdown.js', array( 'jquery' ), GFC_PLUGIN_VERSION );
+		wp_enqueue_script( 'form-countdown-admin-script', GFC_PLUGIN_URL . 'assets/js/admin/admin-script.js', array( 'jquery' ), GFC_PLUGIN_VERSION );
 
 		$gdc_vars = array(
 			'duration_ended_message' => array(
-				'warning' => __( 'You are currently using \' Donation Goal\' message when form closes. Change that to set your custom message here.', 'give-donation-duration' ),
+				'warning' => __( 'You are currently using \' Donation Goal\' message when form closes. Change that to set your custom message here.', 'give-form-countdown' ),
 			),
 		);
 
-		wp_localize_script( 'donation-duration-admin-script', 'gdc_vars', $gdc_vars );
+		wp_localize_script( 'form-countdown-admin-script', 'gdc_vars', $gdc_vars );
 	}
 
 	/**
@@ -310,9 +310,9 @@ class Give_Donation_Duration_Metabox_Settings {
 	 * @param string $hook
 	 */
 	function enqueue_frontend_scripts( $hook ) {
-		wp_register_script( 'donation-duration-jquery-countdown-script', GDD_PLUGIN_URL . 'assets/js/plugin/jquery.countdown.js', array( 'jquery' ), GDD_PLUGIN_VERSION );
-		wp_register_script( 'donation-duration-underscore-script', GDD_PLUGIN_URL . 'assets/js/plugin/underscore-min.js', array( 'jquery' ), GDD_PLUGIN_VERSION );
-		wp_register_style( 'donation-duration-jquery-countdown-layout-1-style', GDD_PLUGIN_URL . 'assets/css/plugin/jquery.countdown-layout-1.css', array(), GDD_PLUGIN_VERSION );
+		wp_register_script( 'form-countdown-jquery-countdown-script', GFC_PLUGIN_URL . 'assets/js/plugin/jquery.countdown.js', array( 'jquery' ), GFC_PLUGIN_VERSION );
+		wp_register_script( 'form-countdown-underscore-script', GFC_PLUGIN_URL . 'assets/js/plugin/underscore-min.js', array( 'jquery' ), GFC_PLUGIN_VERSION );
+		wp_register_style( 'form-countdown-jquery-countdown-layout-1-style', GFC_PLUGIN_URL . 'assets/css/plugin/jquery.countdown-layout-1.css', array(), GFC_PLUGIN_VERSION );
 	}
 
 
@@ -325,12 +325,12 @@ class Give_Donation_Duration_Metabox_Settings {
 	 * @param $form_id
 	 */
 	public function validate_settings( $form_id ) {
-		if ( ! gdd_get_form_close_date( $form_id ) ) {
-			update_post_meta( $form_id, 'donation-duration-close-form', 'disabled' );
+		if ( ! gfc_get_form_close_date( $form_id ) ) {
+			update_post_meta( $form_id, 'form-countdown-close-form', 'disabled' );
 		}
 	}
 }
 
 
 // initialize.
-Give_Donation_Duration_Metabox_Settings::get_instance()->setup_params()->setup_hooks();
+Give_Form_Countdown_Metabox_Settings::get_instance()->setup_params()->setup_hooks();
