@@ -60,7 +60,11 @@ add_action( 'give_post_form_output', 'gfc_add_post_form_end_message' );
  */
 function gfc_add_pre_form_countdown_clock( $form_id ){
 	// Check if time achieved or not.
-	if ( ! gfc_is_form_has_limited_duration( $form_id ) || give_is_limit_donation_time_achieved( $form_id ) ) {
+	if (
+		! gfc_is_form_has_limited_duration( $form_id )
+		|| give_is_limit_donation_time_achieved( $form_id )
+		|| ! give_is_setting_enabled( get_post_meta( $form_id, 'form-countdown-countdown-clock', true ) )
+	) {
 		return false;
 	}
 
