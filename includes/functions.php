@@ -162,7 +162,8 @@ function gfc_get_message( $form_id ) {
 	 * @param string $message
 	 * @param int    $form_id
 	 */
-	$message = apply_filters( 'give_donation_duration_message', wpautop( $message ) );
 
-	return $message;
+	$message = '<div class="gfc-message">' . apply_filters( 'the_content', wpautop( $message ) ) . '</div>';
+    
+	return apply_filters('give_donation_duration_message', $message);
 }
