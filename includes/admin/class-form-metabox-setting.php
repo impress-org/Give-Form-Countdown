@@ -177,7 +177,7 @@ class Give_Form_Countdown_Metabox_Settings {
 						'name'        => __( 'Duration ended message', 'give-form-countdown' ),
 						'type'        => 'wysiwyg',
 						'attributes'  => array(
-							'placeholder' => __( 'Thank you to all our donors, we have met our fundraising goal.', 'give-form-countdown' ),
+							'placeholder' => __( 'Thank you to all our donors, this campaign has ended.', 'give-form-countdown' ),
 						),
 						'description' => __( 'This is the content that will appear in your form when the duration has ended.', 'give-form-countdown' ),
 					),
