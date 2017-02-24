@@ -1,19 +1,34 @@
 .gfc-clock-wrap {
-	margin: 0 auto;
-	width: 355px;
+	margin: 0 0 30px;
+	width: 350px;
 	padding-bottom: 24px;
+	line-height: 0;
+    letter-spacing: 0;
+    max-width: 100%;
 }
-.gfc-clock-wrap .countdown-container {
-	height: 130px;
+
+body .gfc-clock-wrap * {
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+    font-size: 16px;
 }
+
+.gfc-clock-wrap:before, .gfc-clock-wrap:after {
+	content: ' ';
+	clear: both;
+	display: table;
+}
+
 .gfc-clock-wrap .time {
 	border-radius: 5px;
 	box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
 	display: inline-block;
 	text-align: center;
 	position: relative;
-	height: 95px;
+	height: 92px;
 	width: 65px;
+    max-width: 18%;
 
 	-webkit-perspective: 479px;
 	-moz-perspective: 479px;
@@ -44,7 +59,7 @@
 	color: #f8f8f8;
 	display: block;
 	font-family: 'Oswald', sans-serif;
-	font-size: 2em;
+	font-size: 40px;
 	line-height: 2.4em;
 	overflow: hidden;
 	position: absolute;
@@ -99,12 +114,12 @@
 .gfc-clock-wrap .count.next {
 }
 .gfc-clock-wrap .label {
-	font-size: normal;
-	margin-top: 5px;
-	display: block;
-	position: absolute;
-	top: 95px;
-	width: 100%;
+    font-size: 14px;
+    display: block;
+    position: absolute;
+    top: 105px;
+    width: 100%;
+    color: #777;
 }
 /* Animation start */
 .gfc-clock-wrap .count.curr.top {
@@ -153,24 +168,4 @@
 
 .gfc-clock-wrap .gfc-time-length-3{
 	width:80px;
-}
-@media screen and (max-width: 48em) {
-	.gfc-clock-wrap {
-		width: 100%;
-	}
-	.gfc-clock-wrap .countdown-container {
-		height: 100px;
-	}
-	.gfc-clock-wrap .time {
-		height: 70px;
-		width: 48px;
-	}
-	.gfc-clock-wrap .count {
-		font-size: 1.5em;
-		line-height: 70px;
-	}
-	.gfc-clock-wrap .label {
-		font-size: 0.8em;
-		top: 72px;
-	}
 }

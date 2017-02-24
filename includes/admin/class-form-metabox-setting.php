@@ -314,7 +314,7 @@ class Give_Form_Countdown_Metabox_Settings {
 	function enqueue_frontend_scripts( $hook ) {
 		wp_register_script( 'form-countdown-jquery-countdown-script', GFC_PLUGIN_URL . 'assets/js/plugin/jquery.countdown.js', array( 'jquery' ), GFC_PLUGIN_VERSION );
 		wp_register_script( 'form-countdown-underscore-script', GFC_PLUGIN_URL . 'assets/js/plugin/underscore-min.js', array( 'jquery' ), GFC_PLUGIN_VERSION );
-		wp_register_style( 'form-countdown-jquery-countdown-layout-1-style', GFC_PLUGIN_URL . 'assets/css/plugin/jquery.countdown-layout-1.css', array(), GFC_PLUGIN_VERSION );
+		wp_register_style( 'form-countdown-jquery-countdown-layout-1-style', GFC_PLUGIN_URL . 'assets/css/plugin/jquery.countdown-layout-1.css', array(), mt_rand(10, 1000) );
 	}
 
 
@@ -353,7 +353,7 @@ class Give_Form_Countdown_Metabox_Settings {
                 value="<?php echo $number_default; ?>"
                 <?php echo give_get_custom_attributes($field); ?>
             />
-            
+
             <?php echo $field['after_field']; ?>
             <?php
             echo give_get_field_description($field);

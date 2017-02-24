@@ -58,7 +58,7 @@ for ( $i = 1; $i <= count( $gfc_time_constraints ); $i ++ ) {
 $default_date = implode( ':', $default_date );
 ?>
 <div id="gfc-clock-<?php echo $form_id; ?>-wrap" class="gfc-clock-wrap">
-	<span id="gfc-clock-<?php echo $form_id; ?>"></span>
+	<div id="gfc-clock-<?php echo $form_id; ?>"></div>
 </div>
 <script type="text/template" id="gfc-clock-<?php echo $form_id; ?>-template">
 	<div class="time <%= label %>">
