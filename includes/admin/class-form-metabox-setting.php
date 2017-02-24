@@ -289,7 +289,6 @@ class Give_Form_Countdown_Metabox_Settings {
 		}
 
 		wp_enqueue_script( 'jquery-ui-datepicker' );
-		wp_register_script( 'form-countdown-jquery-countdown', GFC_PLUGIN_URL . 'assets/js/plugin/jquery.countdown.js', array( 'jquery' ), GFC_PLUGIN_VERSION );
 		wp_enqueue_script( 'form-countdown-admin-script', GFC_PLUGIN_URL . 'assets/js/admin/admin-script.js', array( 'jquery' ), GFC_PLUGIN_VERSION );
 
 		$gdc_vars = array(
