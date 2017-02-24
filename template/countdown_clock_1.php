@@ -73,7 +73,7 @@ $default_date = implode( ':', $default_date );
 
 	jQuery(window).on('load', function () {
 		var labels   = ['<?php echo implode( '\',\'', $gfc_time_constraints ); ?>'],
-			nextYear = '<?php echo get_date_from_gmt( gfc_get_form_close_date( $form_id, 'Y/m/d H:i:s' ), 'Y/m/d H:i:s' ); ?>',
+			nextYear = '<?php echo get_date_from_gmt( gfc_get_form_close_date( $form_id, 'Y-m-d H:i:s' ), 'Y/m/d H:i:s' ); ?>',
 			template = _.template(jQuery("#gfc-clock-<?php echo esc_js( $form_id ); ?>-template").html()),
 			currDate = nextDate = '<?php echo $default_date; ?>',
 			$gfc_clock = jQuery("#gfc-clock-<?php echo esc_js( $form_id ); ?>");
