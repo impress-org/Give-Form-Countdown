@@ -168,6 +168,7 @@ class Give_Form_Countdown_Metabox_Settings {
 						'name'        => __( 'End Time', 'give-form-countdown' ),
 						'type'        => 'select',
 						'options'     => gfc_get_time_list(),
+                        'default'     => '1800',
 						'description' => __( 'Set the time of day when the duration ends.', 'give-form-countdown' ),
 					),
 

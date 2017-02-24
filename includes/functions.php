@@ -105,7 +105,8 @@ function gfc_get_form_close_date( $form_id, $date_format = '' ) {
  */
 function gfc_get_time_list() {
 	$times = array(
-		'0100' => __( '1:00 AM', 'give-form-countdown' ),
+        '1200' => __( '12:00 AM', 'give-form-countdown' ),
+	    '0100' => __( '1:00 AM', 'give-form-countdown' ),
 		'0200' => __( '2:00 AM', 'give-form-countdown' ),
 		'0300' => __( '3:00 AM', 'give-form-countdown' ),
 		'0400' => __( '4:00 AM', 'give-form-countdown' ),
@@ -116,8 +117,8 @@ function gfc_get_time_list() {
 		'0900' => __( '9:00 AM', 'give-form-countdown' ),
 		'1000' => __( '10:00 AM', 'give-form-countdown' ),
 		'1100' => __( '11:00 AM', 'give-form-countdown' ),
-		'1200' => __( '12:00 AM', 'give-form-countdown' ),
-		'1300' => __( '1:00 PM', 'give-form-countdown' ),
+        '2400' => __( '12:00 PM', 'give-form-countdown' ),
+        '1300' => __( '1:00 PM', 'give-form-countdown' ),
 		'1400' => __( '2:00 PM', 'give-form-countdown' ),
 		'1500' => __( '3:00 PM', 'give-form-countdown' ),
 		'1600' => __( '4:00 PM', 'give-form-countdown' ),
@@ -128,7 +129,6 @@ function gfc_get_time_list() {
 		'2100' => __( '9:00 PM', 'give-form-countdown' ),
 		'2200' => __( '10:00 PM', 'give-form-countdown' ),
 		'2300' => __( '11:00 PM', 'give-form-countdown' ),
-		'2400' => __( '12:00 PM', 'give-form-countdown' ),
 	);
 
 	// Format time  with wp time format setting.
@@ -164,6 +164,6 @@ function gfc_get_message( $form_id ) {
 	 */
 
 	$message = '<div class="gfc-message">' . apply_filters( 'the_content', wpautop( $message ) ) . '</div>';
-    
+
 	return apply_filters('give_donation_duration_message', $message);
 }
