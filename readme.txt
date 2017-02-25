@@ -93,9 +93,10 @@ Give Form Countdown is hosted publicly on Github. We'd love your feedback and su
 
 == Screenshots ==
 
-1. The Form Countdown form edit settings.
-2. The countdown clock at the top of the donation form
-3. A custom Duration Achieved message shown replacing your donation form.
+1. The Form Countdown Clock on a donation form.
+2. The "Duration Ended" message displayed in place of a donation form when the countdown has ended.
+3. You can choose to show either the Donation Ended or Goal Achieved message when a Goal is achieved.
+4. The Form Countdown Settings.
 
 == Changelog ==
 

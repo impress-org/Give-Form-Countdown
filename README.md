@@ -1,4 +1,12 @@
 # Give Form Countdown #
+Contributors: givewp, wordimpress, ravinderk, dlocc, webdevmattcrom
+Donate link: https://github.com/WordImpress/Give-Form-Countdown
+Tags: givewp, donation, donations, time limit, end campaign, duration achieved, close form, donation limit
+Requires at least: 4.3
+Tested up to: 4.7.2
+Stable tag: 1.0
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
 A Give Add-on which allows you to set a number of days or a specific date and time for which your donation form will end and display a custom message.
 
@@ -85,9 +93,10 @@ Give Form Countdown is hosted publicly on Github. We'd love your feedback and su
 
 ## Screenshots ##
 
-1. The Form Countdown form edit settings.
-2. The countdown clock at the top of the donation form
-3. A custom Duration Achieved message shown replacing your donation form.
+1. The Form Countdown Clock on a donation form.
+2. The "Duration Ended" message displayed in place of a donation form when the countdown has ended.
+3. You can choose to show either the Donation Ended or Goal Achieved message when a Goal is achieved.
+4. The Form Countdown Settings.
 
 ## Changelog ##
 
