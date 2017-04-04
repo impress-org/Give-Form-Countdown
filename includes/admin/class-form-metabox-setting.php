@@ -340,8 +340,13 @@ class Give_Form_Countdown_Metabox_Settings {
 	public function gfc_number_field( $field ) {
 
 		global $thepostid;
-		$field['value'] = esc_attr( give_get_field_value( $field, $thepostid ) );
-		$field['min']   = esc_attr( $field['min'] );
+		$field['value']         = esc_attr( give_get_field_value( $field, $thepostid ) );
+		$field['min']           = esc_attr( $field['min'] );
+		$field['wrapper_class'] = ! empty( $field['wrapper_class'] ) ? $field['wrapper_class'] : '';
+		$field['before_field']  = ! empty( $field['before_field'] ) ? $field['before_field'] : '';
+		$field['after_field']   = ! empty( $field['after_field'] ) ? $field['after_field'] : '';
+		$field['style']         = ! empty( $field['style'] ) ? $field['style'] : '';
+
 
 		$number_default = empty( $field['value'] ) ? '10' : esc_attr( $field['value'] );
 		$number_min     = empty( $field['min'] ) ? '1' : $field['min'];
