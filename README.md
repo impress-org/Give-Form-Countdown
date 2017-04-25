@@ -1,16 +1,16 @@
-# Give Form Countdown #
+=== Give Form Countdown ===
 Contributors: givewp, wordimpress, ravinderk, dlocc, webdevmattcrom
 Donate link: https://github.com/WordImpress/Give-Form-Countdown
 Tags: givewp, donation, donations, time limit, end campaign, duration achieved, close form, donation limit
 Requires at least: 4.3
-Tested up to: 4.7.2
-Stable tag: 1.0
+Tested up to: 4.7.4
+Stable tag: 1.0.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
 A Give Add-on which allows you to set a number of days or a specific date and time for which your donation form will end and display a custom message.
 
-## Description ##
+== Description ==
 
 Form Countdown is a [Give](https://givewp.com) Add-on allows you to set a number of days or a specific date and time for which your donation form will end and display a custom message.
 
@@ -39,15 +39,15 @@ There you'll see our tabbed "Donation Form Options" interface. At the bottom is 
 > 
 > If you are enjoying Give Form Countdown please consider giving us your feedback and rating.
 
-## Installation ##
+== Installation ==
 
-### Minimum Requirements ###
+= Minimum Requirements =
 
 * WordPress 4.3 or greater
 * PHP version 5.3 or greater
 * MySQL version 5.0.15 or greater
 
-### Automatic installation ###
+= Automatic installation =
 
 **NOTE:** Before installing Give Form Countdown, you must have the free [Give Donation plugin](https://wordpress.org/plugins/give/) installed and activated on your website.
 
@@ -55,32 +55,32 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 In the search field type "Give Form Countdown" and click Search Plugins. Once you have found the plugin you can view details about it such as the the point release, ratings and description. Most importantly of course, you can install it by simply clicking "Install Now".
 
-### Manual installation ###
+= Manual installation =
 
 The manual installation method involves downloading the plugin and uploading it to your server via your favorite FTP application. The WordPress codex contains [instructions on how to do this here](http://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation).
 
-### Updating ###
+= Updating =
 
 Automatic updates should work like a charm; as always though, ensure you backup your site before doing any plugin or theme updates just in case. If you have any trouble with an update, try out our [WP-Rollback plugin](https://wordpress.org/plugins/wp-rollback) which lets you revert to previous versions of WordPress plugins or themes with just a couple clicks.
 
 
-## Frequently Asked Questions ##
+== Frequently Asked Questions ==
 
-### This sounds great, but what is Give? ###
+= This sounds great, but what is Give? =
 
 [Give](https://givewp.com) is the most robust WordPress plugin available for accepting online donations. Give provides you with powerful features helping you raise more funds for your cause from one, effective, platform.
 
-### My form also has a Goal. How do these work together? ###
+= My form also has a Goal. How do these work together? =
 
 They work great together. If you've chosen a Goal for your form and NOT chosen to close it when the Goal is achieved, and the duration is not yet ended, you will continue to be able to receive donations and they will be reflected in the Progress Bar. Once the Duration end is reached, you'll be able to see the custom message you chose.
 
 If you choose to close the form when your Goal is reached, you can choose either to show a simple message in your "Donation Goal" settings, or opt to show the "Duration achieved message" instead.
 
-### How can I test the completion message? ###
+= How can I test the completion message? =
 
 The easiest way is to manually change the date of your duration to be in the past. The datepicker won't let you choose a date in the past, but you can manually change it in the text field after the datepicker populates it.
 
-### Where can I submit Support Questions? ###
+= Where can I submit Support Questions? =
 
 If you have purchased any of our Premium Add-ons, we can provide with your [Priority Support here](https://givewp.com/support).
 
@@ -88,22 +88,26 @@ If you are a free Give user and have a general question about Give, submit a tic
 
 Otherwise, if your question is specific to Give Form Countdown we're happy to answer your questions [here](https://wordpress.org/support/plugin/give-form-countdown).
 
-### I have a feature request, or would like to contribute to this plugin. Where can I do that? ###
+= I have a feature request, or would like to contribute to this plugin. Where can I do that? =
 Give Form Countdown is hosted publicly on Github. We'd love your feedback and suggestions [there](https://github.com/WordImpress/Give-Form-Countdown/issues).
 
-## Screenshots ##
+== Screenshots ==
 
 1. The Form Countdown Clock on a donation form.
 2. The "Duration Ended" message displayed in place of a donation form when the countdown has ended.
 3. You can choose to show either the Donation Ended or Goal Achieved message when a Goal is achieved.
 4. The Form Countdown Settings.
 
-## Changelog ##
+== Changelog ==
 
-### 1.0 ###
+= 1.0.1 =
+* Compatibility with PHP 5.3
+* Better form default settings
+
+= 1.0 =
 * Initial release
 
-## Upgrade Notice ##
+== Upgrade Notice ==
 
-### 1.0 ###
+= 1.0 =
 This is the initial release. Thanks for installing!
