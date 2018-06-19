@@ -4,12 +4,16 @@
  *
  * @since 1.0
  *
- * @param bool $is_closed
- * @param int  $form_id
+ * @param bool $is_closed   Form closed or open.
+ * @param int  $form_object Form Object.
  *
  * @return bool
  */
-function gfc_form_close( $is_closed, $form_id ) {
+function gfc_form_close( $is_closed, $form_object ) {
+
+	// Get Form ID.
+	$form_id = $form_object->ID;
+
 	// Check if time achieved or not.
 	if ( give_is_limit_donation_time_achieved( $form_id )  && 'close_form' === get_post_meta( $form_id, 'form-countdown-message-achieved-position', true ) ) {
 		return true;
