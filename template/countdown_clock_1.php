@@ -51,7 +51,7 @@ $gfc_time_constraints = array_filter(
 
 
 // Set default date.
-$default_date = '';
+$default_date = array();
 for ( $i = 1; $i <= count( $gfc_time_constraints ); $i ++ ) {
 	$default_date[] = '00';
 }
