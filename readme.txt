@@ -2,9 +2,10 @@
 Contributors: givewp, wordimpress, ravinderk, dlocc, webdevmattcrom
 Donate link: https://github.com/WordImpress/Give-Form-Countdown
 Tags: givewp, donation, donations, time limit, end campaign, duration achieved, close form, donation limit
-Requires at least: 4.3
-Tested up to: 4.7.4
+Requires at least: 4.8
+Tested up to: 4.9
 Stable tag: 1.0.1
+Requires Give: 2.1.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -43,7 +44,7 @@ There you'll see our tabbed "Donation Form Options" interface. At the bottom is 
 
 = Minimum Requirements =
 
-* WordPress 4.3 or greater
+* WordPress 4.8 or greater
 * PHP version 5.3 or greater
 * MySQL version 5.0.15 or greater
 
@@ -100,14 +101,10 @@ Give Form Countdown is hosted publicly on Github. We'd love your feedback and su
 
 == Changelog ==
 
-= 1.0.1 =
-* Compatibility with PHP 5.3
-* Better form default settings
+= 1.0.1: July 5th, 2018 =
+* Fix: Compatibility with Give 2.1+.
+* Fix: Improved compatibility with PHP 5.3
+* Fix: Better form default settings.
 
 = 1.0 =
 * Initial release
-
-== Upgrade Notice ==
-
-= 1.0 =
-This is the initial release. Thanks for installing!

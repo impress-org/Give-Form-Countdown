@@ -5,7 +5,7 @@
  * Description: Accept donations which limited by duration with Give.
  * Author: WordImpress
  * Author URI: https://wordimpress.com
- * Version: 1.0
+ * Version: 1.0.1
  * Text Domain: give-form-countdown
  * Domain Path: /languages
  * GitHub Plugin URI: https://github.com/WordImpress/Give-Form-Countdown
@@ -60,11 +60,11 @@ final class Give_Form_Countdown {
 	 */
 	public function set_constants() {
 		// Global Params.
-		define( 'GFC_PLUGIN_VERSION', 1.0 );
+		define( 'GFC_PLUGIN_VERSION', '1.0.1' );
 		define( 'GFC_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 		define( 'GFC_PLUGIN_URL', plugins_url( '/', __FILE__ ) );
 		define( 'GFC_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-		define( 'GFC_MIN_GIVE_VER', 1.8 );
+		define( 'GFC_MIN_GIVE_VER', '2.1.0' );
 
 		return self::$instance;
 	}
