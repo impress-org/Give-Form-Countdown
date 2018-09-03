@@ -29,7 +29,7 @@ if ( ! class_exists( 'Give_Form_Countdown' ) ) {
 		/**
 		 * Notices (array)
 		 *
-		 * @since 1.0
+		 * @since 1.0.2
 		 *
 		 * @var array
 		 */
@@ -65,7 +65,7 @@ if ( ! class_exists( 'Give_Form_Countdown' ) ) {
 		/**
 		 * Setup Give Form Countdown.
 		 *
-		 * @since  1.0.0
+		 * @since 1.0.2
 		 * @access private
 		 */
 		private function setup() {
@@ -100,7 +100,7 @@ if ( ! class_exists( 'Give_Form_Countdown' ) ) {
 		/**
 		 * Load files.
 		 *
-		 * @since  1.0
+		 * @since 1.0.2
 		 * @access public
 		 * @return Give_Form_Countdown
 		 */
@@ -130,7 +130,7 @@ if ( ! class_exists( 'Give_Form_Countdown' ) ) {
 		/**
 		 * Check plugin environment.
 		 *
-		 * @since  1.0.0
+		 * @since 1.0.20
 		 * @access public
 		 *
 		 * @return bool
@@ -160,7 +160,7 @@ if ( ! class_exists( 'Give_Form_Countdown' ) ) {
 		/**
 		 * Check plugin for Give environment.
 		 *
-		 * @since  1.1.2
+		 * @since 1.0.2
 		 * @access public
 		 *
 		 * @return bool
@@ -188,7 +188,7 @@ if ( ! class_exists( 'Give_Form_Countdown' ) ) {
 		/**
 		 * Show activation banner for this add-on.
 		 *
-		 * @since 1.0
+		 * @since 1.0.2
 		 *
 		 * @return bool
 		 */
@@ -225,7 +225,7 @@ if ( ! class_exists( 'Give_Form_Countdown' ) ) {
 		/**
 		 * Allow this class and other classes to add notices.
 		 *
-		 * @since 1.0
+		 * @since 1.0.2
 		 *
 		 * @param $slug
 		 * @param $class
@@ -241,7 +241,7 @@ if ( ! class_exists( 'Give_Form_Countdown' ) ) {
 		/**
 		 * Display admin notices.
 		 *
-		 * @since 1.0
+		 * @since 1.0.2
 		 */
 		public function admin_notices() {
 
