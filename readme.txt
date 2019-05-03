@@ -3,7 +3,7 @@ Contributors: givewp, wordimpress, ravinderk, dlocc, webdevmattcrom
 Donate link: https://github.com/WordImpress/Give-Form-Countdown
 Tags: givewp, donation, donations, time limit, end campaign, duration achieved, close form, donation limit
 Requires at least: 4.8
-Tested up to: 4.9
+Tested up to: 5.2
 Stable tag: 1.0.1
 Requires Give: 2.1.0
 License: GPLv3 or later
