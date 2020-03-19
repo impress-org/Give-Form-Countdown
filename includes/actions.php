@@ -88,9 +88,8 @@ function gfc_add_pre_form_countdown_clock( $form_id ){
 
 
 	if( 'countdown_clock_1.php' === wp_basename( $countdown_clock ) ) {
-		wp_enqueue_script( 'form-countdown-jquery-countdown-script' );
-		wp_enqueue_script( 'form-countdown-underscore-script' );
-		wp_enqueue_style( 'form-countdown-jquery-countdown-layout-1-style' );
+		wp_enqueue_script( 'form-countdown-flipdown-script' );
+		wp_enqueue_style( 'form-countdown-flipdown-style' );
 
 		include $countdown_clock;
 	}
