@@ -44,6 +44,11 @@ class Give_Form_Countdown_Metabox_Settings {
 	 * Give_Form_Countdown_Metabox_Settings constructor.
 	 */
 	private function __construct() {
+		
+		$this->id     = 'gfc_form_settings';
+		$this->prefix = '_gfc_';
+		add_filter( 'give_metabox_form_data_settings', array( $this, 'setup_setting' ), 999 );
+	
 	}
 
 
@@ -85,8 +90,6 @@ class Give_Form_Countdown_Metabox_Settings {
 	 * @access public
 	 */
 	public function setup_hooks() {
-		// Add settings.
-		add_filter( 'give_metabox_form_data_settings', array( $this, 'setup_setting' ), 999 );
 
 		// Enqueue scripts.
 		add_filter( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ), 999 );
@@ -111,111 +114,93 @@ class Give_Form_Countdown_Metabox_Settings {
 	 * @return mixed
 	 */
 	public function setup_setting( $settings ) {
-
-		// Setup settings.
-		$new_settings = array(
-			$this->id => array(
-				'id'        => $this->id,
-				'title'     => $this->label,
-				'icon-html' => '<span class="dashicons dashicons-clock" style="font-size: 15px;text-align: left;line-height: 20px"></span>',
-				'fields'    => array(
-					// Close Form.
-					array(
-						'id'          => 'form-countdown-close-form',
-						'name'        => __( 'Duration', 'give-form-countdown' ),
-						'type'        => 'radio_inline',
-						'default'     => 'disabled',
-						'options'     => array(
-							'enabled'  => __( 'Enabled', 'give-form-countdown' ),
-							'disabled' => __( 'Disabled', 'give-form-countdown' ),
-						),
-						'description' => __( 'Enable a duration for this form and display a message when the duration ends.', 'give-form-countdown' ),
+        
+        // Custom metabox settings.
+		$settings["{$this->id}_tab"] = array(
+			'id'        => $this->id,
+			'title'     => $this->label,
+			'icon-html' => '<span class="dashicons dashicons-clock"></span>',
+			'fields'    => array(
+				// Close Form.
+				array(
+					'id'          => 'form-countdown-close-form',
+					'name'        => __( 'Show Countdown', 'give-form-countdown' ),
+					'type'        => 'radio_inline',
+					'default'     => 'disabled',
+					'options'     => array(
+						'enabled'  => __( 'Enabled', 'give-form-countdown' ),
+						'disabled' => __( 'Disabled', 'give-form-countdown' ),
 					),
+					'description' => __( 'Enable a duration for this form and display a message when the duration ends.', 'give-form-countdown' ),
+				),
 
-					// Donation duration type.
-					array(
-						'id'          => 'form-countdown-by',
-						'name'        => __( 'Timeframe', 'give-form-countdown' ),
-						'type'        => 'radio_inline',
-						'default'     => 'number_of_days',
-						'options'     => array(
-							'number_of_days'      => __( 'Number of days', 'give-form-countdown' ),
-							'end_on_day_and_time' => __( 'Specific day & time', 'give-form-countdown' ),
-						),
-						'description' => __( 'Choose how the end of the duration is calculated.', 'give-form-countdown' ),
+				// Date
+				array(
+					'id'          => 'form-countdown-on-date',
+					'name'        => __( 'End Date', 'give-form-countdown' ),
+					'type'        => 'text-medium',
+					'description' => __( 'Set the date when the duration ends.', 'give-form-countdown' ),
+				),
+
+				// Time
+				array(
+					'id'          => 'form-countdown-on-time',
+					'name'        => __( 'End Time', 'give-form-countdown' ),
+					'type'        => 'select',
+					'options'     => gfc_get_time_list(),
+					'default'     => '1800',
+					'description' => __( 'Set the time of day when the duration ends.', 'give-form-countdown' ),
+				),
+
+				//Color
+				array(
+					'id'		  => 'form-countdown-theme',
+					'name'		  => __( 'Clock Color Scheme', 'give-form-countdown'),
+					'type'		  => 'select',
+					'options'	  => array(
+						'light'	  => __('Light', 'give-form-countdown'),
+						'dark'	  => __('Dark', 'give-form-countdown'),
+						'custom'  => __('Custom', 'give-form-countdown'),
 					),
+					'default'	  => 'light'
+				),
 
-					// Days.
-					array(
-						'id'          => 'form-countdown-in-number-of-days',
-						'name'        => __( 'Number of Days', 'give-form-countdown' ),
-						'type'        => 'number',
-						'min'         => '10',
-                        'default'     => '30',
-						'description' => __( 'Set the number of days from the date of publication that the duration should last.', 'give-form-countdown' ),
-                        'callback'    => array($this, 'gfc_number_field'),
+				//Custom Color Picker
+				array(
+					'id'		  => 'form-countdown-custom-theme-picker',
+					'name'		  => __('Pick Your Custom Color'),
+					'type'		  => 'colorpicker',
+				),
+
+				// Duration achieved message.
+				array(
+					'id'          => 'form-countdown-message',
+					'name'        => __( 'End Message', 'give-form-countdown' ),
+					'type'        => 'wysiwyg',
+					'default'  	  => __( 'Thank you to all our donors, 		this campaign has ended.', 'give-form-countdown' ),
+					'description' => __( 'Enter content that appears in your form when the duration ends.', 'give-form-countdown' ),
+					'attributes'  => array(
+						'textarea_rows' => 10,
 					),
+				),
 
-					// Date
-					array(
-						'id'          => 'form-countdown-on-date',
-						'name'        => __( 'End Date', 'give-form-countdown' ),
-						'type'        => 'text-medium',
-						'description' => __( 'Set the date when the duration ends.', 'give-form-countdown' ),
+				// Duration achieved message position.
+				array(
+					'id'          => 'form-countdown-message-achieved-position',
+					'name'        => __( 'End Message Position', 'give-form-countdown' ),
+					'type'        => 'radio',
+					'default'     => 'close_form',
+					'options'     => array(
+						'close_form' => __( 'Close the form and replace its content', 'give-form-countdown' ),
+						'above_form' => __( 'Keep the form open and show this message above the form', 'give-form-countdown' ),
+						'below_form' => __( 'Keep the form open and show this message below the form', 'give-form-countdown' ),
 					),
-
-					// Time
-					array(
-						'id'          => 'form-countdown-on-time',
-						'name'        => __( 'End Time', 'give-form-countdown' ),
-						'type'        => 'select',
-						'options'     => gfc_get_time_list(),
-                        'default'     => '1800',
-						'description' => __( 'Set the time of day when the duration ends.', 'give-form-countdown' ),
-					),
-
-                    // Countdown clock.
-                    array(
-                        'id'          => 'form-countdown-countdown-clock',
-                        'name'        => __( 'Countdown Clock', 'give-form-countdown' ),
-                        'type'        => 'radio_inline',
-                        'default'     => 'disabled',
-                        'options'     => array(
-                            'enabled'  => __( 'Enabled', 'give-form-countdown' ),
-                            'disabled' => __( 'Disabled', 'give-form-countdown' ),
-                        ),
-                        'description' => __( 'Enable to display a countdown clock in your form.', 'give-form-countdown' ),
-                    ),
-
-					// Duration achieved message.
-					array(
-						'id'          => 'form-countdown-message',
-						'name'        => __( 'End Message', 'give-form-countdown' ),
-						'type'        => 'wysiwyg',
-						'attributes'  => array(
-							'placeholder' => __( 'Thank you to all our donors, this campaign has ended.', 'give-form-countdown' ),
-						),
-						'description' => __( 'Enter content that appears in your form when the duration ends.', 'give-form-countdown' ),
-					),
-
-					// Duration achieved message position.
-					array(
-						'id'          => 'form-countdown-message-achieved-position',
-						'name'        => __( 'End Message Position', 'give-form-countdown' ),
-						'type'        => 'radio',
-						'default'     => 'close_form',
-						'options'     => array(
-							'close_form' => __( 'Close the form and replace its content', 'give-form-countdown' ),
-							'above_form' => __( 'Keep the form open and show this message above the form', 'give-form-countdown' ),
-							'below_form' => __( 'Keep the form open and show this message below the form', 'give-form-countdown' ),
-						),
-						'description' => __( 'Choose the position you want the "End Message" to appear in when the duration ends.', 'give-form-countdown' ),
-					),
+					'description' => __( 'Choose the position you want the "End Message" to appear in when the duration ends.', 'give-form-countdown' ),
 				),
 			),
 		);
 
-		return array_merge( $settings, $new_settings );
+		return $settings;
 	}
 
 	/**
@@ -362,7 +347,7 @@ class Give_Form_Countdown_Metabox_Settings {
 					id="<?php echo esc_attr( $field['id'] ); ?>"
 					min="<?php echo $number_min; ?>"
 					value="<?php echo $number_default; ?>"
-				<?php echo give_get_custom_attributes( $field ); ?>
+				<?php echo $field['value']; ?>
 			/>
 
 			<?php echo $field['after_field']; ?>

@@ -13,7 +13,8 @@ jQuery(document).ready(function ($) {
 		$donation_duration_message_wysiwyg = $('#wp-form-countdown-message-wrap'),
 		$goal_edit_msg_link = '',
 		$duration_achieved_msg_position = $('.form-countdown-message-achieved-position_field'),
-		$countdown_clock = $('.form-countdown-countdown-clock_field');
+		$countdown_clock = $('.form-countdown-countdown-clock_field'),
+		$theme = $('.form-countdown-theme_field');
 
 	// Add warning.
 	if (!$donation_duration_message_wraning_wrap.length) {
@@ -66,6 +67,24 @@ jQuery(document).ready(function ($) {
 	}).change();
 
 	/**
+	 *  Show Custom Color
+	 */
+
+	$theme.on( 'change', function() {
+
+		var scheme_val = $( '.form-countdown-theme_field select' ).val(),
+		$custom_color = $('.form-countdown-custom-theme-picker_field');
+
+        if ( scheme_val === 'custom' ) {
+            //set price shows
+            $custom_color.show();
+        } else {
+            //multi-value shows
+            $custom_color.hide();
+        }
+    } ).change();
+
+	/**
 	 * Limit donation.
 	 */
 	$limit_donation_radio.change(function () {
@@ -97,12 +116,16 @@ jQuery(document).ready(function ($) {
 	$donation_goal.on('change', function () {
 		var selected_value = $('input[type="radio"]:checked', $(this)).val(),
 			close_form_value = $('input[type="radio"]:checked', $close_form_donation_achieved).val(),
-			donation_end_message_value = $('input[type="radio"]:checked', $donation_end_message).val();
+			donation_end_message_value = $('input[type="radio"]:checked',
+			$donation_duration_message_wysiwyg = $('#wp-form-countdown-message-wrap'),
+			$donation_end_message).val();
 
 		if ('enabled' === selected_value && 'enabled' === close_form_value && 'disabled' === donation_end_message_value) {
-			$donation_end_message.show();
+			$donation_end_message.show(),
+			$donation_duration_message_wysiwyg.show();
 		} else {
-			$donation_end_message.hide();
+			$donation_end_message.hide(),
+			$donation_duration_message_wysiwyg.hide();
 		}
 
 		$donation_end_message.change();

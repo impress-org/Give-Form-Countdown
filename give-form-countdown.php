@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name: Give - Form Countdown
- * Plugin URI: https://github.com/WordImpress/Give-Form-Countdown
+ * Plugin Name: Form Countdown for GiveWP
+ * Plugin URI: https://github.com/impress-org/give-form-countdown
  * Description: Accept donations which limited by duration with Give.
  * Author: WordImpress
  * Author URI: https://wordimpress.com
