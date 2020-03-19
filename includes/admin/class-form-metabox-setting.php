@@ -276,6 +276,7 @@ class Give_Form_Countdown_Metabox_Settings {
 			return;
 		}
 
+		wp_enqueue_style( 'form-countdown-admin-styles', GFC_PLUGIN_URL . 'assets/css/gfc-admin.css', array(), GFC_PLUGIN_VERSION, 'all' );
 		wp_enqueue_script( 'jquery-ui-datepicker' );
 		wp_enqueue_script( 'form-countdown-admin-script', GFC_PLUGIN_URL . 'assets/js/admin/admin-script.js', array( 'jquery' ), GFC_PLUGIN_VERSION );
 
@@ -298,7 +299,7 @@ class Give_Form_Countdown_Metabox_Settings {
 	 */
 	function enqueue_frontend_scripts( $hook ) {
 		wp_register_script( 'form-countdown-flipdown-script', GFC_PLUGIN_URL . 'assets/js/plugin/flipdown.min.js', array( 'jquery' ), GFC_PLUGIN_VERSION );
-		wp_register_style( 'form-countdown-flipdown-style', GFC_PLUGIN_URL . 'assets/css/plugin/flipdown.min.css', array(), mt_rand(10, 1000) );
+		wp_register_style( 'form-countdown-flipdown-style', GFC_PLUGIN_URL . 'assets/css/plugin/flipdown.min.css', array(), GFC_PLUGIN_VERSION );
 	}
 
 

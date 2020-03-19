@@ -7,55 +7,17 @@
  * @todo  : Add months time constraint.
  */
 
+$form_meta = get_post_meta($form_id);
+$theme = $form_meta['form-countdown-theme'][0];
 
-/**
- * Filter the option time constraints per form
- *
- * @since 1.0
- */
-$gfc_default_time_constraints = apply_filters(
-	"gfc_{$form_id}_countdown_clock_1_time_constraints",
-	array(
-		__( 'weeks', 'give-form-countdown' ),
-		__( 'days', 'give-form-countdown' ),
-	)
-);
+$date = $form_meta['form-countdown-on-date'][0] . ' ' . $form_meta['form-countdown-on-time'][0];
+ 
+//Create a new DateTime object using the date string above.
+$dateTime = new DateTime($date);
+ 
+//Format it into a Unix timestamp.
+$timestamp = $dateTime->format('U');
 
-/**
- * Filter the time constraints for all form.
- *
- * @since 1.0
- */
-$gfc_default_time_constraints = apply_filters(
-	"gfc_countdown_clock_1_time_constraints",
-	$gfc_default_time_constraints,
-	$form_id
-);
-
-// Time constraints supported weeks (optional), days (optional), hours, minutes, seconds.
-$gfc_time_constraints = array_filter(
-	array_merge(
-		$gfc_default_time_constraints,
-		array(
-			__( 'hours', 'give-form-countdown' ),
-			__( 'minutes', 'give-form-countdown' ),
-			__( 'seconds', 'give-form-countdown' ),
-		)
-	),
-
-	// Remove empty time constraints.
-	function ( $time_constraint ) {
-		return ! empty( $time_constraint );
-	}
-);
-
-
-// Set default date.
-$default_date = array();
-for ( $i = 1; $i <= count( $gfc_time_constraints ); $i ++ ) {
-	$default_date[] = '00';
-}
-$default_date = implode( ':', $default_date );
 ?>
 <div id="gfc-clock-<?php echo $form_id; ?>-wrap" class="gfc-clock-wrap">
 	<div id="flipdown-<?php echo $form_id; ?>" class="flipdown"></div>
@@ -65,7 +27,18 @@ $default_date = implode( ':', $default_date );
 	document.addEventListener('DOMContentLoaded', () => {
 
 		var twoDaysFromNow = (new Date().getTime() / 1000) + (86400 * 2) + 1;
+		var fiveSeconds = (new Date().getTime() / 1000) + 5;
+		
+		//Testing
+		var flipdown = new FlipDown(fiveSeconds,'flipdown-<?php echo $form_id; ?>', {theme: '<?php echo $theme; ?>'})
 
-		new FlipDown( twoDaysFromNow,'flipdown-<?php echo $form_id; ?>',{theme: 'dark'} ).start();
+		//var flipdown = new FlipDown(<?php echo $timestamp; ?>,'flipdown-<?php echo $form_id; ?>', {theme: '<?php echo $theme; ?>'})
+
+		.start()
+
+		// Do something when the countdown ends
+		.ifEnded(() => {
+			alert('The countdown has ended!');
+  		});
 	});
 </script>

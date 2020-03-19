@@ -28,7 +28,11 @@ jQuery(document).ready(function ($) {
 	 * Datepicker field.
 	 */
 	$('#form-countdown-on-date').datepicker({
-		minDate: 1
+		minDate: 1,
+		defaultDate: +7,
+		buttonText: '<span class="dashicons dashicons-calendar-alt"></span>',
+		dateFormat: 'yy-mm-dd',
+		showOn: 'both'
 	});
 
 	/**
