@@ -167,3 +167,74 @@ function gfc_get_message( $form_id ) {
 
 	return apply_filters('give_donation_duration_message', $message);
 }
+
+function gfc_output_custom_color_scheme($form_id) {
+	
+	$meta = get_post_meta($form_id);
+	$color = $meta['form-countdown-custom-theme-picker'][0];
+	
+	ob_start();
+	?>
+	<style>
+	/********** Theme: custom **********/
+	/* Font styles */
+	.flipdown.flipdown__theme-custom {
+	font-family: sans-serif;
+	font-weight: bold;
+	}
+	/* Rotor group headings */
+	.flipdown.flipdown__theme-custom .rotor-group-heading:before {
+	color: <?php echo gfc_adjustBrightness($color, $steps = '-50');?>;
+	}
+	/* Delimeters */
+	.flipdown.flipdown__theme-custom .rotor-group:nth-child(n+2):nth-child(-n+3):before,
+	.flipdown.flipdown__theme-custom .rotor-group:nth-child(n+2):nth-child(-n+3):after {
+	background-color: <?php echo $color;?>;
+	}
+	/* Rotor tops */
+	.flipdown.flipdown__theme-custom .rotor,
+	.flipdown.flipdown__theme-custom .rotor-top,
+	.flipdown.flipdown__theme-custom .rotor-leaf-front {
+	color: #FFFFFF;
+	background-color: <?php echo $color;?>;
+	}
+	/* Rotor bottoms */
+	.flipdown.flipdown__theme-custom .rotor-bottom,
+	.flipdown.flipdown__theme-custom .rotor-leaf-rear {
+	color: #EFEFEF;
+	background-color: <?php echo gfc_adjustBrightness($color, $steps = '-10');?>;
+	}
+	/* Hinge */
+	.flipdown.flipdown__theme-custom .rotor:after {
+	border-top: solid 1px <?php echo $color;?>;
+	}
+	</style>
+	<?php 
+	
+	$scheme = ob_get_clean();
+
+	return $scheme;
+}
+
+function gfc_adjustBrightness($hex, $steps) {
+    // Steps should be between -255 and 255. Negative = darker, positive = lighter
+    $steps = max(-255, min(255, $steps));
+
+    // Normalize into a six character long hex string
+    $hex = str_replace('#', '', $hex);
+    if (strlen($hex) == 3) {
+        $hex = str_repeat(substr($hex,0,1), 2).str_repeat(substr($hex,1,1), 2).str_repeat(substr($hex,2,1), 2);
+    }
+
+    // Split into three parts: R, G and B
+    $color_parts = str_split($hex, 2);
+    $return = '#';
+
+    foreach ($color_parts as $color) {
+        $color   = hexdec($color); // Convert to decimal
+        $color   = max(0,min(255,$color + $steps)); // Adjust color
+        $return .= str_pad(dechex($color), 2, '0', STR_PAD_LEFT); // Make two char hex code
+    }
+
+    return $return;
+}
