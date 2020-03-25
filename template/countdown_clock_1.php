@@ -39,18 +39,24 @@ if ($theme == 'custom') {
 			formwrap = document.getElementById("give-form-<?php echo $form_id?>-wrap");
 		
 		//Testing
-		var flipdown = new FlipDown(fiveSeconds,'flipdown-<?php echo $form_id; ?>', {theme: '<?php echo $theme; ?>'})
+		//var flipdown = new FlipDown(fiveSeconds,'flipdown-<?php echo $form_id; ?>', {theme: '<?php echo $theme; ?>'})
 
-		//var flipdown = new FlipDown(<?php echo $timestamp; ?>,'flipdown-<?php echo $form_id; ?>', {theme: '<?php echo $theme; ?>'})
+		var flipdown = new FlipDown(<?php echo $timestamp; ?>,'flipdown-<?php echo $form_id; ?>', {theme: '<?php echo $theme; ?>'})
 
 		.start()
 
 		// Do something when the countdown ends
-
-		//.ifEnded(() => {
-			//jQuery(formwrap).fadeOut(500);
-			//jQuery('.gfc-closed-message').fadeIn(1000);
-  		//});
+		<?php switch($closeaction) {
+			case 'close_form': 
+				print_r(".ifEnded(() => {jQuery(formwrap).fadeOut(500);jQuery('.gfc-closed-message').fadeIn(1000);});");
+				break;
+			case 'message_and_form': 
+				print_r(".ifEnded(() => {jQuery('.gfc-closed-message').fadeIn(1000);});");
+				break;
+			default: 
+				return;
+		} ?>
+		
 	});
 
 	function hideGiveForm() {
