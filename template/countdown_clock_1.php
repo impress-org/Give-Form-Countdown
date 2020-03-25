@@ -25,9 +25,9 @@ if ($theme == 'custom') {
 }
 
 ?>
-<div id="gfc-clock-<?php echo $form_id; ?>-wrap" class="gfc-clock-wrap">
-	<div id="flipdown-<?php echo $form_id; ?>" class="flipdown"></div>
-	<div class="gfc-closed-message" style="display:none; margin: 1em 0; overflow:hidden;"><?php echo $form_meta['form-countdown-message'][0]?></div>
+<div id="gfc-clock-<?php echo esc_attr( $form_id ); ?>-wrap" class="gfc-clock-wrap">
+	<div id="flipdown-<?php echo esc_attr( $form_id ); ?>" class="flipdown"></div>
+	<div class="gfc-closed-message" style="display:none; margin: 1em 0; overflow:hidden;"><?php echo wp_kses_post( $form_meta['form-countdown-message'][0] ); ?></div>
 </div>
 
 <script>
@@ -39,19 +39,19 @@ if ($theme == 'custom') {
 			formwrap = document.getElementById("give-form-<?php echo $form_id?>-wrap");
 		
 		//Testing
-		//var flipdown = new FlipDown(fiveSeconds,'flipdown-<?php echo $form_id; ?>', {theme: '<?php echo $theme; ?>'})
+		var flipdown = new FlipDown(fiveSeconds,'flipdown-<?php echo $form_id; ?>', {theme: '<?php echo esc_attr( $theme ); ?>'})
 
-		var flipdown = new FlipDown(<?php echo $timestamp; ?>,'flipdown-<?php echo $form_id; ?>', {theme: '<?php echo $theme; ?>'})
+		//var flipdown = new FlipDown(<?php echo esc_attr( $timestamp ); ?>,'flipdown-<?php echo esc_attr( $form_id ); ?>', {theme: '<?php echo esc_attr( $theme ); ?>'})
 
 		.start()
 
 		// Do something when the countdown ends
 		<?php switch($closeaction) {
 			case 'close_form': 
-				print_r(".ifEnded(() => {jQuery(formwrap).fadeOut(500);jQuery('.gfc-closed-message').fadeIn(1000);});");
+				esc_js(print_r(".ifEnded(() => {jQuery(formwrap).fadeOut(500);jQuery('.gfc-closed-message').fadeIn(1000);});"));
 				break;
 			case 'message_and_form': 
-				print_r(".ifEnded(() => {jQuery('.gfc-closed-message').fadeIn(1000);});");
+				esc_js(print_r(".ifEnded(() => {jQuery('.gfc-closed-message').fadeIn(1000);});"));
 				break;
 			default: 
 				return;
@@ -60,7 +60,7 @@ if ($theme == 'custom') {
 	});
 
 	function hideGiveForm() {
-		var formwrap = document.getElementById("give-form-<?php echo $form_id?>-wrap");
+		var formwrap = document.getElementById("give-form-<?php echo esc_attr( $form_id ); ?>-wrap");
 		if (formwrap.style.display === "block") {
 			formwrap.style.display = "none";
 		} else {
