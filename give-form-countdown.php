@@ -88,13 +88,62 @@ if ( ! class_exists( 'Give_Form_Countdown' ) ) {
 		 */
 		public function set_constants() {
 			// Global Params.
-			define( 'GFC_PLUGIN_VERSION', '1.0.1' );
-			define( 'GFC_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
-			define( 'GFC_PLUGIN_URL', plugins_url( '/', __FILE__ ) );
-			define( 'GFC_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-			define( 'GFC_MIN_GIVE_VER', '2.1.0' );
+
+			// Defines addon version number for easy reference.
+			if ( ! defined( 'GFC_PLUGIN_VERSION' ) ) {
+				define( 'GFC_PLUGIN_VERSION', '1.0.2' );
+			}
+
+			// Set it to latest.
+			if ( ! defined( 'GFC_MIN_GIVE_VER' ) ) {
+				define( 'GFC_MIN_GIVE_VER', '2.3.0' );
+			}
+
+			if ( ! defined( 'GFC_FILE' ) ) {
+				define( 'GFC_FILE', __FILE__ );
+			}
+
+			if ( ! defined( 'GFC_PLUGIN_DIR' ) ) {
+				define( 'GFC_PLUGIN_DIR', plugin_dir_path( GFC_FILE ) );
+			}
+
+			if ( ! defined( 'GFC_PLUGIN_URL' ) ) {
+				define( 'GFC_PLUGIN_URL', plugin_dir_url( GFC_FILE ) );
+			}
+
+			if ( ! defined( 'GFC_PLUGIN_BASENAME' ) ) {
+				define( 'GFC_PLUGIN_BASENAME', plugin_basename( GFC_FILE ) );
+			}
+
+			if ( ! defined( 'GFC_SLUG' ) ) {
+				define( 'GFC_SLUG', 'give-form-countdown' );
+			}
 
 			return self::$instance;
+		}
+
+				/**
+		 * Loads the plugin language files.
+		 *
+		 * @since  1.0
+		 * @access public
+		 *
+		 * @return void
+		 */
+		public function load_textdomain() {
+
+			// Set filter for Give's languages directory
+			$give_lang_dir = dirname( plugin_basename( PER_FORM_CONFIRMATIONS_4_GIVEWP_FILE ) ) . '/languages/';
+			$give_lang_dir = apply_filters( 'pfconfs4givewp_languages_directory', $give_lang_dir );
+
+			// Traditional WordPress plugin locale filter.
+			$locale = is_admin() && function_exists( 'get_user_locale' ) ? get_user_locale() : get_locale();
+			$locale = apply_filters( 'plugin_locale', $locale, 'pfconfs-4-givewp' );
+
+			unload_textdomain( 'pfconfs-4-givewp' );
+			load_textdomain( 'pfconfs-4-givewp', WP_LANG_DIR . '/givewp-per-form-confirmations/' . $locale . '.mo' );
+			load_plugin_textdomain( 'pfconfs-4-givewp', false, $give_lang_dir );
+
 		}
 
 		/**
