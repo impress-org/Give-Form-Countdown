@@ -118,9 +118,6 @@ if ( ! class_exists( 'Give_Form_Countdown' ) ) {
 			// Load helper functions.
 			require_once GFC_PLUGIN_DIR . 'includes/functions.php';
 
-			// Load filters.
-			require_once GFC_PLUGIN_DIR . 'includes/filters.php';
-
 			// Load actions.
 			require_once GFC_PLUGIN_DIR . 'includes/actions.php';
 

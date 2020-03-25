@@ -98,8 +98,6 @@ class Give_Form_Countdown_Metabox_Settings {
 		// Validate setting.
 		add_action( 'give_post_process_give_forms_meta', array( $this, 'validate_settings' ) );
 
-		// Add setting to goal section.
-		add_filter( 'give_donation_goal_options', array( $this, 'add_goal_section_settings' ), 999999 );
 	}
 
 
@@ -172,7 +170,21 @@ class Give_Form_Countdown_Metabox_Settings {
 					'type'		  => 'colorpicker',
 				),
 
-				// Duration achieved message.
+				// Countdown achieved action.
+				array(
+					'id'          => 'form-countdown-achieved-action',
+					'name'        => __( 'Countdown Achieved Action', 'give-form-countdown' ),
+					'type'        => 'radio',
+					'default'     => 'close_form',
+					'options'     => array(
+						'close_form' => __( 'Close the form and replace it with a message', 'give-form-countdown' ),
+						'message_and_form' => __( 'Keep the form open and show this message above the form', 'give-form-countdown' ),
+						'dont_close' => __( 'Don\'t take any action', 'give-form-countdown' ),
+					),
+					'description' => __( 'Choose what action, if any, you want to see when the countdown reaches zero.', 'give-form-countdown' ),
+				),
+
+				// Countdown achieved message.
 				array(
 					'id'          => 'form-countdown-message',
 					'name'        => __( 'End Message', 'give-form-countdown' ),
@@ -183,73 +195,8 @@ class Give_Form_Countdown_Metabox_Settings {
 						'textarea_rows' => 10,
 					),
 				),
-
-				// Duration achieved message position.
-				array(
-					'id'          => 'form-countdown-message-achieved-position',
-					'name'        => __( 'End Message Position', 'give-form-countdown' ),
-					'type'        => 'radio',
-					'default'     => 'close_form',
-					'options'     => array(
-						'close_form' => __( 'Close the form and replace its content', 'give-form-countdown' ),
-						'above_form' => __( 'Keep the form open and show this message above the form', 'give-form-countdown' ),
-						'below_form' => __( 'Keep the form open and show this message below the form', 'give-form-countdown' ),
-					),
-					'description' => __( 'Choose the position you want the "End Message" to appear in when the duration ends.', 'give-form-countdown' ),
-				),
 			),
 		);
-
-		return $settings;
-	}
-
-	/**
-	 * Add settings to goal setting section.
-	 *
-	 * @since  1.0
-	 * @access public
-	 *
-	 * @param array $settings
-	 *
-	 * @return array
-	 */
-	public function add_goal_section_settings( $settings ) {
-		if ( ! empty( $settings['fields'] ) ) {
-			$goal_achieved_message_setting_index = null;
-			foreach ( $settings['fields'] as $index => $field ) {
-				if ( ! isset( $field['id'] ) ) {
-					continue;
-				}
-
-				if ( '_give_form_goal_achieved_message' === $field['id'] ) {
-					$goal_achieved_message_setting_index = $index;
-				}
-			}
-
-			if ( ! is_null( $goal_achieved_message_setting_index ) ) {
-				$gdc_setting = array(
-					array(
-						'id'          => 'form-countdown-use-end-message',
-						'name'        => __( 'Use Donation End Message', 'give-form-countdown' ),
-						'type'        => 'radio_inline',
-						'default'     => 'disabled',
-						'options'     => array(
-							'enabled'  => __( 'Enabled', 'give-form-countdown' ),
-							'disabled' => __( 'Disabled', 'give-form-countdown' ),
-						),
-						'description' => __( 'When goal is achieved, do you want to close the form and show the Form Countdown message', 'give-form-countdown' ),
-					),
-				);
-
-				$settings['fields'] = array_merge(
-					array_slice( $settings['fields'], 0, $goal_achieved_message_setting_index ),
-					$gdc_setting,
-					array_slice( $settings['fields'], $goal_achieved_message_setting_index )
-				);
-
-				$settings['fields'] = array_values( $settings['fields'] );
-			}
-		}
 
 		return $settings;
 	}
@@ -280,13 +227,6 @@ class Give_Form_Countdown_Metabox_Settings {
 		wp_enqueue_script( 'jquery-ui-datepicker' );
 		wp_enqueue_script( 'form-countdown-admin-script', GFC_PLUGIN_URL . 'assets/js/admin/admin-script.js', array( 'jquery' ), GFC_PLUGIN_VERSION );
 
-		$gdc_vars = array(
-			'duration_ended_message' => array(
-				'warning' => __( 'You are currently using \' Donation Goal\' message when form closes. Change that to set your custom message here.', 'give-form-countdown' ),
-			),
-		);
-
-		wp_localize_script( 'form-countdown-admin-script', 'gdc_vars', $gdc_vars );
 	}
 
 	/**

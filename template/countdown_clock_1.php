@@ -12,7 +12,8 @@ $theme = $form_meta['form-countdown-theme'][0];
 $custom_styles = gfc_output_custom_color_scheme($form_id);
 
 $date = $form_meta['form-countdown-on-date'][0] . ' ' . $form_meta['form-countdown-on-time'][0];
- 
+$closeaction = $form_meta['form-countdown-achieved-action'][0];
+
 //Create a new DateTime object using the date string above.
 $dateTime = new DateTime($date);
  
@@ -38,18 +39,18 @@ if ($theme == 'custom') {
 			formwrap = document.getElementById("give-form-<?php echo $form_id?>-wrap");
 		
 		//Testing
-		//var flipdown = new FlipDown(fiveSeconds,'flipdown-<?php echo $form_id; ?>', {theme: '<?php echo $theme; ?>'})
+		var flipdown = new FlipDown(fiveSeconds,'flipdown-<?php echo $form_id; ?>', {theme: '<?php echo $theme; ?>'})
 
-		var flipdown = new FlipDown(<?php echo $timestamp; ?>,'flipdown-<?php echo $form_id; ?>', {theme: '<?php echo $theme; ?>'})
+		//var flipdown = new FlipDown(<?php echo $timestamp; ?>,'flipdown-<?php echo $form_id; ?>', {theme: '<?php echo $theme; ?>'})
 
 		.start()
 
 		// Do something when the countdown ends
 
-		.ifEnded(() => {
-			jQuery(formwrap).fadeOut(500);
-			jQuery('.gfc-closed-message').fadeIn(1000);
-  		});
+		//.ifEnded(() => {
+			//jQuery(formwrap).fadeOut(500);
+			//jQuery('.gfc-closed-message').fadeIn(1000);
+  		//});
 	});
 
 	function hideGiveForm() {
