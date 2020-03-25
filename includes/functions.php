@@ -105,30 +105,30 @@ function gfc_get_form_close_date( $form_id, $date_format = '' ) {
  */
 function gfc_get_time_list() {
 	$times = array(
-        '1200' => __( '12:00 AM', 'give-form-countdown' ),
-	    '0100' => __( '1:00 AM', 'give-form-countdown' ),
-		'0200' => __( '2:00 AM', 'give-form-countdown' ),
-		'0300' => __( '3:00 AM', 'give-form-countdown' ),
-		'0400' => __( '4:00 AM', 'give-form-countdown' ),
-		'0500' => __( '5:00 AM', 'give-form-countdown' ),
-		'0600' => __( '6:00 AM', 'give-form-countdown' ),
-		'0700' => __( '7:00 AM', 'give-form-countdown' ),
-		'0800' => __( '8:00 AM', 'give-form-countdown' ),
-		'0900' => __( '9:00 AM', 'give-form-countdown' ),
-		'1000' => __( '10:00 AM', 'give-form-countdown' ),
-		'1100' => __( '11:00 AM', 'give-form-countdown' ),
-        '2400' => __( '12:00 PM', 'give-form-countdown' ),
-        '1300' => __( '1:00 PM', 'give-form-countdown' ),
-		'1400' => __( '2:00 PM', 'give-form-countdown' ),
-		'1500' => __( '3:00 PM', 'give-form-countdown' ),
-		'1600' => __( '4:00 PM', 'give-form-countdown' ),
-		'1700' => __( '5:00 PM', 'give-form-countdown' ),
-		'1800' => __( '6:00 PM', 'give-form-countdown' ),
-		'1900' => __( '7:00 PM', 'give-form-countdown' ),
-		'2000' => __( '8:00 PM', 'give-form-countdown' ),
-		'2100' => __( '9:00 PM', 'give-form-countdown' ),
-		'2200' => __( '10:00 PM', 'give-form-countdown' ),
-		'2300' => __( '11:00 PM', 'give-form-countdown' ),
+        '12:00:00' => __( '12:00 AM', 'give-form-countdown' ),
+	    '01:00:00' => __( '1:00 AM', 'give-form-countdown' ),
+		'02:00:00' => __( '2:00 AM', 'give-form-countdown' ),
+		'03:00:00' => __( '3:00 AM', 'give-form-countdown' ),
+		'04:00:00' => __( '4:00 AM', 'give-form-countdown' ),
+		'05:00:00' => __( '5:00 AM', 'give-form-countdown' ),
+		'06:00:00' => __( '6:00 AM', 'give-form-countdown' ),
+		'07:00:00' => __( '7:00 AM', 'give-form-countdown' ),
+		'08:00:00' => __( '8:00 AM', 'give-form-countdown' ),
+		'09:00:00' => __( '9:00 AM', 'give-form-countdown' ),
+		'10:00:00' => __( '10:00 AM', 'give-form-countdown' ),
+		'11:00:00' => __( '11:00 AM', 'give-form-countdown' ),
+        '24:00:00' => __( '12:00 PM', 'give-form-countdown' ),
+        '13:00:00' => __( '1:00 PM', 'give-form-countdown' ),
+		'14:00:00' => __( '2:00 PM', 'give-form-countdown' ),
+		'15:00:00' => __( '3:00 PM', 'give-form-countdown' ),
+		'16:00:00' => __( '4:00 PM', 'give-form-countdown' ),
+		'17:00:00' => __( '5:00 PM', 'give-form-countdown' ),
+		'18:00:00' => __( '6:00 PM', 'give-form-countdown' ),
+		'19:00:00' => __( '7:00 PM', 'give-form-countdown' ),
+		'20:00:00' => __( '8:00 PM', 'give-form-countdown' ),
+		'21:00:00' => __( '9:00 PM', 'give-form-countdown' ),
+		'22:00:00' => __( '10:00 PM', 'give-form-countdown' ),
+		'23:00:00' => __( '11:00 PM', 'give-form-countdown' ),
 	);
 
 	// Format time  with wp time format setting.
@@ -166,4 +166,75 @@ function gfc_get_message( $form_id ) {
 	$message = '<div class="gfc-message">' . apply_filters( 'the_content', wpautop( $message ) ) . '</div>';
 
 	return apply_filters('give_donation_duration_message', $message);
+}
+
+function gfc_output_custom_color_scheme($form_id) {
+	
+	$meta = get_post_meta($form_id);
+	$color = $meta['form-countdown-custom-theme-picker'][0];
+	
+	ob_start();
+	?>
+	<style>
+	/********** Theme: custom **********/
+	/* Font styles */
+	.flipdown.flipdown__theme-custom {
+	font-family: sans-serif;
+	font-weight: bold;
+	}
+	/* Rotor group headings */
+	.flipdown.flipdown__theme-custom .rotor-group-heading:before {
+	color: <?php echo gfc_adjustBrightness($color, $steps = '-50');?>;
+	}
+	/* Delimeters */
+	.flipdown.flipdown__theme-custom .rotor-group:nth-child(n+2):nth-child(-n+3):before,
+	.flipdown.flipdown__theme-custom .rotor-group:nth-child(n+2):nth-child(-n+3):after {
+	background-color: <?php echo $color;?>;
+	}
+	/* Rotor tops */
+	.flipdown.flipdown__theme-custom .rotor,
+	.flipdown.flipdown__theme-custom .rotor-top,
+	.flipdown.flipdown__theme-custom .rotor-leaf-front {
+	color: #FFFFFF;
+	background-color: <?php echo $color;?>;
+	}
+	/* Rotor bottoms */
+	.flipdown.flipdown__theme-custom .rotor-bottom,
+	.flipdown.flipdown__theme-custom .rotor-leaf-rear {
+	color: #EFEFEF;
+	background-color: <?php echo gfc_adjustBrightness($color, $steps = '-10');?>;
+	}
+	/* Hinge */
+	.flipdown.flipdown__theme-custom .rotor:after {
+	border-top: solid 1px <?php echo $color;?>;
+	}
+	</style>
+	<?php 
+	
+	$scheme = ob_get_clean();
+
+	return $scheme;
+}
+
+function gfc_adjustBrightness($hex, $steps) {
+    // Steps should be between -255 and 255. Negative = darker, positive = lighter
+    $steps = max(-255, min(255, $steps));
+
+    // Normalize into a six character long hex string
+    $hex = str_replace('#', '', $hex);
+    if (strlen($hex) == 3) {
+        $hex = str_repeat(substr($hex,0,1), 2).str_repeat(substr($hex,1,1), 2).str_repeat(substr($hex,2,1), 2);
+    }
+
+    // Split into three parts: R, G and B
+    $color_parts = str_split($hex, 2);
+    $return = '#';
+
+    foreach ($color_parts as $color) {
+        $color   = hexdec($color); // Convert to decimal
+        $color   = max(0,min(255,$color + $steps)); // Adjust color
+        $return .= str_pad(dechex($color), 2, '0', STR_PAD_LEFT); // Make two char hex code
+    }
+
+    return $return;
 }

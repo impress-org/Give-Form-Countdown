@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name: Give - Form Countdown
- * Plugin URI: https://github.com/WordImpress/Give-Form-Countdown
+ * Plugin Name: Form Countdown for GiveWP
+ * Plugin URI: https://github.com/impress-org/give-form-countdown
  * Description: Accept donations which limited by duration with Give.
  * Author: WordImpress
  * Author URI: https://wordimpress.com
@@ -117,9 +117,6 @@ if ( ! class_exists( 'Give_Form_Countdown' ) ) {
 
 			// Load helper functions.
 			require_once GFC_PLUGIN_DIR . 'includes/functions.php';
-
-			// Load filters.
-			require_once GFC_PLUGIN_DIR . 'includes/filters.php';
 
 			// Load actions.
 			require_once GFC_PLUGIN_DIR . 'includes/actions.php';

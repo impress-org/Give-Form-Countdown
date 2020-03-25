@@ -1,0 +1,7 @@
+.form-countdown-on-date_field button.ui-datepicker-trigger {
+    background: none;
+    border: 0;
+    position: relative;
+    right: 3em;
+    color: #555;
+}
