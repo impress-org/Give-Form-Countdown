@@ -1,0 +1,252 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Form Countdown for GiveWP\n"
+"POT-Creation-Date: 2020-03-25 18:20-0700\n"
+"PO-Revision-Date: 2020-03-25 18:18-0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: give-form-countdown.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: give-form-countdown.php:202
+#, php-format
+msgid ""
+"<strong>Activation Error:</strong> You must have the <a href=\"%s\" target="
+"\"_blank\">Give</a> plugin installed and activated for Give - Form Countdown "
+"to activate."
+msgstr ""
+
+#: give-form-countdown.php:229
+#, php-format
+msgid ""
+"<strong>Activation Error:</strong> You must have the <a href=\"%s\" target="
+"\"_blank\">Give</a> core version %s for the Give - Form Countdown add-on to "
+"activate."
+msgstr ""
+
+#: give-form-countdown.php:260
+msgid "Give Form Countdown"
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:80
+msgid "Form Countdown"
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:125
+msgid "Show Countdown"
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:129
+msgid "Enabled"
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:130
+msgid "Disabled"
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:132
+msgid ""
+"Enable a duration for this form and display a message when the duration ends."
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:138
+msgid "End Date"
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:140
+msgid "Set the date when the duration ends."
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:146
+msgid "End Time"
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:150
+msgid "Set the time of day when the duration ends."
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:156
+msgid "Clock Color Scheme"
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:159
+msgid "Light"
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:160
+msgid "Dark"
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:161
+msgid "Custom"
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:169
+msgid "Pick Your Custom Color"
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:176
+msgid "Countdown Achieved Action"
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:180
+msgid "Close the form and replace it with a message"
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:181
+msgid "Keep the form open and show this message above the form"
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:182
+msgid "Don't take any action"
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:184
+msgid ""
+"Choose what action, if any, you want to see when the countdown reaches zero."
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:190
+msgid "End Message"
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:192
+msgid "Thank you to all our donors, \t\tthis campaign has ended."
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:193
+msgid "Enter content that appears in your form when the duration ends."
+msgstr ""
+
+#: includes/functions.php:108
+msgid "12:00 AM"
+msgstr ""
+
+#: includes/functions.php:109
+msgid "1:00 AM"
+msgstr ""
+
+#: includes/functions.php:110
+msgid "2:00 AM"
+msgstr ""
+
+#: includes/functions.php:111
+msgid "3:00 AM"
+msgstr ""
+
+#: includes/functions.php:112
+msgid "4:00 AM"
+msgstr ""
+
+#: includes/functions.php:113
+msgid "5:00 AM"
+msgstr ""
+
+#: includes/functions.php:114
+msgid "6:00 AM"
+msgstr ""
+
+#: includes/functions.php:115
+msgid "7:00 AM"
+msgstr ""
+
+#: includes/functions.php:116
+msgid "8:00 AM"
+msgstr ""
+
+#: includes/functions.php:117
+msgid "9:00 AM"
+msgstr ""
+
+#: includes/functions.php:118
+msgid "10:00 AM"
+msgstr ""
+
+#: includes/functions.php:119
+msgid "11:00 AM"
+msgstr ""
+
+#: includes/functions.php:120
+msgid "12:00 PM"
+msgstr ""
+
+#: includes/functions.php:121
+msgid "1:00 PM"
+msgstr ""
+
+#: includes/functions.php:122
+msgid "2:00 PM"
+msgstr ""
+
+#: includes/functions.php:123
+msgid "3:00 PM"
+msgstr ""
+
+#: includes/functions.php:124
+msgid "4:00 PM"
+msgstr ""
+
+#: includes/functions.php:125
+msgid "5:00 PM"
+msgstr ""
+
+#: includes/functions.php:126
+msgid "6:00 PM"
+msgstr ""
+
+#: includes/functions.php:127
+msgid "7:00 PM"
+msgstr ""
+
+#: includes/functions.php:128
+msgid "8:00 PM"
+msgstr ""
+
+#: includes/functions.php:129
+msgid "9:00 PM"
+msgstr ""
+
+#: includes/functions.php:130
+msgid "10:00 PM"
+msgstr ""
+
+#: includes/functions.php:131
+msgid "11:00 PM"
+msgstr ""
+
+#: includes/functions.php:155
+msgid "Thank you to all our donors, we have met our fundraising goal."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Form Countdown for GiveWP"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/impress-org/give-form-countdown"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Accept donations which limited by duration with Give."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "webdevmattcrom"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://givewp.com"
+msgstr ""

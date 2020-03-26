@@ -76,8 +76,8 @@ class Give_Form_Countdown_Metabox_Settings {
 	 * @return Give_Form_Countdown_Metabox_Settings
 	 */
 	public function setup_params() {
-		$this->id    = 'give-form-countdown';
-		$this->label = __( 'Form Countdown', 'give-form-countdown' );
+		$this->id    = 'givewp-form-countdown';
+		$this->label = __( 'Form Countdown', 'givewp-form-countdown' );
 
 		return static::get_instance();
 
@@ -122,43 +122,43 @@ class Give_Form_Countdown_Metabox_Settings {
 				// Close Form.
 				array(
 					'id'          => 'form-countdown-close-form',
-					'name'        => __( 'Show Countdown', 'give-form-countdown' ),
+					'name'        => __( 'Show Countdown', 'givewp-form-countdown' ),
 					'type'        => 'radio_inline',
 					'default'     => 'disabled',
 					'options'     => array(
-						'enabled'  => __( 'Enabled', 'give-form-countdown' ),
-						'disabled' => __( 'Disabled', 'give-form-countdown' ),
+						'enabled'  => __( 'Enabled', 'givewp-form-countdown' ),
+						'disabled' => __( 'Disabled', 'givewp-form-countdown' ),
 					),
-					'description' => __( 'Enable a duration for this form and display a message when the duration ends.', 'give-form-countdown' ),
+					'description' => __( 'Enable a duration for this form and display a message when the duration ends.', 'givewp-form-countdown' ),
 				),
 
 				// Date
 				array(
 					'id'          => 'form-countdown-on-date',
-					'name'        => __( 'End Date', 'give-form-countdown' ),
+					'name'        => __( 'End Date', 'givewp-form-countdown' ),
 					'type'        => 'text-medium',
-					'description' => __( 'Set the date when the duration ends.', 'give-form-countdown' ),
+					'description' => __( 'Set the date when the duration ends.', 'givewp-form-countdown' ),
 				),
 
 				// Time
 				array(
 					'id'          => 'form-countdown-on-time',
-					'name'        => __( 'End Time', 'give-form-countdown' ),
+					'name'        => __( 'End Time', 'givewp-form-countdown' ),
 					'type'        => 'select',
 					'options'     => gfc_get_time_list(),
 					'default'     => '1800',
-					'description' => __( 'Set the time of day when the duration ends.', 'give-form-countdown' ),
+					'description' => __( 'Set the time of day when the duration ends.', 'givewp-form-countdown' ),
 				),
 
 				//Color
 				array(
 					'id'		  => 'form-countdown-theme',
-					'name'		  => __( 'Clock Color Scheme', 'give-form-countdown'),
+					'name'		  => __( 'Clock Color Scheme', 'givewp-form-countdown'),
 					'type'		  => 'select',
 					'options'	  => array(
-						'light'	  => __('Light', 'give-form-countdown'),
-						'dark'	  => __('Dark', 'give-form-countdown'),
-						'custom'  => __('Custom', 'give-form-countdown'),
+						'light'	  => __('Light', 'givewp-form-countdown'),
+						'dark'	  => __('Dark', 'givewp-form-countdown'),
+						'custom'  => __('Custom', 'givewp-form-countdown'),
 					),
 					'default'	  => 'light'
 				),
@@ -173,24 +173,24 @@ class Give_Form_Countdown_Metabox_Settings {
 				// Countdown achieved action.
 				array(
 					'id'          => 'form-countdown-achieved-action',
-					'name'        => __( 'Countdown Achieved Action', 'give-form-countdown' ),
+					'name'        => __( 'Countdown Achieved Action', 'givewp-form-countdown' ),
 					'type'        => 'radio',
 					'default'     => 'close_form',
 					'options'     => array(
-						'close_form' => __( 'Close the form and replace it with a message', 'give-form-countdown' ),
-						'message_and_form' => __( 'Keep the form open and show this message above the form', 'give-form-countdown' ),
-						'dont_close' => __( 'Don\'t take any action', 'give-form-countdown' ),
+						'close_form' => __( 'Close the form and replace it with a message', 'givewp-form-countdown' ),
+						'message_and_form' => __( 'Keep the form open and show this message above the form', 'givewp-form-countdown' ),
+						'dont_close' => __( 'Don\'t take any action', 'givewp-form-countdown' ),
 					),
-					'description' => __( 'Choose what action, if any, you want to see when the countdown reaches zero.', 'give-form-countdown' ),
+					'description' => __( 'Choose what action, if any, you want to see when the countdown reaches zero.', 'givewp-form-countdown' ),
 				),
 
 				// Countdown achieved message.
 				array(
 					'id'          => 'form-countdown-message',
-					'name'        => __( 'End Message', 'give-form-countdown' ),
+					'name'        => __( 'End Message', 'givewp-form-countdown' ),
 					'type'        => 'wysiwyg',
-					'default'  	  => __( 'Thank you to all our donors, 		this campaign has ended.', 'give-form-countdown' ),
-					'description' => __( 'Enter content that appears in your form when the duration ends.', 'give-form-countdown' ),
+					'default'  	  => __( 'Thank you to all our donors, 		this campaign has ended.', 'givewp-form-countdown' ),
+					'description' => __( 'Enter content that appears in your form when the duration ends.', 'givewp-form-countdown' ),
 					'attributes'  => array(
 						'textarea_rows' => 10,
 					),

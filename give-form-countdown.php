@@ -3,12 +3,12 @@
  * Plugin Name: Form Countdown for GiveWP
  * Plugin URI: https://github.com/impress-org/give-form-countdown
  * Description: Accept donations which limited by duration with Give.
- * Author: WordImpress
- * Author URI: https://wordimpress.com
- * Version: 1.0.1
- * Text Domain: give-form-countdown
+ * Author: webdevmattcrom
+ * Author URI: https://givewp.com
+ * Version: 2.0
+ * Text Domain: givewp-form-countdown
  * Domain Path: /languages
- * GitHub Plugin URI: https://github.com/WordImpress/Give-Form-Countdown
+ * GitHub Plugin URI: https://github.com/impress-org/Give-Form-Countdown
  */
 
 
@@ -63,7 +63,7 @@ if ( ! class_exists( 'Give_Form_Countdown' ) ) {
 		}
 
 		/**
-		 * Setup Give Form Countdown.
+		 * Setup GiveWP Form Countdown.
 		 *
 		 * @since 1.0.2
 		 * @access private
@@ -122,30 +122,6 @@ if ( ! class_exists( 'Give_Form_Countdown' ) ) {
 			return self::$instance;
 		}
 
-				/**
-		 * Loads the plugin language files.
-		 *
-		 * @since  1.0
-		 * @access public
-		 *
-		 * @return void
-		 */
-		public function load_textdomain() {
-
-			// Set filter for Give's languages directory
-			$give_lang_dir = dirname( plugin_basename( PER_FORM_CONFIRMATIONS_4_GIVEWP_FILE ) ) . '/languages/';
-			$give_lang_dir = apply_filters( 'pfconfs4givewp_languages_directory', $give_lang_dir );
-
-			// Traditional WordPress plugin locale filter.
-			$locale = is_admin() && function_exists( 'get_user_locale' ) ? get_user_locale() : get_locale();
-			$locale = apply_filters( 'plugin_locale', $locale, 'pfconfs-4-givewp' );
-
-			unload_textdomain( 'pfconfs-4-givewp' );
-			load_textdomain( 'pfconfs-4-givewp', WP_LANG_DIR . '/givewp-per-form-confirmations/' . $locale . '.mo' );
-			load_plugin_textdomain( 'pfconfs-4-givewp', false, $give_lang_dir );
-
-		}
-
 		/**
 		 * Load files.
 		 *
@@ -170,7 +146,34 @@ if ( ! class_exists( 'Give_Form_Countdown' ) ) {
 			// Load actions.
 			require_once GFC_PLUGIN_DIR . 'includes/actions.php';
 
+			// Set up localization.
+			$this->load_textdomain();
+
 			return self::$instance;
+		}
+
+		/**
+		 * Loads the plugin language files.
+		 *
+		 * @since  1.0
+		 * @access public
+		 *
+		 * @return void
+		 */
+		public function load_textdomain() {
+
+			// Set filter for Give's languages directory
+			$give_lang_dir = dirname( plugin_basename( GFC_FILE ) ) . '/languages/';
+			$give_lang_dir = apply_filters( 'gfc_languages_directory', $give_lang_dir );
+
+			// Traditional WordPress plugin locale filter.
+			$locale = is_admin() && function_exists( 'get_user_locale' ) ? get_user_locale() : get_locale();
+			$locale = apply_filters( 'plugin_locale', $locale, 'givewp-form-countdown' );
+
+			unload_textdomain( 'givewp-form-countdown' );
+			load_textdomain( 'givewp-form-countdown', WP_LANG_DIR . '/givewp-form-countdown/' . $locale . '.mo' );
+			load_plugin_textdomain( 'give-form-countdown', false, $give_lang_dir );
+
 		}
 
 		/**

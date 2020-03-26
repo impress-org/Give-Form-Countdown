@@ -3,8 +3,6 @@
  * Filter the countdown clock time constraints.
  *
  * @since 1.0
- * @todo  : Refactor javascript code.
- * @todo  : Add months time constraint.
  */
 
 $form_meta = get_post_meta($form_id);
