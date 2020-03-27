@@ -141,10 +141,9 @@ function gfc_get_message( $form_id ) {
 	return apply_filters('give_donation_duration_message', $message);
 }
 
-function gfc_output_custom_color_scheme($form_id) {
+function gfc_output_custom_color_scheme( $form_id ) {
 	
-	$meta = get_post_meta($form_id);
-	$color = esc_attr($meta['form-countdown-custom-theme-picker'][0]);
+	$color = get_post_meta( 'form-countdown-custom-theme-picker', true );
 	
 	ob_start();
 	?>
@@ -157,29 +156,29 @@ function gfc_output_custom_color_scheme($form_id) {
 	}
 	/* Rotor group headings */
 	.flipdown.flipdown__theme-custom .rotor-group-heading:before {
-	color: <?php echo gfc_adjustBrightness($color, $steps = '-50');?>;
+	color: <?php echo gfc_adjustBrightness( esc_attr( $color), $steps = '-50');?>;
 	}
 	/* Delimeters */
 	.flipdown.flipdown__theme-custom .rotor-group:nth-child(n+2):nth-child(-n+3):before,
 	.flipdown.flipdown__theme-custom .rotor-group:nth-child(n+2):nth-child(-n+3):after {
-	background-color: <?php echo $color;?>;
+	background-color: <?php echo esc_attr( $color );?>;
 	}
 	/* Rotor tops */
 	.flipdown.flipdown__theme-custom .rotor,
 	.flipdown.flipdown__theme-custom .rotor-top,
 	.flipdown.flipdown__theme-custom .rotor-leaf-front {
 	color: #FFFFFF;
-	background-color: <?php echo $color;?>;
+	background-color: <?php echo esc_attr( $color );?>;
 	}
 	/* Rotor bottoms */
 	.flipdown.flipdown__theme-custom .rotor-bottom,
 	.flipdown.flipdown__theme-custom .rotor-leaf-rear {
 	color: #EFEFEF;
-	background-color: <?php echo gfc_adjustBrightness($color, $steps = '-10');?>;
+	background-color: <?php echo gfc_adjustBrightness( esc_attr( $color ), $steps = '-10');?>;
 	}
 	/* Hinge */
 	.flipdown.flipdown__theme-custom .rotor:after {
-	border-top: solid 1px <?php echo $color;?>;
+	border-top: solid 1px <?php echo esc_attr( $color );?>;
 	}
 	</style>
 	<?php 
@@ -189,7 +188,7 @@ function gfc_output_custom_color_scheme($form_id) {
 	return $scheme;
 }
 
-function gfc_adjustBrightness($hex, $steps) {
+function gfc_adjustBrightness( $hex, $steps ) {
     // Steps should be between -255 and 255. Negative = darker, positive = lighter
     $steps = max(-255, min(255, $steps));
 
