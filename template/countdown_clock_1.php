@@ -22,8 +22,6 @@ if ($theme == 'custom') {
 	echo $custom_styles;
 }
 
-//var_dump($theme);
-
 ?>
 <div id="gfc-clock-<?php echo esc_attr( $form_id ); ?>-wrap" class="gfc-clock-wrap">
 	<div id="flipdown-<?php echo esc_attr( $form_id ); ?>" class="flipdown"></div>
@@ -45,7 +43,6 @@ if ($theme == 'custom') {
 
 		.start()
 
-		// Do something when the countdown ends
 		<?php switch($closeaction) {
 			case 'close_form': 
 				esc_js(print_r(".ifEnded(() => {jQuery(formwrap).fadeOut(500);jQuery('.gfc-closed-message').fadeIn(1000);});"));
@@ -53,8 +50,6 @@ if ($theme == 'custom') {
 			case 'message_and_form': 
 				esc_js(print_r(".ifEnded(() => {jQuery('.gfc-closed-message').fadeIn(1000);});"));
 				break;
-			default: 
-				return;
 		} ?>
 		
 	});
