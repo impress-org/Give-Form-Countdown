@@ -143,7 +143,7 @@ function gfc_get_message( $form_id ) {
 
 function gfc_output_custom_color_scheme( $form_id ) {
 	
-	$color = get_post_meta( 'form-countdown-custom-theme-picker', true );
+	$color = get_post_meta( $form_id, 'form-countdown-custom-theme-picker', true );
 	
 	ob_start();
 	?>
@@ -156,7 +156,7 @@ function gfc_output_custom_color_scheme( $form_id ) {
 	}
 	/* Rotor group headings */
 	.flipdown.flipdown__theme-custom .rotor-group-heading:before {
-	color: <?php echo gfc_adjustBrightness( esc_attr( $color), $steps = '-50');?>;
+	color: <?php echo gfc_adjustBrightness( esc_attr( $color ) , $steps = '-50');?>;
 	}
 	/* Delimeters */
 	.flipdown.flipdown__theme-custom .rotor-group:nth-child(n+2):nth-child(-n+3):before,
