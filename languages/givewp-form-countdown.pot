@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Form Countdown for GiveWP\n"
-"POT-Creation-Date: 2020-03-25 18:20-0700\n"
-"PO-Revision-Date: 2020-03-25 18:18-0700\n"
+"POT-Creation-Date: 2020-03-26 22:41-0700\n"
+"PO-Revision-Date: 2020-03-26 22:41-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -103,131 +103,144 @@ msgid "Countdown Achieved Action"
 msgstr ""
 
 #: includes/admin/class-form-metabox-setting.php:180
-msgid "Close the form and replace it with a message"
+msgid "Hide the form and show the message below."
 msgstr ""
 
 #: includes/admin/class-form-metabox-setting.php:181
-msgid "Keep the form open and show this message above the form"
+msgid "Show the message below above the form."
 msgstr ""
 
 #: includes/admin/class-form-metabox-setting.php:182
-msgid "Don't take any action"
+msgid "Hide the countdown only."
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:183
+msgid "Hide the countdown and show the message below above the form."
 msgstr ""
 
 #: includes/admin/class-form-metabox-setting.php:184
 msgid ""
+"Hide the countdown and the form and show the message below in their place."
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:185
+msgid "Don't take any action."
+msgstr ""
+
+#: includes/admin/class-form-metabox-setting.php:187
+msgid ""
 "Choose what action, if any, you want to see when the countdown reaches zero."
 msgstr ""
 
-#: includes/admin/class-form-metabox-setting.php:190
+#: includes/admin/class-form-metabox-setting.php:193
 msgid "End Message"
 msgstr ""
 
-#: includes/admin/class-form-metabox-setting.php:192
+#: includes/admin/class-form-metabox-setting.php:195
 msgid "Thank you to all our donors, \t\tthis campaign has ended."
 msgstr ""
 
-#: includes/admin/class-form-metabox-setting.php:193
+#: includes/admin/class-form-metabox-setting.php:196
 msgid "Enter content that appears in your form when the duration ends."
 msgstr ""
 
-#: includes/functions.php:108
+#: includes/functions.php:81
 msgid "12:00 AM"
 msgstr ""
 
-#: includes/functions.php:109
+#: includes/functions.php:82
 msgid "1:00 AM"
 msgstr ""
 
-#: includes/functions.php:110
+#: includes/functions.php:83
 msgid "2:00 AM"
 msgstr ""
 
-#: includes/functions.php:111
+#: includes/functions.php:84
 msgid "3:00 AM"
 msgstr ""
 
-#: includes/functions.php:112
+#: includes/functions.php:85
 msgid "4:00 AM"
 msgstr ""
 
-#: includes/functions.php:113
+#: includes/functions.php:86
 msgid "5:00 AM"
 msgstr ""
 
-#: includes/functions.php:114
+#: includes/functions.php:87
 msgid "6:00 AM"
 msgstr ""
 
-#: includes/functions.php:115
+#: includes/functions.php:88
 msgid "7:00 AM"
 msgstr ""
 
-#: includes/functions.php:116
+#: includes/functions.php:89
 msgid "8:00 AM"
 msgstr ""
 
-#: includes/functions.php:117
+#: includes/functions.php:90
 msgid "9:00 AM"
 msgstr ""
 
-#: includes/functions.php:118
+#: includes/functions.php:91
 msgid "10:00 AM"
 msgstr ""
 
-#: includes/functions.php:119
+#: includes/functions.php:92
 msgid "11:00 AM"
 msgstr ""
 
-#: includes/functions.php:120
+#: includes/functions.php:93
 msgid "12:00 PM"
 msgstr ""
 
-#: includes/functions.php:121
+#: includes/functions.php:94
 msgid "1:00 PM"
 msgstr ""
 
-#: includes/functions.php:122
+#: includes/functions.php:95
 msgid "2:00 PM"
 msgstr ""
 
-#: includes/functions.php:123
+#: includes/functions.php:96
 msgid "3:00 PM"
 msgstr ""
 
-#: includes/functions.php:124
+#: includes/functions.php:97
 msgid "4:00 PM"
 msgstr ""
 
-#: includes/functions.php:125
+#: includes/functions.php:98
 msgid "5:00 PM"
 msgstr ""
 
-#: includes/functions.php:126
+#: includes/functions.php:99
 msgid "6:00 PM"
 msgstr ""
 
-#: includes/functions.php:127
+#: includes/functions.php:100
 msgid "7:00 PM"
 msgstr ""
 
-#: includes/functions.php:128
+#: includes/functions.php:101
 msgid "8:00 PM"
 msgstr ""
 
-#: includes/functions.php:129
+#: includes/functions.php:102
 msgid "9:00 PM"
 msgstr ""
 
-#: includes/functions.php:130
+#: includes/functions.php:103
 msgid "10:00 PM"
 msgstr ""
 
-#: includes/functions.php:131
+#: includes/functions.php:104
 msgid "11:00 PM"
 msgstr ""
 
-#: includes/functions.php:155
+#: includes/functions.php:128
 msgid "Thank you to all our donors, we have met our fundraising goal."
 msgstr ""
 
