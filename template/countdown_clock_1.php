@@ -25,8 +25,8 @@ if ( $theme == 'custom' ) {
 ?>
 <div id="gfc-clock-<?php echo esc_attr( $form_id ); ?>-wrap" class="gfc-clock-wrap">
 	<div id="flipdown-<?php echo esc_attr( $form_id ); ?>" class="flipdown"></div>
-	<div class="gfc-closed-message" style="display:none; margin: 1em 0; overflow:hidden;"><?php echo wp_kses_post( get_post_meta( $form_id, 'form-countdown-message', true ) ); ?></div>
 </div>
+<div class="gfc-closed-message" style="display:none; margin: 1em 0; overflow:hidden;"><?php echo wp_kses_post( get_post_meta( $form_id, 'form-countdown-message', true ) ); ?></div>
 
 <script>
 	document.addEventListener('DOMContentLoaded', () => {
@@ -43,12 +43,21 @@ if ( $theme == 'custom' ) {
 
 		.start()
 
-		<?php switch($closeaction) {
+		<?php switch( $closeaction ) {
 			case 'close_form': 
-				esc_js(print_r(".ifEnded(() => {jQuery(formwrap).fadeOut(500);jQuery('.gfc-closed-message').fadeIn(1000);});"));
+				esc_js(print_r(".ifEnded(() => {jQuery(formwrap).fadeOut(500);jQuery('.gfc-closed-message').delay(500).fadeIn(500);});"));
 				break;
 			case 'message_and_form': 
 				esc_js(print_r(".ifEnded(() => {jQuery('.gfc-closed-message').fadeIn(1000);});"));
+				break;
+			case 'hide_countdown': 
+				esc_js(print_r(".ifEnded(() => {jQuery('.gfc-clock-wrap').fadeOut(1000);});"));
+				break;
+			case 'hide_countdown_show_message': 
+				esc_js(print_r(".ifEnded(() => {jQuery('.gfc-closed-message').delay(500).fadeIn(500);jQuery('.gfc-clock-wrap').fadeOut(500);});"));
+				break;
+			case 'hide_countdown_and_form_show_message': 
+				esc_js(print_r(".ifEnded(() => {jQuery(formwrap).fadeOut(500);jQuery('.gfc-clock-wrap').fadeOut(500);jQuery('.gfc-closed-message').delay(500).fadeIn(500);});"));
 				break;
 		} ?>
 		
