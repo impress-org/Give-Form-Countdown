@@ -25,17 +25,22 @@ jQuery(document).ready(function ($) {
 	 */
 	$close_form.change(function () {
 		var field_value = $('input[type="radio"]:checked', $(this)).val(),
-			theme_val = $( 'select#form-countdown-theme').val();
+			theme_val = $( 'select#form-countdown-theme').val()
+			action_val = $('input[name="form-countdown-achieved-action"]:checked').val();
 
 		if ('enabled' === field_value) {
 			$end_date.show(),
 			$end_time.show(),
 			$theme.show(),
-			$countdown_achieved.show(),
-			$countdown_achieved_msg.show();
+			$countdown_achieved.show();
 
 			if ( theme_val === 'custom' ) {
 				$color_picker.show();
+			}
+			if ( action_val === 'dont_close' || action_val === 'hide_countdown'  ) {
+				$countdown_achieved_msg.hide();
+			} else {
+				$countdown_achieved_msg.show();
 			}
 		} else {
 			$end_date.hide(),
@@ -61,6 +66,21 @@ jQuery(document).ready(function ($) {
             $custom_color.show();
         } else {
             $custom_color.hide();
+        }
+	} ).change();
+	
+	/**
+	 *  Conditionally show the countdown achieved message field
+	 */
+
+	$countdown_achieved.on( 'change', function() {
+		var action_val = $('input[name="form-countdown-achieved-action"]:checked', $(this)).val(),
+			countdown_achieved_msg = $('.form-countdown-message_field');
+
+        if ( action_val === 'close_form' || action_val === 'message_and_form' || action_val === 'hide_countdown_show_message' || action_val === 'hide_countdown_and_form_show_message' ) {
+            countdown_achieved_msg.fadeIn(300);
+        } else {
+            countdown_achieved_msg.fadeOut(300);
         }
     } ).change();
 });
