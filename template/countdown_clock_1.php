@@ -37,9 +37,9 @@ if ( $theme == 'custom' ) {
 			formwrap = document.getElementById("give-form-<?php echo esc_attr( $form_id ); ?>-wrap");
 		
 		//5 second countdown for testing only
-		var flipdown = new FlipDown(fiveSeconds,'flipdown-<?php echo esc_attr( $form_id ); ?>', {theme: '<?php echo esc_attr( $theme ); ?>'})
+		//var flipdown = new FlipDown(fiveSeconds,'flipdown-<?php echo esc_attr( $form_id ); ?>', {theme: '<?php echo esc_attr( $theme ); ?>'})
 
-		//var flipdown = new FlipDown(<?php echo esc_attr( $timestamp ); ?>,'flipdown-<?php echo esc_attr( $form_id ); ?>', {theme: '<?php echo esc_attr( $theme ); ?>'})
+		var flipdown = new FlipDown(<?php echo esc_attr( $timestamp ); ?>,'flipdown-<?php echo esc_attr( $form_id ); ?>', {theme: '<?php echo esc_attr( $theme ); ?>'})
 
 		.start()
 
