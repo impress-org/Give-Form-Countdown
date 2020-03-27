@@ -241,8 +241,8 @@ class Give_Form_Countdown_Metabox_Settings {
 	 * @param string $hook
 	 */
 	function enqueue_frontend_scripts( $hook ) {
-		wp_register_script( 'form-countdown-flipdown-script', GFC_PLUGIN_URL . 'assets/js/plugin/flipdown.min.js', array( 'jquery' ), GFC_PLUGIN_VERSION );
-		wp_register_style( 'form-countdown-flipdown-style', GFC_PLUGIN_URL . 'assets/css/plugin/flipdown.min.css', array(), GFC_PLUGIN_VERSION );
+		wp_register_script( 'form-countdown-flipdown-script', GFC_PLUGIN_URL . 'assets/plugin/flipdown.min.js', array( 'jquery' ), GFC_PLUGIN_VERSION );
+		wp_register_style( 'form-countdown-flipdown-style', GFC_PLUGIN_URL . 'assets/plugin/flipdown.min.css', array(), GFC_PLUGIN_VERSION );
 	}
 
 

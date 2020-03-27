@@ -23,7 +23,7 @@ if ( $theme == 'custom' ) {
 }
 
 ?>
-<div id="gfc-clock-<?php echo esc_attr( $form_id ); ?>-wrap" class="gfc-clock-wrap">
+<div id="gfc-clock-<?php echo esc_attr( $form_id ); ?>-wrap" class="gfc-clock-wrap" style="margin: 1em 0; line-height: 0;">
 	<div id="flipdown-<?php echo esc_attr( $form_id ); ?>" class="flipdown"></div>
 </div>
 <div class="gfc-closed-message" style="display:none; margin: 1em 0; overflow:hidden;"><?php echo wp_kses_post( get_post_meta( $form_id, 'form-countdown-message', true ) ); ?></div>
