@@ -15,7 +15,7 @@ function gfc_add_pre_form_countdown_clock( $form_id ){
 		! gfc_is_form_has_limited_duration( $form_id )
 		|| $form->is_close_donation_form()
 		|| give_is_limit_donation_time_achieved( $form_id )
-		|| ! give_is_setting_enabled( get_post_meta( $form_id, 'form-countdown-countdown-clock', true ) )
+		|| ! give_is_setting_enabled( get_post_meta( $form_id, 'form-countdown-close-form', true ) )
 	) {
 		return false;
 	}

@@ -53,42 +53,15 @@ function give_is_limit_donation_time_achieved( $form_id ) {
 function gfc_get_form_close_date( $form_id, $date_format = '' ) {
 	$limit_timestamp = '';
 
-	// Get donation time limit type.
-	$limit_donation_by = get_post_meta( $form_id, 'form-countdown-by', true );
-
-	switch ( $limit_donation_by ) {
-		case 'number_of_days':
-			$limit_in_day = absint( get_post_meta( $form_id, 'form-countdown-in-number-of-days', true ) );
-			// Bailout: Day should be greater than zero.
-			if ( ! $limit_in_day ) {
-				break;
-			}
-
-			// Local timestamp.
-			$limit_timestamp = strtotime( "+ $limit_in_day days", current_time( 'timestamp' ) );
-
-			$formatted_date = date( 'Y-m-d 00:00:00', $limit_timestamp );
-
-			// GMT timestamp.
-			$limit_timestamp = get_gmt_from_date( $formatted_date, 'U' );
-			break;
-
-		case 'end_on_day_and_time':
+	
 			$limit_in_date = get_post_meta( $form_id, 'form-countdown-on-date', true );
 			$limit_in_time = get_post_meta( $form_id, 'form-countdown-on-time', true );
 			$time_list     = gfc_get_time_list();
-
-			// Bailout: Date and time should be non empty.
-			if ( empty( $limit_in_date ) || empty( $limit_in_time ) ) {
-				break;
-			}
 
 			$formatted_date = date( 'Y-m-d H:i:s', strtotime( $limit_in_date . ' ' . $time_list[ $limit_in_time ] ) );
 
 			// GMT timestamp.
 			$limit_timestamp = get_gmt_from_date( $formatted_date, 'U' );
-			break;
-	}
 
 	// Output.
 	return ( $date_format ? date( $date_format, $limit_timestamp ) : $limit_timestamp );

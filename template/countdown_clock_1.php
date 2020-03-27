@@ -22,6 +22,8 @@ if ($theme == 'custom') {
 	echo $custom_styles;
 }
 
+//var_dump($theme);
+
 ?>
 <div id="gfc-clock-<?php echo esc_attr( $form_id ); ?>-wrap" class="gfc-clock-wrap">
 	<div id="flipdown-<?php echo esc_attr( $form_id ); ?>" class="flipdown"></div>

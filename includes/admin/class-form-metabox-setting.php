@@ -256,45 +256,6 @@ class Give_Form_Countdown_Metabox_Settings {
 			update_post_meta( $form_id, 'form-countdown-close-form', 'disabled' );
 		}
 	}
-
-
-	/**
-	 * Custom field render callback function
-	 * @param $field
-	 */
-	public function gfc_number_field( $field ) {
-
-		global $thepostid;
-		$field['value']         = esc_attr( give_get_field_value( $field, $thepostid ) );
-		$field['min']           = esc_attr( $field['min'] );
-		$field['wrapper_class'] = ! empty( $field['wrapper_class'] ) ? $field['wrapper_class'] : '';
-		$field['before_field']  = ! empty( $field['before_field'] ) ? $field['before_field'] : '';
-		$field['after_field']   = ! empty( $field['after_field'] ) ? $field['after_field'] : '';
-		$field['style']         = ! empty( $field['style'] ) ? $field['style'] : '';
-
-
-		$number_default = empty( $field['value'] ) ? '10' : esc_attr( $field['value'] );
-		$number_min     = empty( $field['min'] ) ? '1' : $field['min'];
-
-		?>
-		<p class="give-field-wrap <?php echo esc_attr( $field['id'] ); ?>_field <?php echo esc_attr( $field['wrapper_class'] ); ?>">
-			<label for="<?php echo give_get_field_name( $field ); ?>"><?php echo wp_kses_post( $field['name'] ); ?></label>
-			<?php echo $field['before_field']; ?>
-			<input
-					type="<?php echo esc_attr( $field['type'] ); ?>"
-					style="<?php echo esc_attr( $field['style'] ); ?>"
-					name="<?php echo give_get_field_name( $field ); ?>"
-					id="<?php echo esc_attr( $field['id'] ); ?>"
-					min="<?php echo $number_min; ?>"
-					value="<?php echo $number_default; ?>"
-				<?php echo $field['value']; ?>
-			/>
-
-			<?php echo $field['after_field']; ?>
-			<?php echo give_get_field_description( $field ); ?>
-		</p>
-		<?php
-	}
 }
 
 
