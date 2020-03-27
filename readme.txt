@@ -6,6 +6,7 @@ Requires at least: 4.8
 Tested up to: 5.4
 Stable tag: 2.0.0
 Requires Give: 2.5.0
+Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -13,7 +14,7 @@ A GiveWP add-on which allows you to display a countdown on your donation forms u
 
 == Description ==
 
-Form Countdown is a [GiveWP](https://givewp.com) add-on allows you to display a countdown on your donation forms until a certain date/time. Various actions are available when the countdown expires.
+Form Countdown is a [GiveWP](https://givewp.com/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=Countdown_Timer) add-on allows you to display a countdown on your donation forms until a certain date/time. Various actions are available when the countdown expires.
 
 Limiting your donation campaigns to a certain time-frame is useful for communicating a sense of urgency. When your donors know that their window to donate is limited to a certain timeframe, they are less likely to postpone giving to a later time.
 
@@ -37,8 +38,11 @@ There you'll see our tabbed "Donation Form Options" interface. Towards the botto
 * **Countdown Achieved Action** -- Chose from a list of different actions to happen when the countdown clock reaches its end. These options allow you to show/hide the clock, the form, or a custom message. 
 * **End Message** -- Show a message when the countdown clock reaches its end. Only shows for relevant settings of the "Countdown Achieved Action" setting.
 
+**ABOUT OUR FREE ADD-ONS**
+Add-ons like "Form Countdown for GiveWP" are a way that we are giving back to the WordPress community. Check out our [announcement about this add-on](https://givewp.com/free-givewp-addon-countdown-timer/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=Countdown_Timer) to learn more about all the great and free add-ons we're creating.
+
 **ABOUT GIVEWP**
-> [GiveWP](https://givewp.com) is the most robust WordPress plugin available for accepting online donations. GiveWP provides you with powerful features helping you raise more funds for your cause from one, effective, platform.
+> [GiveWP](https://givewp.com/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=Countdown_Timer) is the most robust WordPress plugin available for accepting online donations. GiveWP provides you with powerful features helping you raise more funds for your cause from one, effective, platform.
 > 
 > If you are enjoying Give Form Countdown please consider giving us your feedback and rating.
 
@@ -46,7 +50,7 @@ There you'll see our tabbed "Donation Form Options" interface. Towards the botto
 
 = This sounds great, but what is GiveWP? =
 
-[GiveWP](https://givewp.com) is the most robust WordPress plugin available for accepting online donations. GiveWP provides you with powerful features helping you raise more funds for your cause from one, effective, platform.
+[GiveWP](https://givewp.com/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=Countdown_Timer) is the most robust WordPress plugin available for accepting online donations. GiveWP provides you with powerful features helping you raise more funds for your cause from one, effective, platform.
 
 = My form also has a Goal. How do these work together? =
 
@@ -58,11 +62,11 @@ The easiest way is to manually change the date of your duration to be in the pas
 
 = Where can I submit Support Questions? =
 
-If you have purchased any of our Premium Add-ons, we can provide with your [Priority Support here](https://givewp.com/support).
+If you have purchased any of our Premium Add-ons, we can provide with your [Priority Support here](https://givewp.com/support/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=Countdown_Timer).
 
 If you are a free GiveWP user and have a general question about GiveWP, submit a ticket here.
 
-Otherwise, if your question is specific to GiveWP Form Countdown we're happy to answer your questions [here](https://wordpress.org/support/plugin/give-form-countdown).
+Otherwise, if your question is specific to GiveWP Form Countdown we're happy to answer your questions [here](https://wordpress.org/support/plugin/form-countdown-for-givewp).
 
 = I have a feature request, or would like to contribute to this plugin. Where can I do that? =
 
