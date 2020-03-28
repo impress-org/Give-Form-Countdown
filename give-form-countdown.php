@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name: Form Countdown for GiveWP
- * Plugin URI: https://github.com/impress-org/give-form-countdown
- * Description: Accept donations which limited by duration with Give.
- * Author: webdevmattcrom
+ * Plugin URI: https://givewp.com/free-givewp-addon-countdown-timer
+ * Description: Put a sense of urgency on your GiveWP Forms.
+ * Author: GiveWP
  * Author URI: https://givewp.com
  * Version: 2.0
  * Text Domain: givewp-form-countdown
