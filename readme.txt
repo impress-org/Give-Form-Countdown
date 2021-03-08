@@ -3,7 +3,7 @@ Contributors: givewp, webdevmattcrom, ravinderk, dlocc
 Donate link: https://github.com/impress-org/Give-Form-Countdown
 Tags: givewp, donation, donations, time limit, end campaign, duration achieved, close form, donation limit
 Requires at least: 4.8
-Tested up to: 5.4
+Tested up to: 5.7
 Stable tag: 2.0.0
 Requires Give: 2.5.0
 Requires PHP: 7.0
@@ -22,7 +22,7 @@ Limiting your donation campaigns to a certain time-frame is useful for communica
 
 * Display the countdown until a specific date/time.
 * When the form is closed, display a custom message to your donors thanking them for their generosity. Or show/hide the form or the countdown clock.
-* Choose from dark, light, or custom color schemes. 
+* Choose from dark, light, or custom color schemes.
 
 **BASIC USAGE**
 
@@ -34,8 +34,8 @@ There you'll see our tabbed "Donation Form Options" interface. Towards the botto
 * **End Date** -- Set the end date that the countdown clock is counting down toward.
 * **End Time** -- Set the time of day for which the countdown clock will end on the designated "End Date".
 * **Clock Color Scheme** -- Choose from "Dark", "Light", or "Custom" color schemes for your countdown clock.
-* **Pick Your Custom Color** -- A Colorpicker field to choose your custom color. Only appears when "Custom" is selected for the "Clock Color Scheme" setting. 
-* **Countdown Achieved Action** -- Chose from a list of different actions to happen when the countdown clock reaches its end. These options allow you to show/hide the clock, the form, or a custom message. 
+* **Pick Your Custom Color** -- A Colorpicker field to choose your custom color. Only appears when "Custom" is selected for the "Clock Color Scheme" setting.
+* **Countdown Achieved Action** -- Chose from a list of different actions to happen when the countdown clock reaches its end. These options allow you to show/hide the clock, the form, or a custom message.
 * **End Message** -- Show a message when the countdown clock reaches its end. Only shows for relevant settings of the "Countdown Achieved Action" setting.
 
 **ABOUT OUR FREE ADD-ONS**
@@ -43,7 +43,7 @@ Add-ons like "Form Countdown for GiveWP" are a way that we are giving back to th
 
 **ABOUT GIVEWP**
 > [GiveWP](https://givewp.com/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=Countdown_Timer) is the most robust WordPress plugin available for accepting online donations. GiveWP provides you with powerful features helping you raise more funds for your cause from one, effective, platform.
-> 
+>
 > If you are enjoying Give Form Countdown please consider giving us your feedback and rating.
 
 == Frequently Asked Questions ==
@@ -54,11 +54,11 @@ Add-ons like "Form Countdown for GiveWP" are a way that we are giving back to th
 
 = My form also has a Goal. How do these work together? =
 
-The goal and the countdown clock work indepent from each other, generally speaking. This allows you to show the clock for as long as your goal is active, or even after the goal is reached. The one exception is if you chose to close the form after your goal is achieved. In that case the countdown clock will not appear, and instead your goal achieved message will appear alone. 
+The goal and the countdown clock work indepent from each other, generally speaking. This allows you to show the clock for as long as your goal is active, or even after the goal is reached. The one exception is if you chose to close the form after your goal is achieved. In that case the countdown clock will not appear, and instead your goal achieved message will appear alone.
 
 = How can I test the completion message? =
 
-The easiest way is to manually change the date of your duration to be in the past. If you are comfortable with code, there is a line in the main template file intended just for testing which sets the countdown clock at 5 seconds from the present. 
+The easiest way is to manually change the date of your duration to be in the past. If you are comfortable with code, there is a line in the main template file intended just for testing which sets the countdown clock at 5 seconds from the present.
 
 = Where can I submit Support Questions? =
 
@@ -108,7 +108,7 @@ Revamped and Improved!
 * Refactored flip clock with [Flipdown.js](https://github.com/PButcher/flipdown)
 * Refactored form settings for more clarity and simplicity of use
 * Separated the goal settings from the countdown settings for more flexibility in use
-* Added new color scheme options, including custom colors. 
+* Added new color scheme options, including custom colors.
 
 = 1.0.1: July 5th, 2018 =
 * Fix: Compatibility with Give 2.1+.
